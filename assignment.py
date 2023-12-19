@@ -235,6 +235,17 @@ if (fName in data1) and (sName in data2):
                         : 
                          
                          """).upper()
+            print(f'Your answer is, {user}')
+            
+            user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+                       (A) 1:40
+                       (B) 1:45
+                       (C) 1:25
+                       (D) 1:35
+                        : 
+                         
+                         """).upper()
+            print(f'Your answer is, {user}')
             
             
             # examination menu
