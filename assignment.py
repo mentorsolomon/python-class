@@ -224,7 +224,7 @@ if (fName in data1) and (sName in data2):
                         (D) positive and negative.
                         : 
                          
-                         """)
+                         """).upper()
             print(f'Your answer is, {user}')
             
             user = input("""2. What strategy works best with early childhood education?
