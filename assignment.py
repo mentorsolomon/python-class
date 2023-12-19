@@ -214,13 +214,8 @@ if (fName in data1) and (sName in data2):
             Note: Pick your courses with respect to the choice of your course of study.
                             
             """)
-        exam = input("Press 'START' or 'S' to start: ").lower()
-        examCount = 0
-        examLimit = 2
-        while examCount < examLimit:
-            examCount += 1
-        
-            if exam == 'start' or exam == 's':
+        exam = input("Press 'START' or 'S' to start: ").lower()       
+        if exam == 'start' or exam == 's':
                 print(f'You examination starts now {fName}. Goodluck')
                 user = input("""1. The two major types of culture are____________?
                             (A) material and non material
@@ -251,11 +246,9 @@ if (fName in data1) and (sName in data2):
                             
                             """).upper()
                 print(f'Your answer is, {user}')
-                break
-                
-                
+                          
                 # examination menu
-            else:
+        else:
                 print(f'Invalid response; TRY AGAIN {fName}')
         
     elif user.strip() == '3' or user.strip().lower() == 'commercial':
