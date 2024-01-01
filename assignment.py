@@ -194,7 +194,35 @@ if (fName in data1) and (sName in data2):
         exam = input("Press 'START' or 'S' to start: ").lower()
         if exam == 'start' or exam == 's':
             print(f'You examination starts now {fName}. Goodluck')
-            
+            user = input("""1. The two major types of culture are____________?
+                            (A) material and non material
+                            (B) aesthetic and non_esthetic
+                            (C) temporary and permanent
+                            (D) positive and negative.
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}')
+                
+            user = input("""2. What strategy works best with early childhood education?
+                        (A) Singing and dancing
+                        (B) Toys and drawing
+                        (C) Play way
+                        (D) Reading and writing
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}')
+                
+            user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+                        (A) 1:40
+                        (B) 1:45
+                        (C) 1:25
+                        (D) 1:35
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}') 
             # examination menu
         else:
             print(f'Invalid response; TRY AGAIN {fName}')
@@ -270,7 +298,35 @@ if (fName in data1) and (sName in data2):
         exam = input("Press 'START' or 'S' to start: ").lower()
         if exam == 'start' or exam == 's':
             print(f'You examination starts now {fName}. Goodluck!!')
-            
+            user = input("""1. The two major types of culture are____________?
+                            (A) material and non material
+                            (B) aesthetic and non_esthetic
+                            (C) temporary and permanent
+                            (D) positive and negative.
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}')
+                
+            user = input("""2. What strategy works best with early childhood education?
+                        (A) Singing and dancing
+                        (B) Toys and drawing
+                        (C) Play way
+                        (D) Reading and writing
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}')
+                
+            user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+                        (A) 1:40
+                        (B) 1:45
+                        (C) 1:25
+                        (D) 1:35
+                            : 
+                            
+                            """).upper()
+            print(f'Your answer is, {user}')    
             # examination menu
         else:
             print(f'Invalid response; TRY AGAIN {fName}')
