@@ -181,7 +181,7 @@ if (fName in data1) and (sName in data2):
             NAME: {fName} {sName}
             REG NO: {regNo}
             SCIENCE OPTION      
-            Examination Year: 2023
+            Examination Year: 2023cl
             Your subjects combinations are:
                 - English Language
                 - Physics
@@ -202,7 +202,10 @@ if (fName in data1) and (sName in data2):
                             : 
                             
                             """).upper()
-            print(f'Your answer is, {user}')
+            if user != ('a') or user !=('b') or user !=('c') or user !=('d'):
+                print('Invalid answer selected')
+            else:
+                print(f'Your answer is, {user}')
                 
             user = input("""2. What strategy works best with early childhood education?
                         (A) Singing and dancing
