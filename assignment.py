@@ -345,4 +345,17 @@ else:
     
     # =======================================================
     # 1. do a todo list
+    
+    # x = []
+    # for y in range(3):
+    #     x.append(y)
+    #     print(x)
+        
+    #     print('''
+    #           1. add to list
+    #           2. Edit Item
+    #           3. Display list
+    #           4. delete item
+    #           5. delete list
+    #           ''')
     # 2. a cbt exam for 50 people and do the exAM FOR THEM
