@@ -202,12 +202,10 @@ if (fName in data1) and (sName in data2):
                             : 
                             
                             """).upper()
-            if user != ('a') or user !=('b') or user !=('c') or user !=('d'):
-                print('Invalid answer selected')
-            else:
-                print(f'Your answer is, {user}')
-                
-            user = input("""2. What strategy works best with early childhood education?
+            if user == ('A') or user ==('B') or user ==('C') or user ==('D'):
+                    print(f'Your answer is, {user}')
+                    
+                    user = input("""2. What strategy works best with early childhood education?
                         (A) Singing and dancing
                         (B) Toys and drawing
                         (C) Play way
@@ -215,9 +213,9 @@ if (fName in data1) and (sName in data2):
                             : 
                             
                             """).upper()
-            print(f'Your answer is, {user}')
+                    print(f'Your answer is, {user}')
                 
-            user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+                    user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
                         (A) 1:40
                         (B) 1:45
                         (C) 1:25
@@ -225,7 +223,8 @@ if (fName in data1) and (sName in data2):
                             : 
                             
                             """).upper()
-            print(f'Your answer is, {user}') 
+                    print(f'Your answer is, {user}') 
+                    
             # examination menu
         else:
             print(f'Invalid response; TRY AGAIN {fName}')
@@ -311,6 +310,7 @@ if (fName in data1) and (sName in data2):
                             """).upper()
             print(f'Your answer is, {user}')
                 
+                
             user = input("""2. What strategy works best with early childhood education?
                         (A) Singing and dancing
                         (B) Toys and drawing
@@ -341,3 +341,8 @@ if (fName in data1) and (sName in data2):
 # name not in database else
 else:
     print('Name not in Database. Kindly confirm registration credentials.')
+    
+    
+    # =======================================================
+    # 1. do a todo list
+    # 2. a cbt exam for 50 people and do the exAM FOR THEM
