@@ -155,192 +155,193 @@
 #     print('INVALID COMMAND TRY AGAIN')
 # ===========================================================
 
-# Assignment for the new year
-data1 = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
-data2 = ['Adedokun','Tossu', 'Obilade', 'Adewumi', 'Simeon', 'Tanimola', 'Olaiya', 'Ayoade', 'Afolabi', 'Olodude']
-answer = []
+# # Assignment for the new year
+# data1 = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
+# data2 = ['Adedokun','Tossu', 'Obilade', 'Adewumi', 'Simeon', 'Tanimola', 'Olaiya', 'Ayoade', 'Afolabi', 'Olodude']
+# answer = []
+# # dataa = zip(data1, data2)
 
-print('JAMB UTME EXAMINATION PAGE.'.center(100,'_'))
-print('''Welcome to the UTME examination portal 2023.
-         Kindly fill in the required forms
-      ''')
-fName = input('First name: ').strip().capitalize()
-sName = input('Surname: ').capitalize().strip()
-if (fName in data1) and (sName in data2):
-    print('Welcome, input registration number.')
-    regNo = input('JAMB Registration Number: ').upper().strip()
-    user = input('''
-            Kindly pick class
-             1. Science
-             2. Art
-             3. Commercial
+# print('JAMB UTME EXAMINATION PAGE.'.center(100,'_'))
+# print('''Welcome to the UTME examination portal 2023.
+#          Kindly fill in the required forms
+#       ''')
+# fName = input('First name: ').strip().capitalize()
+# sName = input('Surname: ').capitalize().strip()
+# if (fName in data1) and (sName in data1):
+#     print('Welcome, input registration number.')
+#     regNo = input('JAMB Registration Number: ').upper().strip()
+#     user = input('''
+#             Kindly pick class
+#              1. Science
+#              2. Art
+#              3. Commercial
              
-             ''')
-    if user.strip() == '1' or user.strip().lower() == 'science':
-        print(f"""
-            NAME: {fName} {sName}
-            REG NO: {regNo}
-            SCIENCE OPTION      
-            Examination Year: 2023cl
-            Your subjects combinations are:
-                - English Language
-                - Physics
-                - Chemistry
-                - Mathematics*
-                - Biology*
-            Note: Pick your courses with respect to the choice of your course of study.
+#              ''')
+#     if user.strip() == '1' or user.strip().lower() == 'science':
+#         print(f"""
+#             NAME: {fName} {sName}
+#             REG NO: {regNo}
+#             SCIENCE OPTION      
+#             Examination Year: 2023cl
+#             Your subjects combinations are:
+#                 - English Language
+#                 - Physics
+#                 - Chemistry
+#                 - Mathematics*
+#                 - Biology*
+#             Note: Pick your courses with respect to the choice of your course of study.
                             
-                """)
-        exam = input("Press 'START' or 'S' to start: ").lower()
-        if exam == 'start' or exam == 's':
-            print(f'You examination starts now {fName}. Goodluck')
-            user = input("""1. The two major types of culture are____________?
-                            (A) material and non material
-                            (B) aesthetic and non_esthetic
-                            (C) temporary and permanent
-                            (D) positive and negative.
-                            : 
+#                 """)
+#         exam = input("Press 'START' or 'S' to start: ").lower()
+#         if exam == 'start' or exam == 's':
+#             print(f'You examination starts now {fName}. Goodluck')
+#             user = input("""1. The two major types of culture are____________?
+#                             (A) material and non material
+#                             (B) aesthetic and non_esthetic
+#                             (C) temporary and permanent
+#                             (D) positive and negative.
+#                             : 
                             
-                            """).upper()
-            if user == ('A') or user ==('B') or user ==('C') or user ==('D'):
-                    print(f'Your answer is, {user}')
+#                             """).upper()
+#             if user == ('A') or user ==('B') or user ==('C') or user ==('D'):
+#                     print(f'Your answer is, {user}')
                     
-                    user = input("""2. What strategy works best with early childhood education?
-                        (A) Singing and dancing
-                        (B) Toys and drawing
-                        (C) Play way
-                        (D) Reading and writing
-                            : 
+#                     user = input("""2. What strategy works best with early childhood education?
+#                         (A) Singing and dancing
+#                         (B) Toys and drawing
+#                         (C) Play way
+#                         (D) Reading and writing
+#                             : 
                             
-                            """).upper()
-                    print(f'Your answer is, {user}')
+#                             """).upper()
+#                     print(f'Your answer is, {user}')
                 
-                    user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
-                        (A) 1:40
-                        (B) 1:45
-                        (C) 1:25
-                        (D) 1:35
-                            : 
+#                     user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+#                         (A) 1:40
+#                         (B) 1:45
+#                         (C) 1:25
+#                         (D) 1:35
+#                             : 
                             
-                            """).upper()
-                    print(f'Your answer is, {user}') 
+#                             """).upper()
+#                     print(f'Your answer is, {user}') 
                     
-            # examination menu
-        else:
-            print(f'Invalid response; TRY AGAIN {fName}')
+#             # examination menu
+#         else:
+#             print(f'Invalid response; TRY AGAIN {fName}')
         
-    elif user.strip() == '2' or user.strip().lower() == 'art':
-        print(f"""
-            NAME: {sName} {fName}
-            REG NO: {regNo}
-            ART OPTION      
-            Examination Year: 2023
-            Your subjects combinations are:
-                - English Language
-                - Literature in English
-                - CRS
-                - Yoruba*
-                - Government*
-            Note: Pick your courses with respect to the choice of your course of study.
+#     elif user.strip() == '2' or user.strip().lower() == 'art':
+#         print(f"""
+#             NAME: {sName} {fName}
+#             REG NO: {regNo}
+#             ART OPTION      
+#             Examination Year: 2023
+#             Your subjects combinations are:
+#                 - English Language
+#                 - Literature in English
+#                 - CRS
+#                 - Yoruba*
+#                 - Government*
+#             Note: Pick your courses with respect to the choice of your course of study.
                             
-            """)
-        exam = input("Press 'START' or 'S' to start: ").lower()       
-        if exam == 'start' or exam == 's':
-                print(f'You examination starts now {fName}. Goodluck')
-                user = input("""1. The two major types of culture are____________?
-                            (A) material and non material
-                            (B) aesthetic and non_esthetic
-                            (C) temporary and permanent
-                            (D) positive and negative.
-                            : 
+#             """)
+#         exam = input("Press 'START' or 'S' to start: ").lower()       
+#         if exam == 'start' or exam == 's':
+#                 print(f'You examination starts now {fName}. Goodluck')
+#                 user = input("""1. The two major types of culture are____________?
+#                             (A) material and non material
+#                             (B) aesthetic and non_esthetic
+#                             (C) temporary and permanent
+#                             (D) positive and negative.
+#                             : 
                             
-                            """).upper()
-                print(f'Your answer is, {user}')
+#                             """).upper()
+#                 print(f'Your answer is, {user}')
                 
-                user = input("""2. What strategy works best with early childhood education?
-                        (A) Singing and dancing
-                        (B) Toys and drawing
-                        (C) Play way
-                        (D) Reading and writing
-                            : 
+#                 user = input("""2. What strategy works best with early childhood education?
+#                         (A) Singing and dancing
+#                         (B) Toys and drawing
+#                         (C) Play way
+#                         (D) Reading and writing
+#                             : 
                             
-                            """).upper()
-                print(f'Your answer is, {user}')
+#                             """).upper()
+#                 print(f'Your answer is, {user}')
                 
-                user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
-                        (A) 1:40
-                        (B) 1:45
-                        (C) 1:25
-                        (D) 1:35
-                            : 
+#                 user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+#                         (A) 1:40
+#                         (B) 1:45
+#                         (C) 1:25
+#                         (D) 1:35
+#                             : 
                             
-                            """).upper()
-                print(f'Your answer is, {user}')
+#                             """).upper()
+#                 print(f'Your answer is, {user}')
                           
-                # examination menu
-        else:
-                print(f'Invalid response; TRY AGAIN {fName}')
+#                 # examination menu
+#         else:
+#                 print(f'Invalid response; TRY AGAIN {fName}')
         
-    elif user.strip() == '3' or user.strip().lower() == 'commercial':
-        print(f"""
-                NAME: {fName} {sName}
-                REG NO: {regNo}
-                COMMERCIAL OPTION      
-                Examination Year: 2023
-                Your subjects combinations are:
-                - English Language
-                - Accounting
-                - Mathematics
-                - Government*
-                - Economics*
-            Note: Pick your courses with respect to the choice of your course of study.
+#     elif user.strip() == '3' or user.strip().lower() == 'commercial':
+#         print(f"""
+#                 NAME: {fName} {sName}
+#                 REG NO: {regNo}
+#                 COMMERCIAL OPTION      
+#                 Examination Year: 2023
+#                 Your subjects combinations are:
+#                 - English Language
+#                 - Accounting
+#                 - Mathematics
+#                 - Government*
+#                 - Economics*
+#             Note: Pick your courses with respect to the choice of your course of study.
                             
-            """)       
+#             """)       
         
-        exam = input("Press 'START' or 'S' to start: ").lower()
-        if exam == 'start' or exam == 's':
-            print(f'You examination starts now {fName}. Goodluck!!')
-            user = input("""1. The two major types of culture are____________?
-                            (A) material and non material
-                            (B) aesthetic and non_esthetic
-                            (C) temporary and permanent
-                            (D) positive and negative.
-                            : 
+#         exam = input("Press 'START' or 'S' to start: ").lower()
+#         if exam == 'start' or exam == 's':
+#             print(f'You examination starts now {fName}. Goodluck!!')
+#             user = input("""1. The two major types of culture are____________?
+#                             (A) material and non material
+#                             (B) aesthetic and non_esthetic
+#                             (C) temporary and permanent
+#                             (D) positive and negative.
+#                             : 
                             
-                            """).upper()
-            print(f'Your answer is, {user}')
+#                             """).upper()
+#             print(f'Your answer is, {user}')
                 
                 
-            user = input("""2. What strategy works best with early childhood education?
-                        (A) Singing and dancing
-                        (B) Toys and drawing
-                        (C) Play way
-                        (D) Reading and writing
-                            : 
+#             user = input("""2. What strategy works best with early childhood education?
+#                         (A) Singing and dancing
+#                         (B) Toys and drawing
+#                         (C) Play way
+#                         (D) Reading and writing
+#                             : 
                             
-                            """).upper()
-            print(f'Your answer is, {user}')
+#                             """).upper()
+#             print(f'Your answer is, {user}')
                 
-            user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
-                        (A) 1:40
-                        (B) 1:45
-                        (C) 1:25
-                        (D) 1:35
-                            : 
+#             user = input("""3. According to national minimum standards the teacher pupil ratio at ECCD is?
+#                         (A) 1:40
+#                         (B) 1:45
+#                         (C) 1:25
+#                         (D) 1:35
+#                             : 
                             
-                            """).upper()
-            print(f'Your answer is, {user}')    
-            # examination menu
-        else:
-            print(f'Invalid response; TRY AGAIN {fName}')
+#                             """).upper()
+#             print(f'Your answer is, {user}')    
+#             # examination menu
+#         else:
+#             print(f'Invalid response; TRY AGAIN {fName}')
             
-    # picking a class closing tag 
-    else:
-        print('Kindly pick a class, to enhance your examination combination ')
+#     # picking a class closing tag 
+#     else:
+#         print('Kindly pick a class, to enhance your examination combination ')
          
-# name not in database else
-else:
-    print('Name not in Database. Kindly confirm registration credentials.')
+# # name not in database else
+# else:
+#     print('Name not in Database. Kindly confirm registration credentials.')
     
     
     # =======================================================
@@ -359,3 +360,18 @@ else:
     #           5. delete list
     #           ''')
     # 2. a cbt exam for 50 people and do the exAM FOR THEM
+    
+    # answer to assignment 2024 python
+     
+firstName = []
+secondName = []
+print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
+print('Kindly confirm if the registration is for one person or more than one person.')
+user = input('''Personal / 1 or Corporate / 2:
+             > ''').lower()
+if user.strip() == 'personal' or user == '1':
+    print('Proceed to start examination')
+elif user.strip() == 'corporate' or user == '2':
+    print('How many students do you want to register?')
+else:
+    print('Error')
