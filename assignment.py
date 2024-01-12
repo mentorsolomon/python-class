@@ -96,7 +96,23 @@
         
 #     else:
 #         print('Kindly enter a valid course')
-                   
+
+
+# ==============
+#numbers = []
+# for num in range(1,21):
+#     print(num)
+#     numbers.append(num) #append adds a range of value or values to an empty list already created
+# print(numbers)
+ 
+# firstName = []
+# surName = []
+# fName = input('Firstname:  ')
+# sName = input('Surname: ')
+# firstName.append(fName)
+# surName.append(sName)
+# firstName.delete
+                  
 # ========================================================
 # studentFname = ['Aishat', 'Solomon', 'Kayode', 'Damilare', 'Emmanuel', 'Tehya']
 # staffsFname = ['Joke', 'Richard', 'Ige', 'Damola', 'Kemi', 'Oyindamola']
@@ -347,10 +363,10 @@
     # =======================================================
     # 1. do a todo list
     
-    # x = []
-    # for y in range(3):
-    #     x.append(y)
-    #     print(x)
+# x = []
+# for y in range(3):
+#     x.append(y)
+# print(x)
         
     #     print('''
     #           1. add to list
@@ -363,15 +379,40 @@
     
     # answer to assignment 2024 python
      
-firstName = []
-secondName = []
-print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
-print('Kindly confirm if the registration is for one person or more than one person.')
-user = input('''Personal / 1 or Corporate / 2:
-             > ''').lower()
-if user.strip() == 'personal' or user == '1':
-    print('Proceed to start examination')
-elif user.strip() == 'corporate' or user == '2':
-    print('How many students do you want to register?')
-else:
-    print('Error')
+# firstName = []
+# secondName = []
+# print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
+# print('Kindly confirm if the registration is for one person or more than one person.')
+# user = input('''Personal / 1 or Corporate / 2:
+#              > ''').lower()
+# if user.strip() == 'personal' or user == '1':
+#     print('Proceed to registration menu')
+# elif user.strip() == 'corporate' or user == '2':
+#     print('How many students do you want to register?')
+# else:
+#     print('Error')
+
+# numberOfStudents = int(input('Enter a number here: '))
+# students = list(range(numberOfStudents))
+# studentsName = []
+# user = input('students name are: ')
+
+
+# name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
+# for student in name_of_students:
+#     print(f'{student}, Welcome back to School')
+
+students = []
+numberStudents = int(input('How many students are you with: '))
+studentslow = numberStudents - numberStudents
+studentshigh = numberStudents
+students = list(range(studentslow, studentshigh))
+for student in students:
+    user = input('Enter the name of student: ')
+    
+    students.append(user)
+print(students)
+    
+
+
+
