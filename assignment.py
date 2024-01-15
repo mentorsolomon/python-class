@@ -414,25 +414,74 @@
 #     break
     
 # ================================================================
-# firstName = []
-# secondName = [] 
-# studentsList = []
+firstName = []
+secondName = [] 
+studentsList = []
 
-# print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
-# print('How many students are you registering and are sitting for this exam?')
-# studentNumber = int(input('> '))
-# studentslow = studentNumber - studentNumber
-# studentshigh = studentNumber
-# students = list(range(studentslow, studentshigh))
+print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
+print('How many students are you registering and are sitting for this exam?')
+studentNumber = int(input('> '))
+students = list(range(studentNumber))
+# print(students)
 
-# for inputName in students:
-#     studentName = input('Name: ').capitalize().strip()
-#     studentsList.append(studentName)
-# # print(studentsList)
+for inputName in students:
+    studentName = input('Name: ').capitalize().strip()
+    studentsList.append(studentName)
+print(studentsList)
 
-# for students in students:
+for studentName in studentsList:
         
-#         questions = [
+        questions = [
+        "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
+        "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
+        "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
+        "4. What is the capital of Togo a.) Lome b.) Gertha",  
+        "5. What is the capital of Germany a.) Munchen b.) Berlin", 
+        "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm", 
+        "7. What is the capital of Cape Verde a.) Praia b.) Ladta", 
+        "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg", 
+        "9. What is the capital of Oyo a.) Ibadan b.) Oyo", 
+        "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
+        
+    ]
+        answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
+        score = 0
+
+        for questions, ans in zip(questions, answers):
+            print(questions)
+            user = input('Input Answer: ')
+            if user.strip().lower()== ans:
+                print('Correct')
+                score+=10
+            else:
+                print('wrong')
+        print(f' \n Your total score is {score}%')
+        if score == 100:
+            print(f'Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n')
+        elif score >= 70:
+            print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
+        elif score >=60:
+            print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
+        elif score >=50:
+            print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
+        elif score >=40:
+            print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
+        elif score >=0:
+            print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+
+# correction of assignment===============================================================
+# studentList = []
+
+# user = int(input('''How many students are taking the test?:
+#              > '''))
+# for student in range(user):
+#     stud = input(f'Name of student {student + 1}: ')
+#     studentList.append(stud)
+# # print(studentList)
+# for eachStudent in studentList:
+#     print(f"{eachStudent} it's time for your test")
+    
+#     questions = [
 #         "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
 #         "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
 #         "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
@@ -445,29 +494,27 @@
 #         "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
         
 #     ]
-#         answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
-#         score = 0
+#     answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
+#     score = 0
 
-#         for questions, ans in zip(questions, answers):
-#             print(questions)
-#             user = input('Input Answer: ')
-#             if user.strip().lower()== ans:
-#                 print('Correct')
-#                 score+=10
-#             else:
-#                 print('wrong')
-#         print(f'Your total score is {score}%')
-#         if score == 100:
-#             print(f'Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions')
-#         elif score >= 70:
-#             print(f'Excellent. Satisfactory Performance {studentName}. Congratulations')
-#         elif score >=60:
-#             print(f' Very Good. Satisfactory Performance {studentName}. Congratulations')
-#         elif score >=50:
-#             print(f'Good. Satisfactory Performance {studentName}. Congratulations')
-#         elif score >=40:
-#             print(f'Poor. Satisfactory Performance {studentName}. Congratulations')
-#         elif score >=0:
-#             print(f'Fail. Satisfactory Performance {studentName}. Congratulations')
-
-# correction of assignment===============================================================
+#     for questions, ans in zip(questions, answers):
+#         print(questions)
+#         user = input('Input Answer: ')
+#         if user.strip().lower()== ans:
+#             print('Correct')
+#             score+=10
+#         else:
+#             print('wrong')
+#     print(f'Your total score is {score}%')
+#     if score == 100:
+#         print(f'Excellent. Exceptional Performance {eachStudent}. Congratulations, You have secured yourself a place at the battle of the champions')
+#     elif score >= 70:
+#         print(f'Excellent. Satisfactory Performance {eachStudent}. Congratulations')
+#     elif score >=60:
+#         print(f' Very Good. Satisfactory Performance {eachStudent}. Congratulations')
+#     elif score >=50:
+#         print(f'Good. Satisfactory Performance {eachStudent}. Congratulations')
+#     elif score >=40:
+#         print(f'Poor. Satisfactory Performance {eachStudent}. Congratulations')
+#     elif score >=0:
+#         print(f'Fail. Satisfactory Performance {eachStudent}. BEST OF LUCK NEXT TIME')
