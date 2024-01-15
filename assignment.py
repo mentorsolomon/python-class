@@ -402,17 +402,72 @@
 # for student in name_of_students:
 #     print(f'{student}, Welcome back to School')
 
-students = []
-numberStudents = int(input('How many students are you with: '))
-studentslow = numberStudents - numberStudents
-studentshigh = numberStudents
-students = list(range(studentslow, studentshigh))
-for student in students:
-    user = input('Enter the name of student: ')
+# students = []
+# numberStudents = int(input('How many students are you with: '))
+# studentslow = numberStudents - numberStudents
+# studentshigh = numberStudents
+# students = list(range(studentslow, studentshigh))
+# for student in students:
+#     user = input('Enter the name of student: ')
+#     students.append(user)
+#     print(students)
+#     break
     
-    students.append(user)
-print(students)
-    
+# ================================================================
+# firstName = []
+# secondName = [] 
+# studentsList = []
 
+# print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
+# print('How many students are you registering and are sitting for this exam?')
+# studentNumber = int(input('> '))
+# studentslow = studentNumber - studentNumber
+# studentshigh = studentNumber
+# students = list(range(studentslow, studentshigh))
 
+# for inputName in students:
+#     studentName = input('Name: ').capitalize().strip()
+#     studentsList.append(studentName)
+# # print(studentsList)
 
+# for students in students:
+        
+#         questions = [
+#         "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
+#         "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
+#         "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
+#         "4. What is the capital of Togo a.) Lome b.) Gertha",  
+#         "5. What is the capital of Germany a.) Munchen b.) Berlin", 
+#         "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm", 
+#         "7. What is the capital of Cape Verde a.) Praia b.) Ladta", 
+#         "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg", 
+#         "9. What is the capital of Oyo a.) Ibadan b.) Oyo", 
+#         "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
+        
+#     ]
+#         answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
+#         score = 0
+
+#         for questions, ans in zip(questions, answers):
+#             print(questions)
+#             user = input('Input Answer: ')
+#             if user.strip().lower()== ans:
+#                 print('Correct')
+#                 score+=10
+#             else:
+#                 print('wrong')
+#         print(f'Your total score is {score}%')
+#         if score == 100:
+#             print(f'Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions')
+#         elif score >= 70:
+#             print(f'Excellent. Satisfactory Performance {studentName}. Congratulations')
+#         elif score >=60:
+#             print(f' Very Good. Satisfactory Performance {studentName}. Congratulations')
+#         elif score >=50:
+#             print(f'Good. Satisfactory Performance {studentName}. Congratulations')
+#         elif score >=40:
+#             print(f'Poor. Satisfactory Performance {studentName}. Congratulations')
+#         elif score >=0:
+#             print(f'Fail. Satisfactory Performance {studentName}. Congratulations')
+
+# correction of assignment===============================================================
