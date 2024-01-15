@@ -1,9 +1,9 @@
 # ==========================LIST CLASS===================================
 # LIST IS A COLLECTION WHICH IS ORDERED, CHANGEABLE, ALLOWS DUPLICATE VALUE AND THE ITEMS ARE INDEXED.
 
-my_list = ['White Rice', 'beans', 'bread', 'Meat', 'egg', 'fried rice', 'jollof rice', 'pounded yam and egusi', 'fanta', 'water', 'chi exotic', 'wine', True, 2 + 1j, ['Bukunmi', 'Solomon'], (343, 67)]
+# my_list = ['White Rice', 'beans', 'bread', 'Meat', 'egg', 'fried rice', 'jollof rice', 'pounded yam and egusi', 'fanta', 'water', 'chi exotic', 'wine', True, 2 + 1j, ['Bukunmi', 'Solomon'], (343, 67)]
 
-my_list2 = [100, 200, 400, 700]
+# my_list2 = [100, 200, 400, 700]
 
 # print(my_list[0][0])
 # print(type(my_list))
