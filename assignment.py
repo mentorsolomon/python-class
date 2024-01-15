@@ -417,6 +417,7 @@
 firstName = []
 secondName = [] 
 studentsList = []
+results = []
 
 print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
 print('How many students are you registering and are sitting for this exam?')
@@ -425,13 +426,13 @@ students = list(range(studentNumber))
 # print(students)
 
 for inputName in students:
-    studentName = input('Name: ').capitalize().strip()
+    studentName = input(f'Name of student {inputName + 1}: ').capitalize().strip()
     studentsList.append(studentName)
-print(studentsList)
+# print(f'{studentsList} \n')
 
 for studentName in studentsList:
-        
-        questions = [
+    print(f"It's time to take your test {studentName}")
+    questions = [
         "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
         "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
         "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
@@ -444,10 +445,10 @@ for studentName in studentsList:
         "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
         
     ]
-        answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
-        score = 0
+    answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
+    score = 0
 
-        for questions, ans in zip(questions, answers):
+    for questions, ans in zip(questions, answers):
             print(questions)
             user = input('Input Answer: ')
             if user.strip().lower()== ans:
@@ -455,28 +456,45 @@ for studentName in studentsList:
                 score+=10
             else:
                 print('wrong')
-        print(f' \n Your total score is {score}%')
-        if score == 100:
-            print(f'Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n')
-        elif score >= 70:
-            print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
-        elif score >=60:
-            print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
-        elif score >=50:
-            print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
-        elif score >=40:
-            print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
-        elif score >=0:
-            print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+    print(f' \n Your total score is {score}%')
+            
+    if score == 100:
+        print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
+    elif score >= 70:
+        print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=60:
+        print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=50:
+        print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=40:
+        print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
+    elif score >=0:
+        print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+    else:
+        print('Try again')
+        
+    results.append(score)  
+    # print(results)
+for finale in (studentsList, results): 
+         print(finale)
 
-# correction of assignment===============================================================
+print('The overall best student of the test is... drumroll')
+print(max(finale))
+print('The mean or average score')
+print(sum(results)/len(results))
+    
+
+        
+        
+
+# correction of assignment============================2===================================
 # studentList = []
 
 # user = int(input('''How many students are taking the test?:
 #              > '''))
-# for student in range(user):
-#     stud = input(f'Name of student {student + 1}: ')
-#     studentList.append(stud)
+# for students in range(user):
+#     student = input(f'Name of student {student + 1}: ')
+#     studentList.append(student)
 # # print(studentList)
 # for eachStudent in studentList:
 #     print(f"{eachStudent} it's time for your test")
