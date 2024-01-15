@@ -475,13 +475,12 @@ for studentName in studentsList:
         
     results.append(score)  
     # print(results)
-for finale in (studentsList, results): 
-         print(finale)
 
-print('The overall best student of the test is... drumroll')
-print(max(finale))
+print('The overall best student of the test is drumroll')
+print(max(results))
 print('The mean or average score')
 print(sum(results)/len(results))
+
     
 
         
