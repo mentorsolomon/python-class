@@ -414,15 +414,15 @@
 #     break
     
 # ================================================================
-firstName = []
-secondName = [] 
+# firstName = []
+# secondName = [] 
 studentsList = []
 results = []
 
 print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
 print('How many students are you registering and are sitting for this exam?')
 studentNumber = int(input('> '))
-students = list(range(studentNumber))
+students = range(studentNumber)
 # print(students)
 
 for inputName in students:
@@ -458,20 +458,20 @@ for studentName in studentsList:
                 print('wrong')
     print(f' \n Your total score is {score}%')
             
-    if score == 100:
-        print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
-    elif score >= 70:
-        print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=60:
-        print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=50:
-        print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=40:
-        print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
-    elif score >=0:
-        print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
-    else:
-        print('Try again')
+    # if score == 100:
+    #     print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
+    # elif score >= 70:
+    #     print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
+    # elif score >=60:
+    #     print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    # elif score >=50:
+    #     print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    # elif score >=40:
+    #     print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
+    # elif score >=0:
+    #     print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+    # else:
+    #     print('Try again')
         
     results.append(score)  
     # print(results)
