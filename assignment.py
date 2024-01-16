@@ -1,3 +1,27 @@
+# print('Palindrome test')
+# texts = input('Kindly place your texts in here: ').
+# texts = texts.split()
+# texts = ''.join(texts)
+# inverseTexts = texts[::-1]
+# if texts != inverseTexts:
+#     print('Word not a palindrome')
+# else:
+#     print(f'{inverseTexts} is a palindrome of {texts}')
+
+# ========================================================================
+
+# multiplication  table
+# print('multiplication table from 1 - 12')
+# for numbers in range(1,13):
+#     for data in range(1,13):
+        
+#         print(f'{numbers} * {data} = {numbers * data}')
+# print('DONE!')
+
+
+
+# -=================================================================
+
 # calculator
 # e = 10
 # a = float(input('enter first number: '))
@@ -383,19 +407,7 @@
 # secondName = []
 # print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
 # print('Kindly confirm if the registration is for one person or more than one person.')
-# user = input('''Personal / 1 or Corporate / 2:
-#              > ''').lower()
-# if user.strip() == 'personal' or user == '1':
-#     print('Proceed to registration menu')
-# elif user.strip() == 'corporate' or user == '2':
-#     print('How many students do you want to register?')
-# else:
-#     print('Error')
 
-# numberOfStudents = int(input('Enter a number here: '))
-# students = list(range(numberOfStudents))
-# studentsName = []
-# user = input('students name are: ')
 
 
 # name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
@@ -414,91 +426,83 @@
 #     break
     
 # ================================================================
-# firstName = []
-# secondName = [] 
-studentsList = []
-results = []
+# studentsList = []
+# results = []
 
-print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
-print('How many students are you registering and are sitting for this exam?')
-studentNumber = int(input('> '))
-students = range(studentNumber)
-# print(students)
+# print('Welcome to AITECH ATMAN CBT CENTER'.center(115, '.'))
+# print('How many students are you registering and are sitting for this exam?')
+# studentNumber = int(input('> '))
+# students = range(studentNumber)
+# # print(students)
 
-# for inputName in students:
-#     studentName = input(f'Name of student {inputName + 1}: ').capitalize().strip()
-#     studentsList.append(studentName)
-studentsList = [input(f'Name of student {inputName + 1}: ').capitalize().strip() for inputName in students]
-# print(f'{studentsList} \n')
+# # for inputName in students:
+# #     studentName = input(f'Name of student {inputName + 1}: ').capitalize().strip()
+# #     studentsList.append(studentName)
+# studentsList = [input(f'Name of student {inputName + 1}: ').capitalize().strip() for inputName in students]
+# # print(f'{studentsList} \n')
 
-for studentName in studentsList:
-    print(f"It's time to take your test {studentName}")
-    questions = [
-        "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
-        "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
-        "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
-        "4. What is the capital of Togo a.) Lome b.) Gertha",  
-        "5. What is the capital of Germany a.) Munchen b.) Berlin", 
-        "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm", 
-        "7. What is the capital of Cape Verde a.) Praia b.) Ladta", 
-        "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg", 
-        "9. What is the capital of Oyo a.) Ibadan b.) Oyo", 
-        "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
+# for studentName in studentsList:
+#     print(f"It's time to take your test {studentName}")
+#     questions = [
+#         "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
+#         "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
+#         "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
+#         "4. What is the capital of Togo a.) Lome b.) Gertha",  
+#         "5. What is the capital of Germany a.) Munchen b.) Berlin", 
+#         "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm", 
+#         "7. What is the capital of Cape Verde a.) Praia b.) Ladta", 
+#         "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg", 
+#         "9. What is the capital of Oyo a.) Ibadan b.) Oyo", 
+#         "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
         
-    ]
-    answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
-    score = 0
+#     ]
+#     answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
+#     score = 0
 
-    for questions, ans in zip(questions, answers):
-            print(questions)
-            user = input('Input Answer: ')
-            if user.strip().lower()== ans:
-                print('Correct')
-                score+=10
-            else:
-                print('wrong')
-    print(f' \n Your total score is {score}%')
+#     for questions, ans in zip(questions, answers):
+#             print(questions)
+#             user = input('Input Answer: ')
+#             if user.strip().lower()== ans:
+#                 print('Correct')
+#                 score+=10
+#             else:
+#                 print('wrong')
+#     print(f' \n Your total score is {score}%')
             
-    if score == 100:
-        print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
-    elif score >= 70:
-        print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=60:
-        print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=50:
-        print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    elif score >=40:
-        print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
-    elif score >=0:
-        print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
-    else:
-        print('Try again')
+#     if score == 100:
+#         print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
+#     elif score >= 70:
+#         print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
+#     elif score >=60:
+#         print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
+#     elif score >=50:
+#         print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
+#     elif score >=40:
+#         print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
+#     elif score >=0:
+#         print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+#     else:
+#         print('Try again')
         
-    results.append(score)  
-    print(f'\n {studentName} = {score}% \n')   
+#     results.append(score)  
+#     print(f'\n {studentName} = {score}% \n')   
     
-print(studentsList, results)
-print(f'\n The overall best score of the test is {max(results)}')
-print(f'\n The overall lowest score of the test is {min(results)}')
-print(f'\n The mean or average score {sum(results)/len(results)}')
+# print(f'\n {studentName} = {score}% \n')  
+# maxResults = max(results)
+# indexMaxResults = results.index(maxResults)
+# studentsHighest = studentsList[indexMaxResults]
+# print(f'{studentsHighest} has the overall best score of {maxResults} in the Examination')
+
+# minResults = min(results)
+# indexMinResults = results.index(minResults)
+# studentsLowest = studentsList[indexMinResults]
+# print(f'{studentsLowest} has the lowest score of {minResults} in the examination')
+
+# print(f'\n The mean or average score of {studentNumber} is {sum(results)/len(results)}')
+
+# print(F'{list(studentsList)}, {list(results)}')
 
 
-maxResults = max(results)
-indexMaxResults = results.index(maxResults)
-studentsHighest = studentsList[indexMaxResults]
-print(f'{studentsHighest} has the overall best score of {maxResults} in the Examination')
-
-minResults = min(results)
-indexMinResults = results.index(minResults)
-studentsLowest = studentsList[indexMinResults]
-print(f'{studentsLowest} has the lowest score of {minResults} in the examination')
-
-
-
-    
-
-        
-        
 
 # correction of assignment============================2===================================
 # studentList = []
@@ -556,3 +560,42 @@ print(f'{studentsLowest} has the lowest score of {minResults} in the examination
 # 3 set
 # TO DO LIST
 # cart items for a mini supermarket
+
+# ========================================================
+# CART SUPERMARKET 
+
+cart = []
+storeItems = []
+householdItems = []
+farmItems = []
+carItems = []
+stationeries = []
+
+
+
+
+print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
+print("""We sell various 
+      1. Household items. 
+      2. Farm items.
+      3. Car items.
+      4. Stationery. 
+      5. Others
+    What will you like to get?""")
+
+buyer = input('''Household, Farm, Car, stationeries or others:
+              > ''').strip().capitalize()
+if buyer == '1'.strip() or buyer == 'household':
+    print("What Household items do you want?")
+elif buyer == '2'.strip() or buyer == 'farm':
+    print("What Farm items do you want?")
+elif buyer == '3'.strip() or buyer == 'car':
+    print("What Car items do you want?")
+elif buyer == '4'.strip() or buyer == 'stationeries':
+    print("What Stationeries items do you want?")
+elif buyer == '5'.strip() or buyer == 'others':
+    print("What Other item(s) do you want?")
+else:
+    print('Thanks, make a decision and come back later')
+    
+

@@ -30,12 +30,12 @@
 # ========================================
 # day two
 
-student_record = [
-                  ('G-Wagon', '$1M'),
-                  ('lexus 2012', '#2m'),
-                  ('ferrari', '$1.5m')
-                  ]
+# student_record = [
+#                   ('G-Wagon', '$1M'),
+#                   ('lexus 2012', '#2m'),
+#                   ('ferrari', '$1.5m')
+#                   ]
 
-# print(student_record[0][0])
-for carName, carPrice in student_record:
-    print(carName, carPrice)
+# # print(student_record[0][0])
+# for carName, carPrice in student_record:
+#     print(carName, carPrice)
