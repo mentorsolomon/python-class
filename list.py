@@ -90,3 +90,16 @@
 #         print('wrong')
 # print(f'Your total score is {score}%')
     
+    
+    # ====================================================================
+    # list Comprehension JANUARY 16TH 2024
+    
+# num = []
+# for x in range(10):
+#     num.append(x)
+# print(num)
+
+# num = [x for x in range(10)]
+# print(num)
+# ==============================
+    

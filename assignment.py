@@ -425,9 +425,10 @@ studentNumber = int(input('> '))
 students = range(studentNumber)
 # print(students)
 
-for inputName in students:
-    studentName = input(f'Name of student {inputName + 1}: ').capitalize().strip()
-    studentsList.append(studentName)
+# for inputName in students:
+#     studentName = input(f'Name of student {inputName + 1}: ').capitalize().strip()
+#     studentsList.append(studentName)
+studentsList = [input(f'Name of student {inputName + 1}: ').capitalize().strip() for inputName in students]
 # print(f'{studentsList} \n')
 
 for studentName in studentsList:
@@ -458,28 +459,41 @@ for studentName in studentsList:
                 print('wrong')
     print(f' \n Your total score is {score}%')
             
-    # if score == 100:
-    #     print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
-    # elif score >= 70:
-    #     print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
-    # elif score >=60:
-    #     print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    # elif score >=50:
-    #     print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
-    # elif score >=40:
-    #     print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
-    # elif score >=0:
-    #     print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
-    # else:
-    #     print('Try again')
+    if score == 100:
+        print(f'''Excellent. Exceptional Performance {studentName}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
+    elif score >= 70:
+        print(f'Excellent. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=60:
+        print(f' Very Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=50:
+        print(f'Good. Satisfactory Performance {studentName}. Congratulations  \n')
+    elif score >=40:
+        print(f'Poor. Satisfactory Performance {studentName}. Congratulations \n')
+    elif score >=0:
+        print(f'Fail. Satisfactory Performance {studentName}. BEST OF LUCK NEXT TIME  \n')
+    else:
+        print('Try again')
         
     results.append(score)  
-    # print(results)
+    print(f'\n {studentName} = {score}% \n')   
+    
+print(studentsList, results)
+print(f'\n The overall best score of the test is {max(results)}')
+print(f'\n The overall lowest score of the test is {min(results)}')
+print(f'\n The mean or average score {sum(results)/len(results)}')
 
-print('The overall best student of the test is drumroll')
-print(max(results))
-print('The mean or average score')
-print(sum(results)/len(results))
+
+maxResults = max(results)
+indexMaxResults = results.index(maxResults)
+studentsHighest = studentsList[indexMaxResults]
+print(f'{studentsHighest} has the overall best score of {maxResults} in the Examination')
+
+minResults = min(results)
+indexMinResults = results.index(minResults)
+studentsLowest = studentsList[indexMinResults]
+print(f'{studentsLowest} has the lowest score of {minResults} in the examination')
+
+
 
     
 
@@ -535,3 +549,10 @@ print(sum(results)/len(results))
 #         print(f'Poor. Satisfactory Performance {eachStudent}. Congratulations')
 #     elif score >=0:
 #         print(f'Fail. Satisfactory Performance {eachStudent}. BEST OF LUCK NEXT TIME')
+
+# ========================================================================
+# ANOTHER ASSIGNMENT FOR JANUARY 16TH
+# sets assignment for set calculator
+# 3 set
+# TO DO LIST
+# cart items for a mini supermarket
