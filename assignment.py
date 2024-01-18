@@ -566,36 +566,78 @@
 
 cart = []
 storeItems = []
-householdItems = [('Television','#200,000'),
-                  ('Fridge','#250,000'),
-                  ('A/C','#100,000'),
-                  ('Chairs','#300,000'),
-                  ('Wall Sockets','#40,000'),
-                  ('Dining set','#500,000'),
-                  
+householdItems = [('Television', 200_000),
+                  ('Fridge', 250_000),
+                  ('A/c', 100_000),
+                  ('Chairs',300_000),
+                  ('Wall Sockets', 40_000),
+                  ('Dining set', 500_000),               
                   ]
-farmItems = []
-carItems = []
-stationeries = []
 
+farmItems = [
+                  ('Tractor', 1_000_000),
+                  ('Fertilizer', 25_000),
+                  ('Manual Pump', 10_000),
+                  ('Seed', 1_000),
+                  ('Farm gears', 40_000),
+                  ('Herbicides', 11_000),
+]
 
+carItems = [
+                  ('Engine', 750_000),
+                  ('Mirror', 20_000),
+                  ('Gear', 15_000),
+                  ('Seat cover', 30_000),
+                  ('Fan belts',5_000),
+                  ('Lights', 5_000),
+]
+
+stationeries = [
+                  ('Books', 1_000),
+                  ('Pens', 2_000),
+                  ('Magazine', 1_000),
+                  ('Color', 1_500),
+                  ('Journals', 4_000),
+                  ('chairs', 11_000),
+]
+
+price = 0
 
 
 print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
-print("""We sell various 
+print(f"""We sell 
       1. Household items. 
       2. Farm items.
       3. Car items.
       4. Stationery. 
       5. Others
-What Item will you like to get today?""")
+What Item will you like to get today?""".center(70, ' '))
 
-
-buyer = input('''Household, Farm, Car, stationeries or others:
+buyer = input('''\n Household, Farm, Car, stationeries or others:
               > ''').strip().lower()
 if buyer == '1'.strip() or buyer == 'household':
-    print("What Household items do you want?")
-    print(householdItems)
+    for houseNames, housePrices in householdItems:
+        print(f'{houseNames} at {housePrices} \n')
+    print("How many Household items do you want?")
+    no_of_items = int(input('> '))
+    for num in range(no_of_items):
+        goods = (input(f'Household item name {num + 1}: ')).capitalize().strip()
+        if goods not in householdItems:
+             print('Invalid order')
+        else:
+            cart.append(buyer)
+    print(cart)
+    # cart = [(input(f'Household item name {name + 1}: '))for name in range(no_of_items)]
+   
+    # print(cart)
+    
+    
+    # cart = [(input('Items: ').capitalize().strip()) for houseNames in householdItems]
+    # print(f'{houseNames} added to cart')
+    # for bought in cart:
+    #     print(f'{cart} and your price is')
+        
+    
 elif buyer == '2'.strip() or  buyer == 'farm':
     print("What Farm items do you want?")
 elif buyer == '3'.strip() or buyer == 'car':

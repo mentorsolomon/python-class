@@ -5,12 +5,12 @@
 # set: A SET IS A COLLECTION WHICH IS UNORDERED, UNINDEXED, IMMUTABLE/UNCHANGEABLE AND DOES NOT ACCEPT DUPLICATE VALUE
 # set {} or ()
 
-name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
-# setNames = set(('Muazeem', 'Ige', 'Lado'))
-setNames = ('Muazeem', 'Ige', 'Lado')
-name.add('jide')
-name.update([6,7,8], setName)
-print(name)
+# name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
+# # setNames = set(('Muazeem', 'Ige', 'Lado'))
+# setNames = ('Muazeem', 'Ige', 'Lado')
+# name.add('jide')
+# name.update([6,7,8], setName)
+# print(name)
 
 # sets = set()
 # print('welcome to set calculator')
