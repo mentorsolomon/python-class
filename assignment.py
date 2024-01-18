@@ -564,47 +564,47 @@
 # ========================================================
 # CART SUPERMARKET 
 
-# cart = []
-# storeItems = []
-# householdItems = [('Television','#200,000'),
-#                   ('Fridge','#250,000'),
-#                   ('A/C','#100,000'),
-#                   ('Chairs','#300,000'),
-#                   ('Wall Sockets','#40,000'),
-#                   ('Dining set','#500,000'),
+cart = []
+storeItems = []
+householdItems = [('Television','#200,000'),
+                  ('Fridge','#250,000'),
+                  ('A/C','#100,000'),
+                  ('Chairs','#300,000'),
+                  ('Wall Sockets','#40,000'),
+                  ('Dining set','#500,000'),
                   
-                #   ]
-# farmItems = []
-# carItems = []
-# stationeries = []
+                  ]
+farmItems = []
+carItems = []
+stationeries = []
 
 
 
 
-# print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
-# print("""We sell various 
-#       1. Household items. 
-#       2. Farm items.
-#       3. Car items.
-#       4. Stationery. 
-#       5. Others
-# What Item will you like to get today?""")
+print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
+print("""We sell various 
+      1. Household items. 
+      2. Farm items.
+      3. Car items.
+      4. Stationery. 
+      5. Others
+What Item will you like to get today?""")
 
 
-# buyer = input('''Household, Farm, Car, stationeries or others:
-#               > ''').strip().lower()
-# if buyer == '1'.strip() or buyer == 'household':
-#     print("What Household items do you want?")
-#     print(householdItems)
-# elif buyer == '2'.strip() or  buyer == 'farm':
-#     print("What Farm items do you want?")
-# elif buyer == '3'.strip() or buyer == 'car':
-#     print("What Car items do you want?")
-# elif buyer == '4'.strip() or buyer == 'stationeries':
-#     print("What Stationeries items do you want?")
-# elif buyer == '5'.strip() or buyer == 'others':
-#     print("What Other item(s) do you want?")
-# else:
-#     print('Thanks, make a decision and come back later')
+buyer = input('''Household, Farm, Car, stationeries or others:
+              > ''').strip().lower()
+if buyer == '1'.strip() or buyer == 'household':
+    print("What Household items do you want?")
+    print(householdItems)
+elif buyer == '2'.strip() or  buyer == 'farm':
+    print("What Farm items do you want?")
+elif buyer == '3'.strip() or buyer == 'car':
+    print("What Car items do you want?")
+elif buyer == '4'.strip() or buyer == 'stationeries':
+    print("What Stationeries items do you want?")
+elif buyer == '5'.strip() or buyer == 'others':
+    print("What Other item(s) do you want?")
+else:
+    print('Thanks, make a decision and come back later')
     
 
