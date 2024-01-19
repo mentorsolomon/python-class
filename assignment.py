@@ -503,58 +503,6 @@
 # print(F'{list(studentsList)}, {list(results)}')
 
 
-
-# correction of assignment============================2===================================
-# studentList = []
-
-# user = int(input('''How many students are taking the test?:
-#              > '''))
-# for students in range(user):
-#     student = input(f'Name of student {student + 1}: ')
-#     studentList.append(student)
-# # print(studentList)
-# for eachStudent in studentList:
-#     print(f"{eachStudent} it's time for your test")
-    
-#     questions = [
-#         "1. What is the capital of Ghana a.) Accra b.) Utanbatoor", 
-#         "2. What is the capital of Nigeria a.) Abuja b.) Rivers", 
-#         "3. What is the capital of Tunisia a.) Jebba b.) Leona", 
-#         "4. What is the capital of Togo a.) Lome b.) Gertha",  
-#         "5. What is the capital of Germany a.) Munchen b.) Berlin", 
-#         "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm", 
-#         "7. What is the capital of Cape Verde a.) Praia b.) Ladta", 
-#         "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg", 
-#         "9. What is the capital of Oyo a.) Ibadan b.) Oyo", 
-#         "10. What is the capital of Lagos a.) Ikeja b.) Alimosho", 
-        
-#     ]
-#     answers = ['a', 'a', 'b', 'a', 'b', 'b', 'a', 'a', 'a', 'a' ]
-#     score = 0
-
-#     for questions, ans in zip(questions, answers):
-#         print(questions)
-#         user = input('Input Answer: ')
-#         if user.strip().lower()== ans:
-#             print('Correct')
-#             score+=10
-#         else:
-#             print('wrong')
-#     print(f'Your total score is {score}%')
-#     if score == 100:
-#         print(f'Excellent. Exceptional Performance {eachStudent}. Congratulations, You have secured yourself a place at the battle of the champions')
-#     elif score >= 70:
-#         print(f'Excellent. Satisfactory Performance {eachStudent}. Congratulations')
-#     elif score >=60:
-#         print(f' Very Good. Satisfactory Performance {eachStudent}. Congratulations')
-#     elif score >=50:
-#         print(f'Good. Satisfactory Performance {eachStudent}. Congratulations')
-#     elif score >=40:
-#         print(f'Poor. Satisfactory Performance {eachStudent}. Congratulations')
-#     elif score >=0:
-#         print(f'Fail. Satisfactory Performance {eachStudent}. BEST OF LUCK NEXT TIME')
-
-# ========================================================================
 # ANOTHER ASSIGNMENT FOR JANUARY 16TH
 # sets assignment for set calculator
 # 3 set
@@ -564,8 +512,11 @@
 # ========================================================
 # CART SUPERMARKET 
 
+price = 0
 cart = []
-storeItems = []
+storeItems = {}
+
+
 householdItems = [('Television', 200_000),
                   ('Fridge', 250_000),
                   ('A/c', 100_000),
@@ -573,7 +524,6 @@ householdItems = [('Television', 200_000),
                   ('Wall Sockets', 40_000),
                   ('Dining set', 500_000),               
                   ]
-
 farmItems = [
                   ('Tractor', 1_000_000),
                   ('Fertilizer', 25_000),
@@ -582,7 +532,7 @@ farmItems = [
                   ('Farm gears', 40_000),
                   ('Herbicides', 11_000),
 ]
-
+    
 carItems = [
                   ('Engine', 750_000),
                   ('Mirror', 20_000),
@@ -601,42 +551,22 @@ stationeries = [
                   ('chairs', 11_000),
 ]
 
-price = 0
-
-
 print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
-print(f"""We sell 
-      1. Household items. 
-      2. Farm items.
-      3. Car items.
-      4. Stationery. 
-      5. Others
-What Item will you like to get today?""".center(70, ' '))
-
-buyer = input('''\n Household, Farm, Car, stationeries or others:
+print(f"What Item will you like to get today?")
+buyer = input(''' Household, Farm, Car, stationeries or others:
               > ''').strip().lower()
 if buyer == '1'.strip() or buyer == 'household':
-    for houseNames, housePrices in householdItems:
-        print(f'{houseNames} at {housePrices} \n')
-    print("How many Household items do you want?")
+    print("How many Household items do you want?")    
     no_of_items = int(input('> '))
-    for num in range(no_of_items):
-        goods = (input(f'Household item name {num + 1}: ')).capitalize().strip()
-        if goods not in householdItems:
-             print('Invalid order')
+    for item in range(no_of_items):
+        goods = (input(f'Household item name {item + 1}: ')).capitalize().strip()
+        if goods in householdItems[0][0] or goods in householdItems[1][0]  or goods in householdItems[2][0]  or goods in householdItems[3][0]  or goods in householdItems[4][0]  or goods in householdItems[6][0]:
+            cart.append(goods)
+            print('One item added to cart')
+            print(cart)
         else:
-            cart.append(buyer)
-    print(cart)
-    # cart = [(input(f'Household item name {name + 1}: '))for name in range(no_of_items)]
-   
-    # print(cart)
-    
-    
-    # cart = [(input('Items: ').capitalize().strip()) for houseNames in householdItems]
-    # print(f'{houseNames} added to cart')
-    # for bought in cart:
-    #     print(f'{cart} and your price is')
-        
+            print('wrong order')
+            
     
 elif buyer == '2'.strip() or  buyer == 'farm':
     print("What Farm items do you want?")
