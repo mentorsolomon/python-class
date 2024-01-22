@@ -512,71 +512,108 @@
 # ========================================================
 # CART SUPERMARKET 
 
-price = 0
-cart = []
-storeItems = {}
+# price = 0
+# cart = []
+# storeItems = {}
 
 
-householdItems = [('Television', 200_000),
-                  ('Fridge', 250_000),
-                  ('A/c', 100_000),
-                  ('Chairs',300_000),
-                  ('Wall Sockets', 40_000),
-                  ('Dining set', 500_000),               
-                  ]
-farmItems = [
-                  ('Tractor', 1_000_000),
-                  ('Fertilizer', 25_000),
-                  ('Manual Pump', 10_000),
-                  ('Seed', 1_000),
-                  ('Farm gears', 40_000),
-                  ('Herbicides', 11_000),
-]
+# householdItems = [('Television', 200_000),
+#                   ('Fridge', 250_000),
+#                   ('A/c', 100_000),
+#                   ('Chairs',300_000),
+#                   ('Wall Sockets', 40_000),
+#                   ('Dining set', 500_000),               
+#                   ]
+# farmItems = [
+#                   ('Tractor', 1_000_000),
+#                   ('Fertilizer', 25_000),
+#                   ('Manual Pump', 10_000),
+#                   ('Seed', 1_000),
+#                   ('Farm gears', 40_000),
+#                   ('Herbicides', 11_000),
+# ]
     
-carItems = [
-                  ('Engine', 750_000),
-                  ('Mirror', 20_000),
-                  ('Gear', 15_000),
-                  ('Seat cover', 30_000),
-                  ('Fan belts',5_000),
-                  ('Lights', 5_000),
-]
+# carItems = [
+#                   ('Engine', 750_000),
+#                   ('Mirror', 20_000),
+#                   ('Gear', 15_000),
+#                   ('Seat cover', 30_000),
+#                   ('Fan belts',5_000),
+#                   ('Lights', 5_000),
+# ]
 
-stationeries = [
-                  ('Books', 1_000),
-                  ('Pens', 2_000),
-                  ('Magazine', 1_000),
-                  ('Color', 1_500),
-                  ('Journals', 4_000),
-                  ('chairs', 11_000),
-]
+# stationeries = [
+#                   ('Books', 1_000),
+#                   ('Pens', 2_000),
+#                   ('Magazine', 1_000),
+#                   ('Color', 1_500),
+#                   ('Journals', 4_000),
+#                   ('chairs', 11_000),
+# ]
 
-print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
-print(f"What Item will you like to get today?")
-buyer = input(''' Household, Farm, Car, stationeries or others:
-              > ''').strip().lower()
-if buyer == '1'.strip() or buyer == 'household':
-    print("How many Household items do you want?")    
-    no_of_items = int(input('> '))
-    for item in range(no_of_items):
-        goods = (input(f'Household item name {item + 1}: ')).capitalize().strip()
-        if goods in householdItems[0][0] or goods in householdItems[1][0]  or goods in householdItems[2][0]  or goods in householdItems[3][0]  or goods in householdItems[4][0]  or goods in householdItems[6][0]:
-            cart.append(goods)
-            print('One item added to cart')
-            print(cart)
-        else:
-            print('wrong order')
+# storeItems.update(householdItems+farmItems+carItems+stationeries)
+# print(storeItems)
+
+# print("WELCOME TO JERRYMONEY'S STORE".center(70, '_'))
+# print(f"What Item will you like to get today?")
+# buyer = input(''' Household, Farm, Car, stationeries or others:
+#               > ''').strip().lower()
+# if buyer == '1'.strip() or buyer == 'household':
+#     print("How many Household items do you want?")    
+#     no_of_items = int(input('> '))
+#     for item in range(no_of_items):
+#         goods = (input(f'Household item name {item + 1}: ')).capitalize().strip()
+#         if goods in householdItems[0][0] or goods in householdItems[1][0]  or goods in householdItems[2][0]  or goods in householdItems[3][0]  or goods in householdItems[4][0]  or goods in householdItems[6][0]:
+#             cart.append(goods)
+#             print('One item added to cart')
+#             print(cart)
+#         else:
+#             print('wrong order')
             
     
-elif buyer == '2'.strip() or  buyer == 'farm':
-    print("What Farm items do you want?")
-elif buyer == '3'.strip() or buyer == 'car':
-    print("What Car items do you want?")
-elif buyer == '4'.strip() or buyer == 'stationeries':
-    print("What Stationeries items do you want?")
-elif buyer == '5'.strip() or buyer == 'others':
-    print("What Other item(s) do you want?")
-else:
-    print('Thanks, make a decision and come back later')
+# elif buyer == '2'.strip() or  buyer == 'farm':
+#     print("What Farm items do you want?")
+# elif buyer == '3'.strip() or buyer == 'car':
+#     print("What Car items do you want?")
+# elif buyer == '4'.strip() or buyer == 'stationeries':
+#     print("What Stationeries items do you want?")
+# elif buyer == '5'.strip() or buyer == 'others':
+#     print("What Other item(s) do you want?")
+# else:
+#     print('Thanks, make a decision and come back later')
     
 
+# ========================================== CORRECTION 22nd JANUARY 2024=======================================
+productPrice = [('Television', 200_000),
+                ('Table', 200_000),
+                ('Ps5', 1_200_000),
+                ]
+print('\n Available products and services')
+x = 1
+products = []
+prices = []
+for prod, price in productPrice:
+    print(f'{x}. {prod} ----> #{price:,}')
+    x += 1
+    
+    products.append(prod)
+    prices.append(price)
+    
+
+cart = []
+cartPrice = []
+for _ in range(len(products)):
+    user = (input("Add to cart by choosing your option for the product, \ntype 'exit' to stop adding to cart, \ntype 'view' to display your cart: "))
+    if user.isdigit():
+        cart.append(products[int(user) -1])
+        cartPrice.append(prices[int(user) -1])
+    elif user.lower() == 'exit':
+        break
+    
+    elif user == 'view':
+        x = 1
+        for cart, pric in zip(cart, cartPrice):
+            print(f'{x}. {cart} ---> #{price: ,}')
+
+print(f'Your total price is #{sum(cartPrice):,}')
+    
