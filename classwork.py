@@ -35,6 +35,8 @@ def offers():
         data_plan()
     elif user == 99:
         next_page()
+    elif user == '*':
+        exit()
     else:
         print('Invalid request enter a valid key')
         offers()
