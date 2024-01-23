@@ -604,9 +604,9 @@ cart = []
 cartPrice = []
 for _ in range(len(products)):
     user = (input("Add to cart by choosing your option for the product, \ntype 'exit' to stop adding to cart, \ntype 'view' to display your cart: "))
-    if user.isdigit():
-        cart.append(products[int(user) -1])
-        cartPrice.append(prices[int(user) -1])
+    if user:
+        cart.append(products[int(user) - 1])
+        cartPrice.append(prices[int(user) - 1])
     elif user.lower() == 'exit':
         break
     
