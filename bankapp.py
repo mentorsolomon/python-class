@@ -8,43 +8,49 @@ def land():
 
     
 def home():
-    print(f'\nLogin or Register')
-    user = input('> ').strip().lower() 
-    if user == 'login':
-        login()
-    elif user == 'register':
-        register()
-    else:
-        print('Invalid entry. Try Again')
-        home()
-    
-    
-def login():
-    # print('Login')
-    '''Login Page'''
-    username = input('Username: ')
-    pword = pw.pwinput(mask='^')
-    password = getpass.getpass()
-    if username != info['Username'] and pword != info['Password']:
-        print('Invalid Login Details')
-    else:
-        print(f'Welcome back, {info["Name"]}')
+    print(f'\nRegistration Form. Kindly fill the form')
+    register()
+       
     
 def register():
-    print('register')
+    print('Enter your Details.\n')
+    info()
     
+
+def info():
+    info = {
+        'Name': input('Name: ').strip().capitalize(),
+        'Phone': input('Telephone: ').strip(),
+        'Age': int(input('Age:  ').strip()),
+        'Email': input('Email: ').strip().lower(),
+        'Password': input('Password: ').strip(),
+        'Secret Key': input('Enter your secret key: ').strip().lower(),
+        'City': input('Your city: ').strip().capitalize(),
+        'State': input('State: ').strip().capitalize()
+       }
+    print('Registration Successful. Redirecting...')
+    usersData.update(info)
+    print(usersData)
+    login()
+
+
+def login():
+    print('login')
+    '''Login Page'''
+    Email = input('Email: ')
+    pword = pw.pwinput(mask='^')
+    # password = getpass.getpass()
+    if Email != info['Email'] and pword != info['Password']:
+        print('Invalid Login Details.Try Again')
+        login()
+    else:
+        print(f'Welcome, {info["Name"]}')
+        
+
 
     
     
-    
-    #  info = {
-    #     'Name': input('Name: ').strip().capitalize(),
-    #     'Department': input('Department: ').strip().upper(),
-    #     'Email': input('Email: ').strip().lower(),
-    #     'Password': input('Password: ').strip(),
-    #    }
-    
-    
+   
     
     
     

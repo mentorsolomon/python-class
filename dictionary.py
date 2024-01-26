@@ -43,6 +43,16 @@
 # *x, = vehicle
 # print(x)
 
+
+# '''Login'''
+# username = input('Username: ')
+# pword = pw.pwinput(mask='^')
+# # password = getpass.getpass()
+# if username != info['Username'] and pword != info['Password']:
+#     print('Invalid Login Details')
+# else:
+#     print(f'Welcome back, {info["Name"]}')
+
 # ===============================================
 # classwork
 
@@ -88,6 +98,19 @@
 #     })
 
 
+
+
+# '''Login'''
+# username = input('Username: ')
+# pword = pw.pwinput(mask='^')
+# # password = getpass.getpass()
+# if username != info['Username'] and pword != info['Password']:
+#     print('Invalid Login Details')
+# else:
+#     print(f'Welcome back, {info["Name"]}')
+
+# ==============================================================================
+
 import pwinput as pw
 import getpass 
 
@@ -111,11 +134,3 @@ print(StudentsData)
 
     
 
-# '''Login'''
-# username = input('Username: ')
-# pword = pw.pwinput(mask='^')
-# # password = getpass.getpass()
-# if username != info['Username'] and pword != info['Password']:
-#     print('Invalid Login Details')
-# else:
-#     print(f'Welcome back, {info["Name"]}')
