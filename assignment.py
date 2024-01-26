@@ -488,19 +488,21 @@
 #     print(f'\n {studentName} = {score}% \n')   
     
 # print(f'\n {studentName} = {score}% \n')  
-# maxResults = max(results)
+# maxResults = max(results) = 70
 # indexMaxResults = results.index(maxResults)
+# print(f'\n the index is at {indexMaxResults}\n')
 # studentsHighest = studentsList[indexMaxResults]
 # print(f'{studentsHighest} has the overall best score of {maxResults} in the Examination')
 
 # minResults = min(results)
 # indexMinResults = results.index(minResults)
+# print(f'\n the index of the minimum score is at {indexMinResults}\n')
 # studentsLowest = studentsList[indexMinResults]
 # print(f'{studentsLowest} has the lowest score of {minResults} in the examination')
 
-# print(f'\n The mean or average score of {studentNumber} is {sum(results)/len(results)}')
+# print(f'\n The mean or average score of {studentNumber} students is {sum(results)/len(results)}')
 
-# print(F'{list(studentsList)}, {list(results)}')
+# print(f'{studentsList}, {results}')
 
 
 # ANOTHER ASSIGNMENT FOR JANUARY 16TH
@@ -584,36 +586,36 @@
     
 
 # ========================================== CORRECTION 22nd JANUARY 2024=======================================
-productPrice = [('Television', 200_000),
-                ('Table', 200_000),
-                ('Ps5', 1_200_000),
-                ]
-print('\n Available products and services')
-x = 1
-products = []
-prices = []
-for prod, price in productPrice:
-    print(f'{x}. {prod} ----> #{price:,}')
-    x += 1
+# productPrice = [('Television', 200_000),
+#                 ('Table', 200_000),
+#                 ('Ps5', 1_200_000),
+#                 ]
+# print('\n Available products and services')
+# x = 1
+# products = []
+# prices = []
+# for prod, price in productPrice:
+#     print(f'{x}. {prod} ----> #{price:,}')
+#     x += 1
     
-    products.append(prod)
-    prices.append(price)
+#     products.append(prod)
+#     prices.append(price)
     
 
-cart = []
-cartPrice = []
-for _ in range(len(products)):
-    user = (input("Add to cart by choosing your option for the product, \ntype 'exit' to stop adding to cart, \ntype 'view' to display your cart: "))
-    if user:
-        cart.append(products[int(user) - 1])
-        cartPrice.append(prices[int(user) - 1])
-    elif user.lower() == 'exit':
-        break
+# cart = []
+# cartPrice = []
+# for _ in range(len(products)):
+#     user = (input("Add to cart by choosing your option for the product, \ntype 'exit' to stop adding to cart, \ntype 'view' to display your cart: "))
+#     if user:
+#         cart.append(products[int(user) - 1])
+#         cartPrice.append(prices[int(user) - 1])
+#     elif user.lower() == 'exit':
+#         break
     
-    elif user == 'view':
-        x = 1
-        for cart, pric in zip(cart, cartPrice):
-            print(f'{x}. {cart} ---> #{price: ,}')
+#     elif user == 'view':
+#         x = 1
+#         for cart, pric in zip(cart, cartPrice):
+#             print(f'{x}. {cart} ---> #{price: ,}')
 
-print(f'Your total price is #{sum(cartPrice):,}')
+# print(f'Your total price is #{sum(cartPrice):,}')
     

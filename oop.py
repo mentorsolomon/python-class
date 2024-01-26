@@ -40,5 +40,5 @@ class USSD:
               1. Buy Data
               2. Check Balance
               ''')
-        
-ussd = USSD
+
+ussd = USSD()

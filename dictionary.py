@@ -71,13 +71,14 @@
 # print(score)
 
 # ========================= CLASS WORK TWO ===================================================
+# info = {}
+
 # name = input('Name: ')
 # dept = input('Department: ')
 # matNo = input('Matric No: ')
 # userName = input('Username: ')
 # passWord = input('Password: ')
 
-# info = {}
 # info.update({
 #     'Name': name,
 #     'Department': dept,
@@ -104,16 +105,17 @@ for eachStudent in range(students):
     
     StudentsData[matricNum] = info
     StudentsData.update({matricNum:info})
-    
-# print(StudentsData)
-    
-# print(info)
+    print(info)
 
-'''Login'''
-username = input('Username: ')
-pword = pw.pwinput(mask='^')
-# password = getpass.getpass()
-if username != info['Username'] and pword != info['Password']:
-    print('Invalid Login Details')
-else:
-    print(f'Welcome back, {info["Name"]}')
+print(StudentsData)
+
+    
+
+# '''Login'''
+# username = input('Username: ')
+# pword = pw.pwinput(mask='^')
+# # password = getpass.getpass()
+# if username != info['Username'] and pword != info['Password']:
+#     print('Invalid Login Details')
+# else:
+#     print(f'Welcome back, {info["Name"]}')

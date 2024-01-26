@@ -15,7 +15,6 @@ def home():
         print('Try Again.')
         home()
 
-
 def land():
     print('''
         1. add to list
@@ -32,7 +31,7 @@ def land():
         edit()
     elif user == '3' or user == 'display':
         display()
-    elif user == '4' or user == 'remove':
+    elif user == '4' or user == 'delete item':
         del_item()
     elif user == '5' or user == 'delete':
         delete()
@@ -43,49 +42,42 @@ def land():
         land()
         
 def add():
-    no_of_items = int(input('How many items are you doing today. [1,2,3...10]. Think about it clearly > '))
-    for num in range(no_of_items):
-        tasks =  input(f'Using Action words, what are you doing today. Task {num + 1}  > ').strip().title()
-        toDo.append(tasks)
-    land()
-
+    # no_of_items = int(input('How many items are you doing today. [1,2,3...10]. Think about it clearly > '))
+    # for num in range(no_of_items):
+    #     tasks =  input(f'Using Action words, Enter Tasks. Task {num + 1}  > ').strip().title()
+    #     toDo.append(tasks)
+    while True:
+        tasks = input(f"Input Task. (Press 'S' to stop adding task): ").strip().lower()          
+        if tasks == 's':
+            land()
+        
+        toDo.append(tasks)           
+           
 def edit():
     print(toDo)
     nums = int(input('Change your to do list at number. > '))
     place = nums - 1
-    toDo[place] = input('Enter new item to do: ').title()
-    print(toDo)
+    toDo[place] = input('Enter new task to do: ').lower()
+    print(f'You edited your ToDo successfully.')
     land()
-    
-    # OR 
-    # print(toDo)
-    # you_edit = input('What do you want to change > ')
-    # toDo.index(you_edit) = input('The new entry: ')
-    # print(toDo)
-    # land()=
-
+   
+   
 def display():
     for every in toDo:
         print(f'\n{every}')
     land()
 
 def del_item():
-    remove()
-    
-    
-def remove():
     print(toDo)
-    user = input('What will you be removing: ').title().strip()
-    if user in toDo:
-        toDo.remove(user)
-        land()
-    else:
-        print('Entry not found on List')
-        del_item()
+    user = input('What do you want to remove? : ').strip()
+    toDo.remove(user)
+    print(f'Item removed successfully. List Update to date.')
+    land()
 
 def delete():
     toDo.clear()
-    print(f"Cleared Successfully. List ({toDo}) is now empty. ")
+    print(f"Cleared Successfully. List is now empty. {toDo}")
+    print("Select 'add' or '1' to add new tasks to your TODO.")
     land()
     
 home()
