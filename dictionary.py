@@ -21,10 +21,10 @@
 # print(vehicle)
 
 
-# print(vehicle.keys())
+# print(vehicle.values())
 # for x in vehicle.keys():
 #     print(x)
-# print(vehicle['Status'].keys())
+# print(vehicle['Status'].values())
 # print(vehicle.values())
 # for x in vehicle.values():
 #     print(x)
@@ -111,26 +111,26 @@
 
 # ==============================================================================
 
-import pwinput as pw
-import getpass 
+# import pwinput as pw
+# import getpass 
 
 
-StudentsData = {}
-students = int(input('How many students are you registering: '))
-for eachStudent in range(students):
-    matricNum = input('Your Matric No: ').strip().capitalize(),
-    info = {
-        'Name': input('Name: ').strip().capitalize(),
-        'Department': input('Department: ').strip().upper(),
-        'Username': input('Username: ').strip().lower(),
-        'Password': input('Password: ').strip(),
-       }
+# StudentsData = {}
+# students = int(input('How many students are you registering: '))
+# for eachStudent in range(students):
+#     matricNum = input('Your Matric No: ').strip().capitalize(),
+#     info = {
+#         'Name': input('Name: ').strip().capitalize(),
+#         'Department': input('Department: ').strip().upper(),
+#         'Username': input('Username: ').strip().lower(),
+#         'Password': input('Password: ').strip(),
+#        }
     
-    StudentsData[matricNum] = info
-    StudentsData.update({matricNum:info})
-    print(info)
+#     StudentsData[matricNum] = info
+#     StudentsData.update({matricNum:info})
+#     print(info)
 
-print(StudentsData)
+# print(StudentsData)
 
     
 
