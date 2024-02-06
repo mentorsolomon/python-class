@@ -13,7 +13,8 @@ def home():
     
 def land():
     print('\nWelcome, you are to register as a first time user.')
-    user = input("Press '1' to open registration portal. > ".strip())
+    user = input(""":Press '1' to open registration portal.
+                 >   """.strip())
     if user != '1':
         print('\nError. Try again')
         land()
@@ -22,7 +23,13 @@ def land():
 
 def register():
     print('\nWelcome to the registration panel. Kindly provide your details to get started')
-    userId = input('Username > ').strip()
+    info_tab()
+    login()
+    
+    
+    
+def info_tab():
+    userId = input('Username >  ').strip()
     info = {
         'Name': input('Name: ').strip().title(),
         'Age': int(input('Age: ').strip()),
@@ -30,32 +37,47 @@ def register():
         'Password': input('Password: ').strip(),
         'Secret Key': input('Enter your secret key: ').strip().lower(),
         'City': input('Your city: ').strip().capitalize(),
-        'State': input('State: ').strip().capitalize()
+        'State': input('State: ').strip().capitalize() 
     }
     userName.append(userId)
     bankUser[userId] = info 
     bankUser.update({userId:info})
-         
-    print(bankUser[userId])
-#     # print(f'\n {info}')
-    
-#     # print(f'\n {bankUser}')
+    print(f'\n {bankUser}')
     print('\n redirecting...')
-    land()
-#     login()
+    
+def login():
+    print('Welcome. Kindly enter your Login details.')
+    name_check()
+    password_check()
+    bank()
     
     
-# def login():
-#     print('Login Page')
-#     mail = input('Enter Username: ')
-#     if mail not in userName:
-#         print('Invalid Login Credentials. Try Again.')
-#         login()
-#     else:
-#         print('correct')
+    
+def name_check():
+    loginName = input('Username: ')
+    if loginName not in userName:
+        print('Invalid Username')
+        name_check()
+              
+               
+def password_check():
+    loginPW = pw.pwinput('Password: ')
+    if loginPW in bankUser['Password']:      
+        print('Login Successful. Redirecting...')
+        bank()
+    else:
+        print('Invalid Password')
+        password_check()
         
-#     pword = input('Enter Password: ')
-#     print(f"Welcome. What will you like to do today ")
+def bank():
+    print(f'Welcome {userName}')
+    print(f"""
+          1. Check Balance
+          2. Transfer
+          3. Update details
+          4. Logout
+          """)
+  
 home()
 
 
