@@ -1,6 +1,7 @@
-usersData = {}
 import pwinput as pw
 import getpass
+usersData = {}
+
 
 def land():
     print("'Welcome to Solo'net Microfinance bank.".title().center(100, "#"))
@@ -39,7 +40,7 @@ def login():
     '''Login Page'''
     Email = input('Email: ')
     pword = pw.pwinput(mask='^')
-    # password = getpass.getpass()
+    password = getpass.getpass('Enter Password > ')
     if Email != info['Email'] and pword != info['Password']:
         print('Invalid Login Details.Try Again')
         login()
