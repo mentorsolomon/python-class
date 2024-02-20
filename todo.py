@@ -1,4 +1,16 @@
 toDo = []
+import datetime as dt
+import pygame
+import time
+
+song = (r"C:\python-level-two\music\plf.mp3")
+pygame.init()
+pygame.mixer.music.load(song)
+pygame.mixer.music.play()
+time.sleep(60)
+pygame.mixer.music.stop()
+
+
 
 print('Here you have your TO-DO LIST'.center(70,'_'))
 def home():
@@ -82,7 +94,7 @@ def delete():
     
 home()
 
-# ==========================correctio==========================
+# ==========================correction==========================
 # def toDo():
 #     print('''
 #           My ToDo APP

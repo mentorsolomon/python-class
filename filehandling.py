@@ -201,9 +201,9 @@ for k in grades:
 # print("\n")
 
 for x,y,z in zip(names, scores, grades):
-    pass
-    # print(x,y)
-    
+    pass 
+    # print(y)
+print('\n')
 # ===========================
 
 # index = 0
@@ -212,54 +212,61 @@ for x,y,z in zip(names, scores, grades):
 #         print(name[index])
 #     index += 1
 
-# ================================ names of students 
+# ================================ names of students ==============================
 
-for h in scores:
-    if h >= 70:
-        # for h in c:
-         print(h)
+max_score = max(scores)
+index_max = scores.index(max_score)
+min_score = min(scores)
+index_min = scores.index(min_score)
+
+print(f'{names[index_min]} score the lowest score of {min_score}')
+print('\n')
+print(f'{names[index_max]} score the highest score of {max_score}') 
+print('\n')
 
 
-# ============= check results 
-def land():
-    print('You can now check your results.')
-    check()
+
+
+# ================ check results ========================
+# def land():
+#     print('You can now check your results.')
+#     check()
     
     
-def check():
-    check = input('Enter Name of candidate: ').title()
-    if check not in names:
-        print('name not found')
-        check()
-    else:
-        indexCheck = names.index(check)
-        studentScore = scores[indexCheck]
-        studentScore = int(studentScore)
-        print('Getting info...')
-        time.sleep(2)
-        print(f"{check} scored {studentScore}")
+# def check():
+#     check = input('Enter Name of candidate: ').title()
+#     if check not in names:
+#         print('name not found')
+#         check()
+#     else:
+#         indexCheck = names.index(check)
+#         studentScore = scores[indexCheck]
+#         studentScore = int(studentScore)
+#         print('Getting info...')
+#         time.sleep(2)
+#         print(f"{check} scored {studentScore}")
         
-        if studentScore == 100:
-            print(f'''Excellent. Exceptional Performance {check}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
+#         if studentScore == 100:
+#             print(f'''Excellent. Exceptional Performance {check}. Congratulations, You have secured yourself a place at the battle of the champions  \n''')
             
-        elif studentScore >= 70:
-            print(f'Excellent. Satisfactory Performance {check}. Congratulations  \n')
+#         elif studentScore >= 70:
+#             print(f'Excellent. Satisfactory Performance {check}. Congratulations  \n')
     
-        elif studentScore >=60:
-            print(f' Very Good. Satisfactory Performance {check}. Congratulations  \n')
+#         elif studentScore >=60:
+#             print(f' Very Good. Satisfactory Performance {check}. Congratulations  \n')
             
-        elif studentScore >=50:
-            print(f'Good. Satisfactory Performance {check}. Congratulations  \n')
+#         elif studentScore >=50:
+#             print(f'Good. Satisfactory Performance {check}. Congratulations  \n')
             
-        elif studentScore >=40:
-            print(f'Poor. Satisfactory Performance {check}. Congratulations \n')
+#         elif studentScore >=40:
+#             print(f'Poor. Satisfactory Performance {check}. Congratulations \n')
             
-        elif studentScore >=0:
-            print(f'Fail. Satisfactory Performance {check}. BEST OF LUCK NEXT TIME  \n')
+#         elif studentScore >=0:
+#             print(f'Fail. Satisfactory Performance {check}. BEST OF LUCK NEXT TIME  \n')
             
-        else:
-            print('Score record not found')
+#         else:
+#             print('Score record not found')
     
-        land()
+#         land()
                 
-land()
+# land()

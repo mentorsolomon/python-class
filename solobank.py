@@ -1,11 +1,13 @@
 import time
 import pwinput as pw
 import re
+import random
 
 
 bankUser = {}
 userName = []
 pass_word = []
+account_num = []
 
 def home():
     print('''
@@ -32,11 +34,11 @@ def register():
     
 def info_tab():
     userId = input('Username:  '.strip())
-    match = re.findall(r'\w+\d+@\w+\.\w+', mail)
+    match = re.findall(r'\w+\d+', userId)
     if match:
-        print('Email created')
+        print('Id created')
     else:
-        print('Inc`orrect email pattern.')
+        print('Id must not contain, symbols or sign.')
     userName.append(userId)
     time.sleep(1)
     
@@ -96,6 +98,7 @@ def password_check():
 def bank():
     print(f'Welcome {userName[0]}. What do you want to do today?')
     print(f"""
+          
           1. Check Balance
           2. Transfer
           3. Update details
@@ -103,8 +106,19 @@ def bank():
           5. Logout.
           
           """)
+    user = input('Your option:  ')
+    if user.strip() == '1' or user.strip() == 'balance':
+        balance()
+         
+    
     home()
-  
+
+
+def balance():
+   global account_number
+   account_number = random(0000000000, 999999999)
+    
+    
 home()
 
 
