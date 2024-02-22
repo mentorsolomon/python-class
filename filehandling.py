@@ -27,6 +27,10 @@
 # myFile = open(r"C:\python-level-two\text.docx",mode = "w")
 # myFile.write('James my boy')
 
+# # delete
+
+# myFile.
+
 # =========================== FEBRUARY 2023, 13TH ====================
 # ============================  OS  ===================
 # import os 

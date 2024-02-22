@@ -112,11 +112,15 @@ def home():
     #         min_ = number
     # print(min_)
             
-            
-    one = random.randint(1,7)
-    two = random.randint(1,7)
+
+    # one = random.randint(1,6)
+    # two = random.randint(1,6)
+    # roll = one, two
+    # # print(roll)  
+
+    x = 10
+    y = random.randint(0000000, 99999999)
+    print(f'{x}{y}')
     
-    print((one, two))
-            
     
 home()
