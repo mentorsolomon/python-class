@@ -1,7 +1,7 @@
 # JANUARY 24TH 2024
 # OOP === OBJECT ORIENTED LANGUAGE//// ALWAYS INITIALIZE YOUR CLASS
 
-numbers = list()
+# numbers = list()
 # numbers.sort
 # print(numbers)
 
@@ -27,7 +27,7 @@ numbers = list()
 class USSD:
     def __init__(self):
         
-        self.home()
+        # self.home()
 
     def home(self):
         self.ussd = input('Enter USSD here > ').strip()
@@ -35,6 +35,7 @@ class USSD:
             print('Invalid Code!')
             self.home()
         self.landingPage()
+        
     def landingPage(self):
         print('''
               1. Buy Data
@@ -42,3 +43,4 @@ class USSD:
               ''')
 
 ussd = USSD()
+self.home()

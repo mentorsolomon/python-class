@@ -58,12 +58,15 @@ import timer
 # ========================== PRACTICE ============================
 
 def mail():
-    mail = input('Email: ')
-    match = re.findall(r'\w+\d+@\w+\.\w+', mail)
+    mail = input('Email: ').strip()
+    match = re.findall(r'\w+@\w+\.\w+', mail)
     if match:
         print('Email created')
+        username = mail.strip(r'@\w+\.\w+')
+        print(username)
     else:
         print('Incorrect email pattern.')
         mail()
-    print(mail) 
+        
+    
 mail()

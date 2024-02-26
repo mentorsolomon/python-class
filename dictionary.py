@@ -16,6 +16,7 @@
 # x = vehicle['Bonus'].pop()  #pop selects a value at random
 # print(x)
 
+# ============= CHANGE ENTRY ===================
 # vehicle['Name'] = 'Legsux'
 # print(vehicle['Name'])
 # print(vehicle)

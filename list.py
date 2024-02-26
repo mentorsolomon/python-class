@@ -1,3 +1,7 @@
+import random
+
+
+
 # ==========================LIST CLASS===================================
 # LIST IS A COLLECTION WHICH IS ORDERED, CHANGEABLE, ALLOWS DUPLICATE VALUE AND THE ITEMS ARE INDEXED.
 
@@ -33,7 +37,13 @@
 # x = list(range(1,20))
 # print(x)
 
-# name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
+
+
+name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
+
+x = random.
+
+
 # for student in name_of_students:
 #     print(f'{student}, Welcome back to School')
     
@@ -102,4 +112,6 @@
 # num = [x for x in range(10)]
 # print(num)
 # ==============================
+    
+    
     

@@ -19,9 +19,21 @@ mycursor = mycon.cursor()
 # mycursor.execute('ALTER TABLE customer_table ADD password VARCHAR(20)')
 # mycursor.execute('ALTER TABLE customer_table CHANGE id customer_id INT AUTO_INCREMENT')
 
-# mycursor.execute('CREATE TABLE transact_history(id INT AUTO_INCREMENT PRIMARY KEY, type VARCHAR(10), amount FLOAT , sender_name VARCHAR(50), reciever_name VARCHAR(50), reciever_no VARCHAR(10),sender_no VARCHAR(10),  date_time DATETIME )')
+# mycursor.execute('''CREATE TABLE transact_history
+# (
+    # id INT AUTO_INCREMENT PRIMARY KEY, 
+    # type VARCHAR(10), 
+    # amount FLOAT,
+    # sender_name VARCHAR(50),
+    # reciever_name VARCHAR(50),
+    # reciever_no VARCHAR(10),
+    # sender_no VARCHAR(10),
+    # date_time DATETIME
+    # 
+    # )
+    # ''')
 
-mycursor.execute('ALTER TABLE transact_history CHANGE date_time date_time DATETIME DEFAULT CURRENT_TIMESTAMP')
+# mycursor.execute('''ALTER TABLE transact_history CHANGE date_time date_time DATETIME DEFAULT CURRENT_TIMESTAMP''')
 
 
 class Bank:
@@ -72,12 +84,16 @@ class Bank:
         print('Proccessing...')
         time.sleep(2)
         try: 
-            query = 'INSERT INTO customer_table(fullname, email, account_no, account_balance, bvn, password) VALUES(%s,%s,%s,%s,%s,%s)'
+            query = '''
+            INSERT INTO customer_table(fullname, email, account_no, account_balance, bvn, password) 
+            VALUES(%s,%s,%s,%s,%s,%s)
+            '''
 
             values = (fullname, email, account_number, account_balance, bvn, password2)
+            
             mycursor.execute(query, values)
-
             mycon.commit()
+            
         except Exception as e:
             print(f'Registration unsuccessful\n{e}.\n Kindly input valid informations')
             self.signup()
