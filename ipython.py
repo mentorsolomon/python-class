@@ -15,5 +15,11 @@ import random
 # ===================================================================
 # IPYTHON = INTERACTIVE PYTHON
 
-account_number = random(0000000000, 999999999)
-print(account_number)
+user = input('ENTER PALINDROME: ')
+users = user.split()
+print(users)
+word = ''.join(users)
+
+if word == word[::-1]:
+        print('WELL WELLL WLELLL')
+

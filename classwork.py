@@ -72,6 +72,8 @@ def area_offer():
         0. menu    
                     
                     ''')
+     
+     
                 
      userTwo = int(input('Put a number here: '))
      if userTwo == 22:

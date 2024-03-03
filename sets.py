@@ -116,11 +116,70 @@ def home():
     # one = random.randint(1,6)
     # two = random.randint(1,6)
     # roll = one, two
-    # # print(roll)  
+    # # print((roLl))  
 
-    x = 10
-    y = random.randint(0000000, 99999999)
-    print(f'{x}{y}')
+    # x = 10
+    # y = random.randint(0000000, 99999999)
+    # print(f'{x}{y}')
+    
+    
+    # set calculator 
+    set_A = set()
+    set_B = set()
+    set_C = set()
+    set_D = set()
+    set_E= set()
+    
+    
+    print('''
+          
+          Welcome to set Calculator
+          
+          ''')
+    user = input('''
+                 What will you like to do today?
+                 1. union
+                 2. intersection
+                 3. difference
+                 4. symmetric difference
+                 5. Others
+                 
+                 > ''')
+    
+    
+    if user.strip() == '1':
+        union_op()
+    elif user.strip() == '2':
+        intersection_op()
+    elif user.strip() == '3':
+        difference_op()   
+    elif user.strip() == '4':
+        sym_difference()  
+    elif user.strip() == '5':
+        others()
+    else:
+        print('Invalid Entry') 
+        # comment: 
+        
+    
+    
+def union_op():
+    operations = int(input('How many sets do you want? '))
+    for operation in range(operations):
+        for entry in range(operation):
+            user = int(input(f'How many data set do you have in {operation}: \n'))
+            for num in range(user):
+                sets = input(f'enter set{num+1}: ')
+                
+                
+                unio
+                
+        
+        
+          
+        
+    
+    
     
     
 home()

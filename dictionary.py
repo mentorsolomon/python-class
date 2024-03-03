@@ -4,13 +4,13 @@
 # syntax 
 # written using {key:value} or dict{key=value}
 
-# vehicle = {
-#     'Name': ('BMW','peugoet'),
-#     'Year': 2020,
-#     'Status': {'Brand New': True, 'Tokunbo':False},
-#     'Bonus': {'2 extre tyres', 'Engine oil'},
-#     'Price': {6_000_000: 89}
-# }
+vehicle = {
+    'Name': ('BMW','peugoet'),
+    'Year': 2020,
+    'Status': {'Brand New': True, 'Tokunbo':False},
+    'Bonus': {'2 extre tyres', 'Engine oil'},
+    'Price': {6_000_000: 89}
+}
 
 # print(vehicle['Name'][1])
 # x = vehicle['Bonus'].pop()  #pop selects a value at random
@@ -39,13 +39,14 @@
 # vehicle.popitem() #takes no argument
 # vehicle.pop() #takes argument
 # vehicle.update({'transmission':'automatic'})
-# vehicle['Engine'] = 'v6'
+# # vehicle['Engine'] = 'v6'
     
 # *x, = vehicle
 # print(x)
+# print(vehicle.get('Price','Not found'))
 
 
-# '''Login'''
+'''Login'''
 # username = input('Username: ')
 # pword = pw.pwinput(mask='^')
 # # password = getpass.getpass()
@@ -133,5 +134,16 @@
 
 # print(StudentsData)
 
+
+{
+    'Student1': {'Name':'Ade', 'MatNo': '11'}
+    'Student2': {'Name':'James', 'MatNo': '12'}
+}    
+
+user = input('Kindly press "1" to register')
+if user == '1':
+    x = 1
     
+
+
 
