@@ -41,6 +41,9 @@ def division():
         val1 = int(input("Enter your number: "))
         val2 = int(input("Enter your number: "))
         div = val1/val2
+        
+        
+        va
 
     except ValueError:
         print('Input an integer')

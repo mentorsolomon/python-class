@@ -141,7 +141,7 @@ class Bank:
         mycursor.execute(query, values)
 
         details = mycursor.fetchone()
-        print(details)
+        # print(details)
         self.account_no = details[3]
         self.account_balance = details[4]
         self.name = details[1]

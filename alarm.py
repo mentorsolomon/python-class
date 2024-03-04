@@ -1,7 +1,11 @@
 # # import pygame
 # # import datetime as dt
-import time
-import re
+# import time
+# import re
+
+# from inherintance import PARENT
+
+import inherintance
 
 
 # # file = (r"C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
@@ -95,10 +99,15 @@ import re
 
 # =====================================
 
-pattern = r'\w+\d+@\w+\.\w+'
-e_mail = input("Please enter your mail: ")
-match = re.match(pattern,e_mail)
-if not match:
-    print('Email Mismatch.. TRY "ask11@gmail.com"')
-else:
-    print('Perfect match')
+# pattern = r'\w+\d+@\w+\.\w+'
+# e_mail = input("Please enter your mail: ")
+# match = re.match(pattern,e_mail)
+# if not match:
+#     print('Email Mismatch.. TRY "ask11@gmail.com"')
+# else:
+#     print('Perfect match')
+
+
+
+# wake =  input('phone number: ').strip('0'.startswith('0'))
+# print(wake)

@@ -155,17 +155,99 @@ class SPORTY():
     
                         
     def login(self):
-        print(f'\n\nLogin your {self.name} Account')
+
+        print('\nLogin your Sporty+ Account\n')
 
         login_mail = input('Email:  ').strip()
         login_pwd = pw.pwinput('Password: ').strip()
-
-        print('Processing...')
-        time.sleep(2)
         print('Checking details...')
         time.sleep(2)
 
         try:
+            query = 'SELECT * FROM Sport_bettor WHERE Email =%s AND Password =%s'
+
+            values = (login_mail,login_pwd)
+
+            mycursor.execute(query,values,)
+
+            details = mycursor.fetchone()
+            self.Email = details[4]
+            # print(details)
+
+            if details:
+                print('Login Successful.')
+                time.sleep(3)
+                self.dashboard()
+            else:
+                print('Login Credentials not accurate. Try again.')
+                self.login()
+
+        except Exception as e:
+            print(f'{e}')
+            self.login()
+    
+
+    def dashboard(self):
+        query = 'SELECT * FROM Sport_bettor WHERE Email =%s'
+        value = (self.Email,)
+        mycursor.execute(query, value)
+
+        details = mycursor.fetchone()
+        # print(details) 
+
+        self.Name = details[1]
+        self.userId = details[2]
+        self.Email = details[4]
+        self.Balance = details[6]
+
+        print(f'''
+        Welcome {self.Name}. You are on course to be a winner.
+
+        Your User ID is {self.userId} and your current balance is #{self.Balance}.
+
+        1. Deposit          2. Withdraw
+        3. Stake            4. Read Guidelines to stake.
+        5. Log out
+
+        ''')
+        enter = input('Enter Your choice: ').strip()
+        if enter == '1':
+            self.deposit()
+        elif enter == '2':
+            self.withdraw()
+        elif enter == '3':
+            self.stake()
+        elif enter == '4':
+            self.guidelines()
+        elif enter == '5':
+            user = input('ARE YOU SURE YOU WANT TO LOGOUT? : ').strip().lower()
+            if user == 'yes':
+                print('Do come back')
+                time.sleep(2)
+                self.home()
+            elif user == 'no':
+                print('🎈🎈')
+                self.dashboard()
+            
+            else:
+                print('Command error')
+                self.login()
+                
+
+
+        
+
+            
+
+
+
+
+
+
+
+
+
+
 
 
 
