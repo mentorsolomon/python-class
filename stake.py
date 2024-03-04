@@ -9,6 +9,7 @@ mycon = sql.connect(host = '127.0.0.1' , user = 'root', password = '',  database
 
 mycursor = mycon.cursor()
 
+
 # mycursor.execute("""
                  
 #                  CREATE DATABASE Sporty_db

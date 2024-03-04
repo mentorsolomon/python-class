@@ -8,6 +8,7 @@
 import inherintance
 
 
+
 # # file = (r"C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
 
 # # while True:
@@ -79,6 +80,7 @@ import inherintance
 
 # def ussd():
 #     ussd = input('Enter USSD: ')
+
 #     while ussd != '*312#':
 #         print("Invalid USSD CODE. TRY *312# ")
 #         ussd = input('Enter USSD: ')
@@ -111,3 +113,4 @@ import inherintance
 
 # wake =  input('phone number: ').strip('0'.startswith('0'))
 # print(wake)
+

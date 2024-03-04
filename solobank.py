@@ -1,4 +1,4 @@
-import time
+from time import sleep
 import pwinput as pw
 import re
 import random
@@ -63,13 +63,13 @@ def info_tab():
     else:
         print('Id must not contain, symbols or sign.')
     userName.append(userId)
-    time.sleep(1)
+    sleep(1)
     
     passId = pw.pwinput(mask='*').strip()
-    time.sleep(1)
+    sleep(1)
     
     pword = pw.pwinput(mask='*').strip()
-    time.sleep(2)
+    sleep(2)
     if passId != pword:
         print('Error. Try Again.\n')
         time.sleep(1)
@@ -92,9 +92,9 @@ def info_tab():
         bankUser.update({userId:info})
         # print(f'\n {bankUser}')
         # print(pass_word)
-        time.sleep(2)
+        sleep(2)
         print('\n redirecting...\n\n')
-        time.sleep(3)
+        sleep(3)
 
     
 def login():
@@ -115,7 +115,7 @@ def password_check():
         password_check()
     else:
         print('Login Successful. Redirecting...')
-        time.sleep(3)
+        sleep(3)
         bank()
         
 def bank():
