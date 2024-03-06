@@ -5,6 +5,7 @@ import time
 import pwinput
 import pandas as pd
 
+
 mycon = sql.connect(host='127.0.0.1', user='root', passwd='', database = 'MTP_db')
 
 mycursor = mycon.cursor()
@@ -84,10 +85,10 @@ class Bank:
         print('Proccessing...')
         time.sleep(2)
         try: 
-            query = '''
+            query = ('''
             INSERT INTO customer_table(fullname, email, account_no, account_balance, bvn, password) 
             VALUES(%s,%s,%s,%s,%s,%s)
-            '''
+            ''')
 
             values = (fullname, email, account_number, account_balance, bvn, password2)
             
