@@ -4,21 +4,24 @@ import re
 import random
 import mysql.connector as sql
 
-mycon = sql.connect(host = '127.0.0.1', user = 'root', password = '', database = 'solobank_db')
+mycon = sql.connect(host = '127.0.0.1', user = 'root', password = '') #database = 'solobank_db'
 
 mycursor = mycon.cursor()
 
 # mycursor.execute('CREATE Database SOLOBank_db')
 # mycursor.execute('SHOW Databases')
 # for db in mycursor:
-#     print(db)
+#     for dbs in db:
+#         print(dbs)
     
 # mycursor.execute('CREATE TABLE customer_table(id INT(4) AUTO_INCREMENT PRIMARY KEY, Fullname VARCHAR(40),Age INT(2), Email VARCHAR(35) UNIQUE, BVN INT(11) UNIQUE)')
 
 # mycursor.execute('ALTER TABLE customer_table ADD account_balance VARCHAR(35) UNIQUE')
 # mycursor.execute('ALTER TABLE customer_table CHANGE id customer_id INT AUTO_INCREMENT')
 # mycursor.execute('ALTER TABLE customer_table ADD password VARCHAR(10)')
-mycursor.execute('ALTER TABLE customer_table ADD account_number VARCHAR(10) UNIQUE')
+# mycursor.execute('ALTER TABLE customer_table ADD account_number VARCHAR(10) UNIQUE')
+
+mycursor.execute('ALTER DATABASE solobank_db soloboy_bd ')
 
 # # id INT(4) AUTO_INCREMENT PRIMARY KEY, fullname VARCHAR(40), Age VARCHAR(2),BVN VARCHAR(11) UNIQUE, Email VARCHAR(25) UNIQUE,  City VARCHAR(11),  state VARCHAR(11), account_num VARCHAR(10) UNIQUE,username VARCHAR(20) UNIQUE, password VARCHAR, accountbalance FLOAT, datejoined DATETIME DEFAULT CURRENT_TIMESTAMP
 
