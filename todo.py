@@ -1,7 +1,7 @@
-# toDo = []
-# import datetime as dt
+toDo = []
+import datetime as dt
 # import pygame
-# import time
+import time
 
 # song = (r"C:\python-level-two\music\plf.mp3")
 # pygame.init()
@@ -54,10 +54,13 @@ def land():
         land()
         
 def add():
-    # no_of_items = int(input('How many items are you doing today. [1,2,3...10]. Think about it clearly > '))
-    # for num in range(no_of_items):
-    #     tasks =  input(f'Using Action words, Enter Tasks. Task {num + 1}  > ').strip().title()
-    #     toDo.append(tasks)
+    # no_of_items = int(input('How many items do you want todo today. [1,2,3...10]> '))
+    # toDo =[input(f'Enter Tasks. Task {num +1}>> ') for num in range(no_of_items)]
+    # # for num in range(no_of_items):
+    # #     tasks =  input(f'Enter Tasks. Task {num +1}  > ').strip().title()
+    # #     toDo.append(tasks)
+    # land()
+    # ================
     while True:
         tasks = input(f"Input Task. (Press 'S' to stop adding task): ").strip().lower()          
         if tasks == 's':

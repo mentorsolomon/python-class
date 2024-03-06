@@ -11,6 +11,8 @@ mycon = sql.connect(host = '127.0.0.1' , user = 'root', password = '',  database
 
 mycursor = mycon.cursor()
 
+mycon.autocommit = True
+
 
 # mycursor.execute("""
                  
@@ -37,7 +39,7 @@ mycursor = mycon.cursor()
 
 
 # mycursor.execute('''ALTER TABLE Sport_bettor ADD Pin VARCHAR(4) ''')
-
+# mycursor.execute('ALTER TABLE Sport_bettor CHANGE bettor_id Bettor_ID INT(4) AUTO_INCREMENT')
 
 # ==============================
 
@@ -98,13 +100,13 @@ class SPORTY():
 
             mycursor.execute(query, values)
 
-            mycon.commit()
+            # mycon.commit()
         
         except Exception as e:
             print(f"Registration Unsuccessful {e} \n. Kindly provide right information.")
             self.register()
 
-        print('Account created successfully')
+        print('Profile created successfully')
         self.login()
 
 
@@ -134,7 +136,6 @@ class SPORTY():
             print('Password mismatch Try again')
             self.password_check()
         else:
-            print('Your password has been created successfully.')
             time.sleep(3)
             
 
@@ -230,14 +231,12 @@ class SPORTY():
         elif enter == '2':
             self.withdraw()
         elif enter == '3':
-            sleep(2)
             self.check_balance()
         elif enter == '4':
             self.stake()
         elif enter == '5':
             self.logout()
         elif enter == '6':
-            print('Your PIN will be used to confirm transactions do keep it safe and away from thirdparty.')
             self.pin_create()
         elif enter == '7':
             self.guidelines()
@@ -245,6 +244,36 @@ class SPORTY():
             print('Invalid selection')
             self.dashboard()
     
+    def stake(self):
+        print('''
+        
+                PLAY THE STAKE GAMES
+
+                The following are the available games
+                1. Secret Number
+                2. High and Low
+                3. WHO IS?... QUESTIONS AND ANSWER
+                4. LEFT OR RIGHT
+                5. GUESS THE NAME/ RANDOM
+
+                If you have what it takes, enter the dragon.. 
+        
+        ''')
+        user = input('Game to play: ').strip()
+        if user == '1':
+            pass
+        elif user == '2':
+            pass
+        elif user == '3':
+            pass
+        elif user == '4':
+            pass
+        elif user == '5':
+            pass
+        else:
+            print('Wrong input.')
+            self.stake()
+
 
 
 
@@ -286,7 +315,7 @@ class SPORTY():
         query2 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email =%s')
         value2 = (Balance, self.Email)
         mycursor.execute(query2,value2)
-        mycon.commit()
+        # mycon.commit()
         self.payagain()
 
 
@@ -335,45 +364,51 @@ class SPORTY():
 
         details = mycursor.fetchone()
         Pin = details[10]
-        Balance = details[6]       
+        Balance = details[6]      
 
-        for num in range(1,6):
-            pin = pw.pwinput('Enter your Secure transaction pin to confirm transaction: ').strip()
-            if pin != Pin:
-                if num == 1:
-                    if pin != Pin:
-                        print('You have 4 attempts left')
-                elif num == 2:
-                    if pin != Pin:
-                        print('You have 3 attempts left')
-                elif num == 3:
-                    if pin != Pin:
-                        print('You have 2 attempts left')
-                elif num == 4:
-                    if pin != Pin:
-                        print('You have 1 attempt left. ')
-                        time.sleep(2)
-                        print('Account will be automatically logged out on final attempt.')
-                        time.sleep(2)
-                elif num == 5:
+        prompt = input('''
+        Enter transaction Pin. 
+            Press "1" to create. 
+                Press "s" to skip if you have already created >>  '''.strip())
+        if prompt == '1':
+            self.pin_create()
+        elif prompt == 's':
+            for num in range(1,6):
+                pin = pw.pwinput('Enter your Secure transaction pin to confirm transaction: ').strip()
+                if pin != Pin:
+                    if num == 1:
                         if pin != Pin:
-                            print('Account Logged out.')
+                            print('You have 4 attempts left')
+                    elif num == 2:
+                        if pin != Pin:
+                            print('You have 3 attempts left')
+                    elif num == 3:
+                        if pin != Pin:
+                            print('You have 2 attempts left')
+                    elif num == 4:
+                        if pin != Pin:
+                            print('You have 1 attempt left. ')
                             time.sleep(2)
-                            exit()
-            else:
-                # if amount > Balance:
-                #     print(f'''{self.Balance} is not upto the amount you want to withdraw. 
-                #         Check Balance and try again.''')
-                # else:
-                Balance -= amount
-                print('Transaction Approved')
-                break
+                            print('Account will be automatically logged out on final attempt.')
+                            time.sleep(2)
+                    elif num == 5:
+                            if pin != Pin:
+                                print('Account Logged out.')
+                                time.sleep(2)
+                                exit()
+                else:
+                    Balance -= amount
+                    print('Transaction Approved')
+                    break
+        else:
+            sleep(2)
+            self.withdraw()
         
         query5 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
         value5 = (Balance, self.Email)
 
         mycursor.execute(query5,value5)
-        mycon.commit()
+        # mycon.commit()
 
         self.withdraw_again()
     
@@ -381,25 +416,32 @@ class SPORTY():
 
     def amount_checker(self, amounnt):
         if amounnt > self.Balance:
-            user = input('''Transaction error. Amount not upto what is in account: Press 1 to deposit, press 2 to check balance: ''').strip()
+            user = input('''
+            Transaction Failed. 
+            Amount in account Low.
+            Press 1 to deposit, press 2 to check balance >> ''').strip()
             if user == '1':
-                sleep(2)
+                sleep(1)
                 self.deposit()
             elif user == '2':
-                time.sleep(2)
+                time.sleep(1)
                 self.check_balance()
             else:
                 print('Invalid Command')
                 self.amount_checker()
-
+        elif amounnt <= 0:
+            print('You can not withdraw #0.. Try Again.. ')
+            self.withdraw()
         else:           
-                time.sleep(1)
+            time.sleep(1)
 
 
 
 
     def check_balance(self):
-        print(f'Your {self.name} balance is #{self.Balance}\n')
+        print('Fetching Balance...')
+        sleep(3)
+        print(f'\nYour {self.name} balance is #{self.Balance}\n')
         user = input('Press "1" to return to dashboard or press "s" to EXIT: ').lower().strip()
         if user == '1':
             self.dashboard()
@@ -428,21 +470,34 @@ class SPORTY():
 
 
     def pin_create(self):
-        user1 = pw.pwinput('ENTER 4 unique Transaction pin: ').strip()
-        user2 = pw.pwinput('Confirm pin: ').strip()
-        if user1 != user2:
-            print('Pin mismatch. Check and try again.')
-            self.pin_create()
+        query_pin = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+        value_pin = (self.Email,)
+
+        mycursor.execute(query_pin,value_pin)
+
+        details = mycursor.fetchone()
+        Pin = details[10]
+
+        if not Pin: 
+            print('Your PIN will be used to confirm transactions do keep it safe and away from thirdparty.')         
+            user1 = pw.pwinput('ENTER 4 unique Transaction pin: ').strip()
+            user2 = pw.pwinput('Confirm pin: ').strip()
+            if user1 != user2:
+                print('Pin mismatch. Check and try again.')
+                self.pin_create()
+            else:
+                query = 'UPDATE Sport_bettor SET Pin=%s WHERE Email=%s'
+                value = (user2, self.Email)
+                mycursor.execute(query,value)
+                # mycon.commit()   
+
+
+                print('Pin created successfully')
+                sleep(2)
+                self.transact_pin()
         else:
-            query = 'UPDATE Sport_bettor SET Pin=%s WHERE Email=%s'
-            value = (user2, self.Email)
-            mycursor.execute(query,value)
-            mycon.commit()   
-
-
-            print('Pin created successfully')
-            sleep(2)
-            self.transact_pin()
+            print('You already created a PIN')
+            self.dashboard()
 
 
 

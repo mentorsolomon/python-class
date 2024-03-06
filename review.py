@@ -9,6 +9,7 @@ import pandas as pd
 mycon = sql.connect(host='127.0.0.1', user='root', passwd='', database = 'MTP_db')
 
 mycursor = mycon.cursor()
+mycon.autocommit = True
 
 # mycursor.execute('CREATE DATABASE MTP_db ')
 # mycursor.execute('SHOW DATABASES')
@@ -17,7 +18,7 @@ mycursor = mycon.cursor()
 
 # mycursor.execute('CREATE TABLE customer_table (id INT(4) AUTO_INCREMENT PRIMARY KEY, fullname VARCHAR(50), email VARCHAR(50) UNIQUE, account_no VARCHAR(10) UNIQUE, account_balance FLOAT, date_joined DATETIME DEFAULT CURRENT_TIMESTAMP  )')
 
-# mycursor.execute('ALTER TABLE customer_table ADD password VARCHAR(20)')
+# # mycursor.execute('ALTER TABLE customer_table ADD password VARCHAR(20)')
 # mycursor.execute('ALTER TABLE customer_table CHANGE id customer_id INT AUTO_INCREMENT')
 
 # mycursor.execute('''CREATE TABLE transact_history

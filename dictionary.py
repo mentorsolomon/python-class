@@ -136,7 +136,7 @@ vehicle = {
 
 
 {
-    'Student1': {'Name':'Ade', 'MatNo': '11'}
+    'Student1': {'Name':'Ade', 'MatNo': '11'},
     'Student2': {'Name':'James', 'MatNo': '12'}
 }    
 
