@@ -1,3 +1,26 @@
+# ====================== BINARY OPERATIONS =============================
+# MARCH 6TH, 2024
+
+a = 10
+b = 14
+
+print(bin(a))
+print(bin())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ======================
 # variable declaration
 # i = me = myself = 'Damilare'
 # print(i)
