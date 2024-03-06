@@ -41,6 +41,7 @@ mycon.autocommit = True
 # mycursor.execute('''ALTER TABLE Sport_bettor ADD Pin VARCHAR(4) ''')
 # mycursor.execute('ALTER TABLE Sport_bettor CHANGE bettor_id Bettor_ID INT(4) AUTO_INCREMENT')
 
+
 # ==============================
 
 class SPORTY():
@@ -222,6 +223,7 @@ class SPORTY():
         3. Check Balance    4. Stake       
         5. Log out          6. Create Transaction Pin
         7. Read Guidelines to stake.
+        8. Correct details.
         
 
         ''')
@@ -240,6 +242,8 @@ class SPORTY():
             self.pin_create()
         elif enter == '7':
             self.guidelines()
+        elif enter == '8':
+            self.correct_details()
         else:
             print('Invalid selection')
             self.dashboard()
@@ -250,18 +254,16 @@ class SPORTY():
                 PLAY THE STAKE GAMES
 
                 The following are the available games
-                1. Secret Number
-                2. High and Low
+                1. Secret Number                2. High and Low
                 3. WHO IS?... QUESTIONS AND ANSWER
-                4. LEFT OR RIGHT
-                5. GUESS THE NAME/ RANDOM
+                4. LEFT OR RIGHTl                5. GUESS THE NAME/ RANDOM
 
                 If you have what it takes, enter the dragon.. 
         
         ''')
         user = input('Game to play: ').strip()
         if user == '1':
-            pass
+            self.game_1()
         elif user == '2':
             pass
         elif user == '3':
@@ -274,6 +276,60 @@ class SPORTY():
             print('Wrong input.')
             self.stake()
 
+
+
+
+    def game_1(self):
+        query_g = ('SELECT * FROM Sport_bettor where Email = %s')
+        value_g = (self.Email,)
+        mycursor.execute(query_g,value_g)
+
+        details_game = mycursor.fetchone()
+        Balance = details_game[6]
+
+        print(f'''
+            {self.Name} you are about to play {self.name} secret Number:
+            Below are the rules:
+            1. You have to stake an amount to play
+            2. This is a game of 5 odds
+            3. If you get the number you win, if you don't you lose
+            4. The number is random integer between 1 and 15
+
+            ...stake responsibly...
+        
+        ''')
+        amount = float(input('Amount to stake from balance>> '))
+        if (amount > Balance) and (amount<=0):
+            print('''
+            You cannot play this round. 
+            Kindly deposit and try again or stake accordingly.
+            Press "1" to deposit
+            Press "2" to stake amount higher than zero(0)
+            ''')
+            user = input('Enter choice: ').strip()
+            if user == '1':
+                self.deposit()
+            elif user == '2':
+                self.game_1()
+            
+        else:
+            try:            
+                x = random.randint(1, 15)
+                user = int(input('Guess the Secret Number: '))
+                print(f'\n{x} is the correct number')
+                if user == x:
+                    print('Guess right')
+                    Balance*=5
+                    print(f'You have won #{earn}')
+                else:
+                    print('\nWrong answer. Try again')
+                    Balance-=amount
+
+                query = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')  
+                value = (Balance, self.E)        
+            except ValueError:
+                print('Integer expected.')
+            
 
 
 
@@ -514,6 +570,26 @@ class SPORTY():
             print('Wrong entry.')  
             self.transact_pin() 
         
+
+    def correct_details(self):
+        user = input('''
+        What do you want to change
+        1. name
+        2. phone number
+        >> ''').strip()
+        if user == '1':
+            new_name = input('Input Name: ').strip().title()
+            try:
+                querys = 'UPDATE Sport_bettor SET Name = %s WHERE Email = %s'
+                values = (new_name, self.Email)
+
+                mycursor.execute(querys,values)
+                print('Changes created Successfully.')
+                sleep(2)
+                self.dashboard()
+            except Exception as e:
+                print(f'{e}')
+
 
     
 mysporty = SPORTY()

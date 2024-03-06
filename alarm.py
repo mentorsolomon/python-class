@@ -1,6 +1,7 @@
 # # import pygame
 # # import datetime as dt
 import time
+import random
 # import re
 
 # from inherintance import PARENT
@@ -165,25 +166,47 @@ pin = '2222'
 
 
 # ========== FOR loop approach =====================
-for num in range(1,4):
-    user = input('Enter your pin: ').strip()
-    if user == pin:
-        time.sleep(2)
-        print("welcome")
-        break
-    else:
-        num
-        if num == 1:
-            if user != pin:
-                print('You have 2 attempts left')
-        elif num == 2:
-            if user != pin:
-                print('You have 1 attempt left. ')
-                time.sleep(2)
-                print('Account will be automatically logged out on final attempt.')
-                time.sleep(3)
-        elif num == 3:
-            if user != pin:
-                print('Account Logged out.')
-                time.sleep(2)
-                exit()
+# for num in range(1,4):
+#     user = input('Enter your pin: ').strip()
+#     if user == pin:
+#         time.sleep(2)
+#         print("welcome")
+#         break
+#     else:
+#         if num == 1:
+#             if user != pin:
+#                 print('You have 2 attempts left')
+#         elif num == 2:
+#             if user != pin:
+#                 print('You have 1 attempt left. ')
+#                 time.sleep(2)
+#                 print('Account will be automatically logged out on final attempt.')
+#                 time.sleep(3)
+#         elif num == 3:
+#             if user != pin:
+#                 print('Account Logged out.')
+#                 time.sleep(2)
+#                 exit()
+
+# =====================
+def game():
+    try:
+        earn = 0
+        x = random.randint(1, 15)
+        user = int(input('Guess the number: '))
+        print(f'\n{x} is the correct number')
+        if user == x:
+            print('Guess right')
+            earn+=10
+            print(f'You have won #{earn}')
+            game()
+        else:
+            print('\nWrong answer. Try again')
+            game()
+    except ValueError:
+        print('Integer expected.')
+        game()
+
+
+
+game()
