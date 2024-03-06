@@ -1,10 +1,12 @@
+from time import sleep
+import colorama
 import time
 import re
 import random
 import mysql.connector as sql
 import pwinput as pw
 
-# ============================= SQL SERERERE
+# ============================= SQL PROMPT ===================================
 mycon = sql.connect(host = '127.0.0.1' , user = 'root', password = '',  database = 'Sporty_db')
 
 mycursor = mycon.cursor()
@@ -34,6 +36,9 @@ mycursor = mycon.cursor()
 #             """)
 
 
+# mycursor.execute('''ALTER TABLE Sport_bettor ADD Pin VARCHAR(4) ''')
+
+
 # ==============================
 
 class SPORTY():
@@ -55,7 +60,7 @@ class SPORTY():
               3. Read T&C's
               
               ''')
-        time.sleep(3)
+        sleep(1)
         user = input('Select your choice: ')
         if user.strip() == '1':   
             self.register()
@@ -111,8 +116,6 @@ class SPORTY():
         else:
             print('Age inline with the range of Legal Acceptance.')
             print('Proceed to Register')    
-            time.sleep(1)  
-            print('.') 
             time.sleep(3)  
             print('\n')   
 
@@ -135,11 +138,15 @@ class SPORTY():
             time.sleep(3)
             
 
+
+
     def terms(self):
         print('''
-            I, Adedokun Solomon, a Second Class Honors graduate of computer science from Ladoke Akintola University of Technology, want to express my profound desire to work with the ministry towards the betterment of the state and help her scale heights digitally. I have ideas I'm open or will love to share with the ministry top personnels incase they are willing to listen to me at any point in time.
-            I belief Osun state under the leadership of this government has all it takes to be a pioneer state in the country in terms of innovation and TECH advancements which would not only bring peace but usher in a lot of jobs and a wide array of technological improvements in a lot of sector.
-                    Thanks, I hope to hear from you soon. Osun oni baje o
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum beatae totam distinctio omnis illo culpa cumque veniam tempore quibusdam ipsa! Voluptatem ipsa reprehenderit, a excepturi dolore quibusdam quia minus dolorum.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic earum consectetur delectus numquam nihil expedita eveniet enim saepe perferendis provident commodi molestias deserunt nostrum, soluta vel maxime amet neque suscipit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloremque alias culpa quae commodi possimus! Dignissimos non molestiae delectus officia mollitia assumenda veniam repudiandae sint rem, magnam eos laborum illo?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit odio maxime, dicta similique ratione id, in architecto provident esse aspernatur delectus numquam dignissimos debitis. Similique dolorem expedita minus qui repudiandae!Loremlorem
+
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias, exercitationem eaque non molestias eius nisi libero sapiente labore nobis laborum sint, facilis nam sed, doloribus magnam a voluptatem magni?
+
         ''')
         time.sleep(2)
         user = input('Press "1" to go home or "s" to exit. ').strip()
@@ -150,14 +157,15 @@ class SPORTY():
         else:
             self.terms()
     
-    
 
 
-    
-                        
+
     def login(self):
 
-        print('\nLogin your Sporty+ Account\n')
+        print('''
+
+                Login your Sporty+ Account
+        ''')
 
         login_mail = input('Email:  ').strip()
         login_pwd = pw.pwinput('Password: ').strip()
@@ -165,7 +173,7 @@ class SPORTY():
         time.sleep(2)
 
         try:
-            query = 'SELECT * FROM Sport_bettor WHERE Email =%s AND Password =%s'
+            query = 'SELECT * FROM Sport_bettor WHERE Email = %s AND Password = %s'
 
             values = (login_mail,login_pwd)
 
@@ -188,6 +196,8 @@ class SPORTY():
             self.login()
     
 
+
+
     def dashboard(self):
         query = 'SELECT * FROM Sport_bettor WHERE Email =%s'
         value = (self.Email,)
@@ -202,13 +212,16 @@ class SPORTY():
         self.Balance = details[6]
 
         print(f'''
-        Welcome {self.Name}. You are on course to be a winner.
+        Welcome {self.Name}. 
+        Your User ID is {self.userId} and balance is #{self.Balance}.
 
-        Your User ID is {self.userId} and your current balance is #{self.Balance}.
+        Remember stake responsibly...
 
         1. Deposit          2. Withdraw
-        3. Stake            4. Read Guidelines to stake.
-        5. Log out
+        3. Check Balance    4. Stake       
+        5. Log out          6. Create Transaction Pin
+        7. Read Guidelines to stake.
+        
 
         ''')
         enter = input('Enter Your choice: ').strip()
@@ -217,45 +230,236 @@ class SPORTY():
         elif enter == '2':
             self.withdraw()
         elif enter == '3':
-            self.stake()
+            sleep(2)
+            self.check_balance()
         elif enter == '4':
-            self.guidelines()
+            self.stake()
         elif enter == '5':
-            user = input('ARE YOU SURE YOU WANT TO LOGOUT? : ').strip().lower()
-            if user == 'yes':
-                print('Do come back')
-                time.sleep(2)
-                self.home()
-            elif user == 'no':
-                print('🎈🎈')
-                self.dashboard()
-            
-            else:
-                print('Command error')
-                self.login()
-                
-
-
-        
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mysporty = SPORTY()
-mysporty.home()
+            self.logout()
+        elif enter == '6':
+            print('Your PIN will be used to confirm transactions do keep it safe and away from thirdparty.')
+            self.pin_create()
+        elif enter == '7':
+            self.guidelines()
+        else:
+            print('Invalid selection')
+            self.dashboard()
     
 
+
+
+    def guidelines(self):
+        print('''
+           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum beatae totam distinctio omnis illo culpa cumque veniam tempore quibusdam ipsa! Voluptatem ipsa reprehenderit, a excepturi dolore quibusdam quia minus dolorum.
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic earum consectetur delectus numquam nihil expedita eveniet enim saepe perferendis provident commodi molestias deserunt nostrum, soluta vel maxime amet neque suscipit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam doloremque alias culpa quae commodi possimus! Dignissimos non molestiae delectus officia mollitia assumenda veniam repudiandae sint rem, magnam eos laborum illo?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit odio maxime, dicta similique ratione id, in architecto provident esse aspernatur delectus numquam dignissimos debitis. Similique dolorem expedita minus qui repudiandae!Loremlorem
+
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam alias, exercitationem eaque non molestias eius nisi libero sapiente labore nobis laborum sint, facilis nam sed, doloribus magnam a voluptatem magni?
+
+        ''')
+        time.sleep(2)
+        user = input('Press "1" to go to dashboard or "s" to exit. ').strip()
+        if user == '1':
+            self.dashboard()
+        elif user == 's':
+            exit()
+        else:
+            self.guidelines()
+
+
+
+
+    def deposit(self):
+        print(f'How much do you want to deposit into your {self.name} account.')
+        amount =float(input('Amount: '))
+
+        query1 = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+        value1 = (self.Email,)
+        mycursor.execute(query1, value1)
+        details = mycursor.fetchone()
+
+        Balance = details[6]
+
+        Balance += amount
+
+        # ================ SECOND QUERY TO DATABASE TO UPDATE THE ACCOUNT BALANCE WITH DEPOSIT =================
+
+        query2 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email =%s')
+        value2 = (Balance, self.Email)
+        mycursor.execute(query2,value2)
+        mycon.commit()
+        self.payagain()
+
+
+
+
+    def payagain(self):
+        print('Transaction Successful.')
+        sleep(2)
+        user = input('Do you want to deposit another amount now?: ').strip().lower()
+        if user == 'yes':
+            sleep(1)
+            self.deposit()
+        elif user == 'no':
+            sleep(2)
+            self.dashboard()
+        else:
+            print('Invalid Command.')
+    
+
+
+
+    def withdraw_again(self):
+        print('Withdrawal successful')
+        sleep(2)
+        user = input('Do you want to withdraw another amount now?: ').strip().lower()
+        if user == 'yes':
+            sleep(1)
+            self.withdraw()
+        elif user == 'no':
+            sleep(2)
+            self.dashboard()
+        else:
+            print('Invalid Command.')
+
+
+
+
+    def withdraw(self):
+        amount = float(input('Amount to Withdraw: '))
+        self.amount_checker(amount)
+        account_no_receiver = input('Kindly provide the account to send the money: ')
+        query = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+        value = (self.Email,)
+        
+        mycursor.execute(query,value)
+
+        details = mycursor.fetchone()
+        Pin = details[10]
+        Balance = details[6]       
+
+        for num in range(1,6):
+            pin = pw.pwinput('Enter your Secure transaction pin to confirm transaction: ').strip()
+            if pin != Pin:
+                if num == 1:
+                    if pin != Pin:
+                        print('You have 4 attempts left')
+                elif num == 2:
+                    if pin != Pin:
+                        print('You have 3 attempts left')
+                elif num == 3:
+                    if pin != Pin:
+                        print('You have 2 attempts left')
+                elif num == 4:
+                    if pin != Pin:
+                        print('You have 1 attempt left. ')
+                        time.sleep(2)
+                        print('Account will be automatically logged out on final attempt.')
+                        time.sleep(2)
+                elif num == 5:
+                        if pin != Pin:
+                            print('Account Logged out.')
+                            time.sleep(2)
+                            exit()
+            else:
+                # if amount > Balance:
+                #     print(f'''{self.Balance} is not upto the amount you want to withdraw. 
+                #         Check Balance and try again.''')
+                # else:
+                Balance -= amount
+                print('Transaction Approved')
+                break
+        
+        query5 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
+        value5 = (Balance, self.Email)
+
+        mycursor.execute(query5,value5)
+        mycon.commit()
+
+        self.withdraw_again()
+    
+
+
+    def amount_checker(self, amounnt):
+        if amounnt > self.Balance:
+            user = input('''Transaction error. Amount not upto what is in account: Press 1 to deposit, press 2 to check balance: ''').strip()
+            if user == '1':
+                sleep(2)
+                self.deposit()
+            elif user == '2':
+                time.sleep(2)
+                self.check_balance()
+            else:
+                print('Invalid Command')
+                self.amount_checker()
+
+        else:           
+                time.sleep(1)
+
+
+
+
+    def check_balance(self):
+        print(f'Your {self.name} balance is #{self.Balance}\n')
+        user = input('Press "1" to return to dashboard or press "s" to EXIT: ').lower().strip()
+        if user == '1':
+            self.dashboard()
+        elif user == 's':
+            sleep(3)
+            exit()
+        else:
+            self.check_balance()
+
+
+
+    def logout(self):
+        user = input('ARE YOU SURE YOU WANT TO LOGOUT? : ').strip().lower()
+        if user == 'yes':
+            print('Do come back')
+            time.sleep(2)
+            self.home()
+        elif user == 'no':
+            print('🎈🎈')
+            self.dashboard()
+        
+        else:
+            print('Command error')
+            self.login()
+
+
+
+    def pin_create(self):
+        user1 = pw.pwinput('ENTER 4 unique Transaction pin: ').strip()
+        user2 = pw.pwinput('Confirm pin: ').strip()
+        if user1 != user2:
+            print('Pin mismatch. Check and try again.')
+            self.pin_create()
+        else:
+            query = 'UPDATE Sport_bettor SET Pin=%s WHERE Email=%s'
+            value = (user2, self.Email)
+            mycursor.execute(query,value)
+            mycon.commit()   
+
+
+            print('Pin created successfully')
+            sleep(2)
+            self.transact_pin()
+
+
+
+    
+    def transact_pin(self):
+        user = input('Press "1" to return to dashboard and press "s" to logout: ').strip().lower()
+        if user == '1':
+            sleep(3)
+            self.dashboard()
+        elif user == 's':
+            sleep(2)
+            exit()
+        else:
+            print('Wrong entry.')  
+            self.transact_pin() 
+        
+
+    
+mysporty = SPORTY()
+mysporty.home()

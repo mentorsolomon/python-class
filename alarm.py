@@ -1,11 +1,11 @@
 # # import pygame
 # # import datetime as dt
-# import time
+import time
 # import re
 
 # from inherintance import PARENT
 
-import inherintance
+# import inherintance
 
 
 
@@ -114,3 +114,76 @@ import inherintance
 # wake =  input('phone number: ').strip('0'.startswith('0'))
 # print(wake)
 
+# =================================
+
+        
+#    =================================================
+
+# x = 10
+# while x > 0:
+#     print(f'Leave the class {x}')
+#     x -= 1
+# else:
+#     print('Condition successful')
+# =========================================================
+# x = 1
+# while x <= 10:
+#     print(f'You are welcome to class {x}')
+#     x += 1
+# # print(x)
+
+      
+# while pin != user:
+#     print('Wrong, try again')
+#     x = x-1
+# else:
+#     print('Welcome')
+#     break
+
+# while loop approach ================================
+
+pin = '2222'
+# user = input('Enter Pin: ').strip()
+# x = 4
+
+# while x > 0:
+#     if user == pin:
+#         print('Welcome')
+#         break
+#     else:
+#         print(f'You have {x} attempt(s) left.\n')
+#         user = input('Enter Pin: ').strip()
+#         x -= 1
+#         if x == 2:
+#             if user !=pin:
+#                 print('Account will be Logged out automatically on the final attempt if wrong.')
+#         if x == 1:
+#             if user != pin:
+#                 time.sleep(2)
+#                 print('Account Logged Out.')
+#                 exit()   
+
+
+# ========== FOR loop approach =====================
+for num in range(1,4):
+    user = input('Enter your pin: ').strip()
+    if user == pin:
+        time.sleep(2)
+        print("welcome")
+        break
+    else:
+        num
+        if num == 1:
+            if user != pin:
+                print('You have 2 attempts left')
+        elif num == 2:
+            if user != pin:
+                print('You have 1 attempt left. ')
+                time.sleep(2)
+                print('Account will be automatically logged out on final attempt.')
+                time.sleep(3)
+        elif num == 3:
+            if user != pin:
+                print('Account Logged out.')
+                time.sleep(2)
+                exit()

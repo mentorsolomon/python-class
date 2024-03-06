@@ -41,7 +41,8 @@ import random
 
 name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
 
-x = random.
+x = random.choice(name_of_students)
+print(x)
 
 
 # for student in name_of_students:

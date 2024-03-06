@@ -190,7 +190,7 @@ class Bank:
         print('Proccessing...')
         time.sleep(2)
 
-        user = input('Transaction successfull. \nPress 1 to perform another transaction or 2 to exit.').strip()
+        user = input('Transaction successful. \nPress 1 to perform another transaction or 2 to exit.').strip()
         if user == '1':
             self.dashboard()
         elif user == '2':
