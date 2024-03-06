@@ -33,8 +33,8 @@
 
 # =========================== FEBRUARY 2023, 13TH ====================
 # ============================  OS  ===================
-# import os 
-# import time
+import os 
+import time
 
 # os.exists
 # os.remove
@@ -75,26 +75,26 @@
 # files = open("C:\\python-level-two\\ROOTdir\\text.txt", mode = "x")
 # new = open("C:\\python-level-two\\ROOTdir\dir1\\texts.py", mode = "x")
 
-# try:
-#     os.rmdir("C:\\python-level-two\\ROOTdir") 
-# except OSError:
-#     print('The folder contains information.')
-#     # print(os.walk("C:\\python-level-two\\ROOTdir"))
-#     for root, folder, files in os.walk("C:\\python-level-two\\ROOTdir"):
-#         print(folder, files)
+try:
+    os.rmdir("C:\\python-level-two\\ROOTdir") 
+except OSError:
+    print('The folder contains information.')
+    # print(os.walk("C:\\python-level-two\\ROOTdir"))
+    for root, folder, files in os.walk("C:\\python-level-two\\ROOTdir"):
+        print(folder, files)
         
-#         for inside in folder:
-#             for outside in files:
-#                 time.sleep(2)
-#                 print(outside)
-#                 os.rmdir("C:\\python-level-two\\ROOTdir\\" +inside)
-#             print('Deleting Directory')
-#             time.sleep(1)
-#             os.rmdir("C:\\python-level-two\\\\ROOTdir\\" +outside)
+        for inside in folder:
+            for outside in files:
+                time.sleep(2)
+                print(outside)
+                os.rmdir("C:\\python-level-two\\ROOTdir\\" +inside)
+            print('Deleting Directory')
+            time.sleep(1)
+            os.rmdir("C:\\python-level-two\\\\ROOTdir\\" +outside)
         
-#     print('Deleting Directory')
-#     time.sleep(1)
-#     os.rmdir("C:\\python-level-two\\ROOTdir")
+    print('Deleting Directory')
+    time.sleep(1)
+    os.rmdir("C:\\python-level-two\\ROOTdir")
             
         
 
@@ -159,55 +159,55 @@
 
 
 # ======================  STUDENTS AND GRADES  =====================
-import time
-names = []
-scores = []
-grades = []
+# import time
+# names = []
+# scores = []
+# grades = []
 
-try:
-    with open(r"C:\python-level-two\words\students-grade.csv", mode = "rt") as my_file:
-        # print(my_file.readlines())
-        for entries in my_file.readlines():
-            # print(f"{entries}\n")
-            entry = entries.split(",")
-            name = entry[0].strip()
-            score = entry[1].strip()
-            grade = entry[2]. strip("\n")
+# try:
+#     with open(r"C:\python-level-two\words\students-grade.csv", mode = "rt") as my_file:
+#         # print(my_file.readlines())
+#         for entries in my_file.readlines():
+#             # print(f"{entries}\n")
+#             entry = entries.split(",")
+#             name = entry[0].strip()
+#             score = entry[1].strip()
+#             grade = entry[2]. strip("\n")
             
-            names.append(name)
-            scores.append(score)
-            grades.append(grade)  
+#             names.append(name)
+#             scores.append(score)
+#             grades.append(grade)  
                                  
-except FileNotFoundError:
-    print('Check the locator and try again.')
+# except FileNotFoundError:
+#     print('Check the locator and try again.')
     
-names.pop(0)
-print('Student Names'.center(50, "_"))
-for i in names:
-    # print(i)
-    pass
-print("\n")
-
-
-scores.pop(0)
-# print('Scores'.center(40, '_'))
-# for j in scores:
-#     print(j)
+# names.pop(0)
+# print('Student Names'.center(50, "_"))
+# for i in names:
+#     # print(i)
+#     pass
 # print("\n")
+
+
+# scores.pop(0)
+# # print('Scores'.center(40, '_'))
+# # for j in scores:
+# #     print(j)
+# # print("\n")
      
 
-grades.pop(0)
-print('Grades'.center(40, '_'))
-for k in grades:
-    # print(k)
-    pass
+# grades.pop(0)
+# print('Grades'.center(40, '_'))
+# for k in grades:
+#     # print(k)
+#     pass
     
-# print("\n")
+# # print("\n")
 
-for x,y,z in zip(names, scores, grades):
-    pass 
-    # print(y)
-print('\n')
+# for x,y,z in zip(names, scores, grades):
+#     pass 
+#     # print(y)
+# print('\n')
 # ===========================
 
 # index = 0
@@ -218,15 +218,15 @@ print('\n')
 
 # ================================ names of students ==============================
 
-max_score = max(scores)
-index_max = scores.index(max_score)
-min_score = min(scores)
-index_min = scores.index(min_score)
+# max_score = max(scores)
+# index_max = scores.index(max_score)
+# min_score = min(scores)
+# index_min = scores.index(min_score)
 
-print(f'{names[index_min]} score the lowest score of {min_score}')
-print('\n')
-print(f'{names[index_max]} score the highest score of {max_score}') 
-print('\n')
+# print(f'{names[index_min]} score the lowest score of {min_score}')
+# print('\n')
+# print(f'{names[index_max]} score the highest score of {max_score}') 
+# print('\n')
 
 
 
