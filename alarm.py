@@ -2,7 +2,7 @@
 # # import datetime as dt
 import time
 import random
-# import re
+import re
 
 # from inherintance import PARENT
 
@@ -143,7 +143,7 @@ import random
 
 # while loop approach ================================
 
-pin = '2222'
+# pin = '2222'
 # user = input('Enter Pin: ').strip()
 # x = 4
 
@@ -190,23 +190,42 @@ pin = '2222'
 
 # =====================
 def game():
-    try:
-        earn = 0
-        x = random.randint(1, 15)
-        user = int(input('Guess the number: '))
-        print(f'\n{x} is the correct number')
-        if user == x:
-            print('Guess right')
-            earn+=10
-            print(f'You have won #{earn}')
-            game()
-        else:
-            print('\nWrong answer. Try again')
-            game()
-    except ValueError:
-        print('Integer expected.')
-        game()
+    # try:
+    #     earn = 0
+    #     x = random.randint(1, 15)
+    #     user = int(input('Guess the number: '))
+    #     print(f'\n{x} is the correct number')
+    #     if user == x:
+    #         print('Guess right')
+    #         earn+=10
+    #         print(f'You have won #{earn}')
+    #         game()
+    #     else:
+    #         print('\nWrong answer. Try again')
+    #         game()
+    # except ValueError:
+    #     print('Integer expected.')
+    #     game()
 
+
+
+    # pattern = (r'\d+\w+@\w+\.\w+') or (r'\w+\d+@\w+\.\w+') 
+    # ee_mail = input('Email >> ').strip()
+    # match = re.search(pattern,ee_mail)
+    # if not match:
+    #     print('Email Mismatch.. TRY "ask11@gmail.com"')
+    #     # self.mail_checker()
+    # else:
+    #     print('Pattern Found')
+
+    balance = 20
+
+    amount = 5
+
+    balance+=amount*5
+    print((balance))
+
+            
 
 
 game()

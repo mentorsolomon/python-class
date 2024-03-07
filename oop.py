@@ -24,23 +24,23 @@
 # Solomon.walk()
 
 # ====================================================================
-class USSD:
-    def __init__(self):
+# class USSD:
+#     def __init__(self):
         
-        # self.home()
+#         # self.home()
 
-    def home(self):
-        self.ussd = input('Enter USSD here > ').strip()
-        while self.ussd != "*312#":
-            print('Invalid Code!')
-            self.home()
-        self.landingPage()
+#     def home(self):
+#         self.ussd = input('Enter USSD here > ').strip()
+#         while self.ussd != "*312#":
+#             print('Invalid Code!')
+#             self.home()
+#         self.landingPage()
         
-    def landingPage(self):
-        print('''
-              1. Buy Data
-              2. Check Balance
-              ''')
+#     def landingPage(self):
+#         print('''
+#               1. Buy Data
+#               2. Check Balance
+#               ''')
 
-ussd = USSD()
-self.home()
+# ussd = USSD()
+# self.home()

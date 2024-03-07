@@ -113,20 +113,20 @@ class SPORTY():
 
     def age_check(self, Agee):        
         if Agee < 18:
-            print('You are not of legal age of acceptance')
+            print('You are not of legal age of Acceptance'.title().splitlines())
             time.sleep(2)
             exit()
         else:
-            print('Age inline with the range of Legal Acceptance.')
+            print('Age inline with the range of Legal Acceptance.'.title())
             print('Proceed to Register')    
             time.sleep(3)  
             print('\n')   
 
             
     def mail_checker(self, ee_mail):   
-        pattern = r'\w+\d+@\w+\.\w+'
-        match = re.match(pattern,ee_mail)
-        if not match:
+        pattern = (r'\d+\w+@\w+\.\w+') or (r'\w+\d+@\w+\.\w+')
+        find = re.findall(pattern,ee_mail)
+        if not find:
             print('Email Mismatch.. TRY "ask11@gmail.com"')
             self.mail_checker()
         else:
@@ -289,17 +289,18 @@ class SPORTY():
 
         print(f'''
             {self.Name} you are about to play {self.name} secret Number:
+
             Below are the rules:
             1. You have to stake an amount to play
             2. This is a game of 5 odds
-            3. If you get the number you win, if you don't you lose
-            4. The number is random integer between 1 and 15
+            3. The number is random integer between 1 and 15
 
             ...stake responsibly...
         
         ''')
+      
         amount = float(input('Amount to stake from balance>> '))
-        if (amount > Balance) and (amount<=0):
+        if (amount > Balance) or (amount<=0):
             print('''
             You cannot play this round. 
             Kindly deposit and try again or stake accordingly.
@@ -311,22 +312,56 @@ class SPORTY():
                 self.deposit()
             elif user == '2':
                 self.game_1()
-            
         else:
-            try:            
+            try:           
                 x = random.randint(1, 15)
                 user = int(input('Guess the Secret Number: '))
                 print(f'\n{x} is the correct number')
                 if user == x:
-                    print('Guess right')
-                    Balance*=5
-                    print(f'You have won #{earn}')
+                    print('\nCongratulations, you are amazing.'.title())
+                    Balance+=amount*5
+                    print(f'Y #{amount*5} has been added to your account')
                 else:
                     print('\nWrong answer. Try again')
                     Balance-=amount
 
                 query = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')  
-                value = (Balance, self.E)        
+                value = (Balance, self.Email)     
+                mycursor.execute(query, value)
+
+
+                if Balance == (Balance/4):
+                    print('You have a quarter of your starting funds left.')
+                    option = input('''
+                    Do you want to continue?
+                    Yes, No
+                    
+                    ''').strip().lower()
+                    if option == 'yes':
+                        self.game_1()
+                    elif option == 'no':
+                        self.dashboard()
+                    else:
+                        print('Invalid Option')
+                        self.terms()
+                elif Balance == 0:
+                    print('''
+                    You exhausted your money.
+                    Press "1" to deposit
+                    Press "2" to exit
+                    ''')
+                    user = input('Option: ').strip()
+                    if user == '1':
+                        self.deposit()
+                    elif user == '2':
+                        print('Do come back')
+                        sleep(4)
+                        exit()
+                    else:
+                        print('Enter a valid command')
+                        self.terms()
+                else:
+                    self.game_1()
             except ValueError:
                 print('Integer expected.')
             
@@ -372,15 +407,15 @@ class SPORTY():
         value2 = (Balance, self.Email)
         mycursor.execute(query2,value2)
         # mycon.commit()
-        self.payagain()
-
-
-
-
-    def payagain(self):
         print('Transaction Successful.')
+        self.deposit_again()
+
+
+
+
+    def deposit_again(self):
         sleep(2)
-        user = input('Do you want to deposit another amount now?: ').strip().lower()
+        user = input('Deposit More?.Yes or No: ').strip().lower()
         if user == 'yes':
             sleep(1)
             self.deposit()
