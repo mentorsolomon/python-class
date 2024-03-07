@@ -217,13 +217,22 @@ def game():
     #     # self.mail_checker()
     # else:
     #     print('Pattern Found')
+# ==============================================================
+    balance = []
 
-    balance = 20
+    # amount = 5
 
-    amount = 5
+    # balance+=amount*5
+    # print('#',{amount*5},"added to Balance")
+    # print((balance))
 
-    balance+=amount*5
-    print((balance))
+    game_sets = []
+    for nums in range(1,41):
+        game_sets.append(nums)
+        print(game_sets)
+    print(game_sets)
+    
+
 
             
 

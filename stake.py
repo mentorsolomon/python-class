@@ -183,7 +183,7 @@ class SPORTY():
 
             details = mycursor.fetchone()
             self.Email = details[4]
-            # print(details)
+            # print(details) ======= PRINTS ALL IN A ROW FORMAT AND ENSURES ALL THE ENTRIES ARE IN A TABLE FORMAT
 
             if details:
                 print('Login Successful.')
@@ -265,7 +265,7 @@ class SPORTY():
         if user == '1':
             self.game_1()
         elif user == '2':
-            pass
+            self.game_2()
         elif user == '3':
             pass
         elif user == '4':
@@ -298,73 +298,159 @@ class SPORTY():
             ...stake responsibly...
         
         ''')
-      
-        amount = float(input('Amount to stake from balance>> '))
-        if (amount > Balance) or (amount<=0):
-            print('''
-            You cannot play this round. 
-            Kindly deposit and try again or stake accordingly.
-            Press "1" to deposit
-            Press "2" to stake amount higher than zero(0)
-            ''')
-            user = input('Enter choice: ').strip()
-            if user == '1':
-                self.deposit()
-            elif user == '2':
-                self.game_1()
-        else:
-            try:           
-                x = random.randint(1, 15)
-                user = int(input('Guess the Secret Number: '))
-                print(f'\n{x} is the correct number')
-                if user == x:
-                    print('\nCongratulations, you are amazing.'.title())
-                    Balance+=amount*5
-                    print(f'Y #{amount*5} has been added to your account')
-                else:
-                    print('\nWrong answer. Try again')
-                    Balance-=amount
-
-                query = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')  
-                value = (Balance, self.Email)     
-                mycursor.execute(query, value)
-
-
-                if Balance == (Balance/4):
-                    print('You have a quarter of your starting funds left.')
-                    option = input('''
-                    Do you want to continue?
-                    Yes, No
-                    
-                    ''').strip().lower()
-                    if option == 'yes':
-                        self.game_1()
-                    elif option == 'no':
-                        self.dashboard()
-                    else:
-                        print('Invalid Option')
-                        self.terms()
-                elif Balance == 0:
-                    print('''
-                    You exhausted your money.
-                    Press "1" to deposit
-                    Press "2" to exit
-                    ''')
-                    user = input('Option: ').strip()
-                    if user == '1':
-                        self.deposit()
-                    elif user == '2':
-                        print('Do come back')
-                        sleep(4)
-                        exit()
-                    else:
-                        print('Enter a valid command')
-                        self.terms()
-                else:
+        try:
+            amount = float(input('''
+            Amount to stake from balance 
+                        OR 
+            Press "0" to exit>> '''))
+            if (amount > Balance) or (amount<0):
+                print('''
+                You cannot play this round. 
+                Kindly deposit and try again or stake accordingly.
+                Press "1" to deposit
+                Press "2" to stake amount higher than zero(0)
+                ''')
+                user = input('Enter choice: ').strip()
+                if user == '1':
+                    self.deposit()
+                elif user == '2':
                     self.game_1()
-            except ValueError:
-                print('Integer expected.')
+            elif (amount==0):
+                self.dashboard()
+            else:
+                try:           
+                    x = random.randint(1, 15)
+                    user = int(input('Guess the Secret Number: '))
+                    print(f'\n{x} is the correct number')
+                    if user == x:
+                        print('\nCongratulations, you are amazing.'.title())
+                        Balance+=amount*5
+                        print('#',{amount*5},"added to Balance")
+                    else:
+                        print('\nWrong answer. Try again')
+                        Balance-=amount
+
+                    query = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')  
+                    value = (Balance, self.Email)     
+                    mycursor.execute(query, value)
+
+
+                    if Balance <= (Balance/4):
+                        print('You have a quarter of your starting funds left.')
+                        option = input('''
+                        Do you want to continue?
+                        Yes, No
+                        
+                        ''').strip().lower()
+                        if option == 'yes':
+                            self.game_1()
+                        elif option == 'no':
+                            self.dashboard()
+                        else:
+                            print('Invalid Option')
+                            self.terms()
+                    elif Balance == 0:
+                        print('''
+                        You exhausted your money.
+                        Press "1" to deposit
+                        Press "2" to exit
+                        ''')
+                        user = input('Option: ').strip()
+                        if user == '1':
+                            self.deposit()
+                        elif user == '2':
+                            print('Do come back')
+                            sleep(4)
+                            exit()
+                        else:
+                            print('Enter a valid command')
+                            self.terms()
+                    else:
+                        self.game_1()
+                except ValueError:
+                    print('Integer expected.')
+        except Exception as e:
+            print(f'Wrong Entry, {e}. Try a number (1,2,3... 50) ')
+            self.game_1()
+                
+    def game_2(self):
+        query_high = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+        value_high = (self.Email,)
+
+        mycursor.execute(query_high, value_high)
+
+        # mycon.commit()
+
+        details_game_2 = mycursor.fetchone()
+        Balance = details_game_2[6]
+
+
+        print(f'''
+              {self.Name}, {self.name} presents HIGH and LOW
+                        Rules
+                1. You will be given a number, and you will be provide with another number.
+                2. You have to guess if the number to be provided on a scale of inequality is:
+                    a. Higher than the number.
+                    b. Lower than the number.
+                    c. Equal to the number.
+
+                Are you ready to play?
+        
+        ''')
+        user = input('Yes or No >>'  ).strip().lower()
+        if user == 'no':
+            sleep(2)
+            self.stake()
+        elif user == 'yes':
+            self.game_2_play()
+        else:
+            print('Invalid Command')
+            self.game_2()
+
+        
+
+    def game_2_play(self):
+        try:
+            numbers_list = []
+            for numbers in range(1,101):
+                numbers_list.append(numbers)
+            print(game_sets)
             
+            amount = float(input('''
+            Amount to stake from balance 
+                        OR 
+            Press "0" to exit>> '''))
+            if (amount > Balance) or (amount<0):
+                print('''
+                You cannot play this round. 
+                Kindly deposit and try again or stake accordingly.
+                Press "1" to deposit
+                Press "2" to stake amount higher than zero(0)
+                ''')
+                user = input('Enter choice: ').strip()
+                if user == '1':
+                    self.deposit()
+                elif user == '2':
+                    self.game_1()
+            elif (amount==0):
+                self.dashboard()
+            else:
+                try:         
+                    number = random.choice(numbers_list)
+                    print("\n")
+                    print(number,"is your the number\n")
+                    guess = input('')
+                    number_2 = random.choice(numbers_list)
+                except Exception as e:
+                    print(f"{e}. Retry")
+                    self.game_2_play()
+        except Exception as e:
+                print(f"wrong input {e}. Use numbers 1,2,3... 90")
+                self.game_2_play()
+
+
+
+
 
 
 
