@@ -218,7 +218,7 @@ def game():
     # else:
     #     print('Pattern Found')
 # ==============================================================
-    balance = []
+    # balance = []
 
     # amount = 5
 
@@ -226,12 +226,45 @@ def game():
     # print('#',{amount*5},"added to Balance")
     # print((balance))
 
-    game_sets = []
-    for nums in range(1,41):
-        game_sets.append(nums)
-        print(game_sets)
-    print(game_sets)
-    
+    # game_sets = []
+    # for nums in range(1,41):
+    #     game_sets.append(nums)
+    #     print(game_sets)
+    # print('\n')
+    # print(game_sets)
+    # print('\n')
+
+    # numbers_list = []
+    # for numbers in range(1,101):
+    #     numbers_list.append(numbers)
+    # print(numbers_list)    
+
+
+    # =================================
+    score = 0
+    exam = {
+        "1. What is the capital of Ghana a.) Accra b.) Utanbatoor": "a",
+        "2. What is the capital of Nigeria a.) Abuja b.) Rivers": "a",
+        "3. What is the capital of Tunisia a.) Jebba b.) Leona": "b",
+        "4. What is the capital of Togo a.) Lome b.) Gertha": "a",
+        "5. What is the capital of Germany a.) Munchen b.) Berlin": "b",
+        "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm": "b",
+        "7. What is the capital of Cape Verde a.) Praia b.) Ladta": "a",
+        "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg": "a",
+        "9. What is the capital of Oyo a.) Ibadan b.) Oyo": "a",
+        "10. What is the capital of Lagos a.) Ikeja b.) Alimosho": "a",
+    }
+
+    for question, answers in exam.items():
+        print(question)
+        user = input('answer: ').strip().lower()
+        if user != answers:
+            print('wrong')
+        else:
+            print('correct')
+            score += 10
+    print(score)
+        
 
 
             

@@ -256,7 +256,7 @@ class SPORTY():
                 The following are the available games
                 1. Secret Number                2. High and Low
                 3. WHO IS?... QUESTIONS AND ANSWER
-                4. LEFT OR RIGHTl                5. GUESS THE NAME/ RANDOM
+                4. LEFT OR RIGHT                5. GUESS THE NAME/ RANDOM
 
                 If you have what it takes, enter the dragon.. 
         
@@ -267,7 +267,7 @@ class SPORTY():
         elif user == '2':
             self.game_2()
         elif user == '3':
-            pass
+            self.game_3()
         elif user == '4':
             pass
         elif user == '5':
@@ -400,57 +400,128 @@ class SPORTY():
         user = input('Yes or No >>'  ).strip().lower()
         if user == 'no':
             sleep(2)
-            self.stake()
+            self.dashboard()
         elif user == 'yes':
-            self.game_2_play()
+            try:
+                wager = float(input('Stake amount OR Press "0" to exit>>  '))
+                if (wager>Balance) or (wager<0):
+                    print('''
+                    You cannot play this round. 
+                    Kindly deposit and try again or stake accordingly.
+                    Press "1" to deposit
+                    Press "2" to stake amount higher than zero(0)
+                    ''')
+                    user = input('Enter choice: ').strip()
+                    if user == '1':
+                        self.deposit()
+                    elif user == '2':
+                        self.game_2()
+                elif (wager==0):
+                    self.dashboard()
+                else:
+                    try:         
+                        number = random.randint(1,999)
+                        print("\n")
+                        print(number,"is your the number\n")
+                        number_2 = random.randint(1, 999)
+                        guess = input('''
+                        Select
+                        1. Higher
+                        2. Lower
+                        3. Equal to
+
+                        >> 
+                        
+                        ''').strip()
+                        if guess == '1':
+                            print(f'The first number is {number} and the second number {number_2}.')
+                            if (number_2 > number):
+                                Balance += wager*2
+                                print("#",wager*2, "was added to your Balance")
+                            else:
+                                Balance -= wager
+                                print('You lost your Wager')
+
+                        elif guess == '2':
+                            print(f'The first number is {number} and the second number {number_2}.')
+                            if (number_2 < number):
+                                Balance += wager*2
+                                print(wager*2, "was added to your Balance")
+                            else:
+                                Balance -= wager
+                                print('You lost your Wager')
+                        
+                        elif guess == '2':
+                            print(f'The first number is {number} and the second number {number_2}.')
+                            if (number_2 < number):
+                                Balance += wager*2
+                                print(wager*2, "was added to your Balance")
+                            else:
+                                Balance -= wager
+                                print('You lost your Wager')
+                        elif guess == '3':
+                            print(f'The first number is {number} and the second number {number_2}.')
+                            if (number_2 == number):
+                                Balance += wager*5
+                                print(wager*5, "was added to your Balance")
+                            else:
+                                Balance -= wager
+                                print('You lost your Wager')
+                        else:
+                            print('RETRY')                            
+
+                        query_wager = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
+                        value_wager = (Balance, self.Email)
+                        mycursor.execute(query_wager, value_wager)
+                        # mycon.commit()
+
+                        if Balance <= (Balance/4):
+                            print('You have a quarter of your starting funds left.')
+                            option = input('''
+                            Do you want to continue?
+                            Yes, No
+                            
+                            ''').strip().lower()
+                            if option == 'yes':
+                                self.game_2()
+                            elif option == 'no':
+                                self.dashboard()
+                            else:
+                                print('Invalid Option')
+                                self.terms()
+                        elif Balance == 0:
+                            print('''
+                            You exhausted your money.
+                            Press "1" to deposit
+                            Press "2" to exit
+                            ''')
+                            user = input('Option: ').strip()
+                            if user == '1':
+                                self.deposit()
+                            elif user == '2':
+                                print('Do come back')
+                                sleep(4)
+                                exit()
+                            else:
+                                print('Enter a valid command')
+                                self.terms()
+                        else:
+                            self.game_2()
+                        
+
+                    except Exception as e:
+                        print(f"{e}. Retry")
+                        self.game_2()
+            except Exception as e:
+                    print(f"{e}")
+                    self.game_2()
         else:
             print('Invalid Command')
             self.game_2()
 
-        
-
-    def game_2_play(self):
-        try:
-            numbers_list = []
-            for numbers in range(1,101):
-                numbers_list.append(numbers)
-            print(game_sets)
-            
-            amount = float(input('''
-            Amount to stake from balance 
-                        OR 
-            Press "0" to exit>> '''))
-            if (amount > Balance) or (amount<0):
-                print('''
-                You cannot play this round. 
-                Kindly deposit and try again or stake accordingly.
-                Press "1" to deposit
-                Press "2" to stake amount higher than zero(0)
-                ''')
-                user = input('Enter choice: ').strip()
-                if user == '1':
-                    self.deposit()
-                elif user == '2':
-                    self.game_1()
-            elif (amount==0):
-                self.dashboard()
-            else:
-                try:         
-                    number = random.choice(numbers_list)
-                    print("\n")
-                    print(number,"is your the number\n")
-                    guess = input('')
-                    number_2 = random.choice(numbers_list)
-                except Exception as e:
-                    print(f"{e}. Retry")
-                    self.game_2_play()
-        except Exception as e:
-                print(f"wrong input {e}. Use numbers 1,2,3... 90")
-                self.game_2_play()
-
-
-
-
+    
+    def game_3(self):
+        pass
 
 
 
@@ -696,20 +767,48 @@ class SPORTY():
         user = input('''
         What do you want to change
         1. name
-        2. phone number
+        2. Age
+        3. Email
         >> ''').strip()
         if user == '1':
-            new_name = input('Input Name: ').strip().title()
+            new_name = input('Input Name: ').strip()
             try:
                 querys = 'UPDATE Sport_bettor SET Name = %s WHERE Email = %s'
                 values = (new_name, self.Email)
 
                 mycursor.execute(querys,values)
-                print('Changes created Successfully.')
+                print('Changes Successfully.')
                 sleep(2)
-                self.dashboard()
+                self.login()
             except Exception as e:
                 print(f'{e}')
+        elif user == '2':
+            new_age = input('Input Age: ').strip()
+            try:
+                querys = 'UPDATE Sport_bettor SET Age = %s WHERE Email = %s'
+                values = (new_age, self.Email)
+
+                mycursor.execute(querys,values)
+                print('Changes Successfully.')
+                sleep(2)
+                self.login()
+            except Exception as e:
+                print(f'{e}')
+        elif user == '3':
+            new_email = input('Input Email: ')
+            try:
+                querys = 'UPDATE Sport_bettor SET Email = %s WHERE Name = %s'
+                values = (new_email, self.Name)
+
+                mycursor.execute(querys,values)
+                print('Changes Successfully. Login Again')
+                sleep(2)
+                self.login()
+            except Exception as e:
+                print(f'{e}')
+        else:
+            print('Invalid prompt')
+            self.dashboard()
 
 
     

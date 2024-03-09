@@ -135,14 +135,14 @@ vehicle = {
 # print(StudentsData)
 
 
-{
-    'Student1': {'Name':'Ade', 'MatNo': '11'},
-    'Student2': {'Name':'James', 'MatNo': '12'}
-}    
+# {
+#     'Student1': {'Name':'Ade', 'MatNo': '11'},
+#     'Student2': {'Name':'James', 'MatNo': '12'}
+# }    
 
-user = input('Kindly press "1" to register')
-if user == '1':
-    x = 1
+# user = input('Kindly press "1" to register')
+# if user == '1':
+#     x = 1
     
 
 
