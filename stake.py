@@ -533,7 +533,27 @@ class SPORTY():
         print(f'{self.Name} proceed to play {self.name} WHO IS...?')
         user = input('Play or Quit? ').lower().strip()
         if user == "quit":
-            self.dash
+            self.dashboard()
+        elif user == "play":
+            print('''
+                WHO IS, is a  game of Q&A.. 
+                
+                You are asked a series of question and you provide answers if the answer is wrong you lose your stake
+            ''')
+            user = input('ARE YOU READY? yes or no >> ').lower().strip()
+            if user == 'no':
+                sleep(2)
+                self.stake()
+            elif user == 'yes':
+                pass
+            else:
+                print('Invalid prompt')
+                sleep(2)
+                
+        else:
+            print(f'{self.Name} you entered an invalid command.')
+            self.game_3()
+
 
 
 
