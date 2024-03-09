@@ -521,7 +521,19 @@ class SPORTY():
 
     
     def game_3(self):
-        pass
+        query_who = ('SELECT * FROM Sport_bettor WHERE Email =%s')
+        value_who = (self.Email,)
+
+        mycursor.execute(query_who, value_who)
+        # mycon.commit()
+         
+        details_who = mycursor.fetchone()
+        Balance = details_who[6]
+
+        print(f'{self.Name} proceed to play {self.name} WHO IS...?')
+        user = input('Play or Quit? ').lower().strip()
+        if user == "quit":
+            self.dash
 
 
 
