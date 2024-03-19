@@ -48,11 +48,11 @@ import re
     # ============ palindrome ===============
 # user = input('Enter word to test: ')
 # user.split
-# word = ''.join(users)
+# user = ''.join(user)
 
 #     # test for palindrome
     
-# if word != word[::-1]:
+# if user != user[::-1]:
 #     print('Word not a palindrome')
 # else:
 #     print('Word is a palindrome')
@@ -241,33 +241,76 @@ def game():
 
 
     # =================================
-    score = 0
-    exam = {
-        "1. What is the capital of Ghana a.) Accra b.) Utanbatoor": "a",
-        "2. What is the capital of Nigeria a.) Abuja b.) Rivers": "a",
-        "3. What is the capital of Tunisia a.) Jebba b.) Leona": "b",
-        "4. What is the capital of Togo a.) Lome b.) Gertha": "a",
-        "5. What is the capital of Germany a.) Munchen b.) Berlin": "b",
-        "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm": "b",
-        "7. What is the capital of Cape Verde a.) Praia b.) Ladta": "a",
-        "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg": "a",
-        "9. What is the capital of Oyo a.) Ibadan b.) Oyo": "a",
-        "10. What is the capital of Lagos a.) Ikeja b.) Alimosho": "a",
-    }
+    # score = 0
+    # exam = {
+    #     "1. What is the capital of Ghana a.) Accra b.) Utanbatoor": "a",
+    #     "2. What is the capital of Nigeria a.) Abuja b.) Rivers": "a",
+    #     "3. What is the capital of Tunisia a.) Jebba b.) Leona": "b",
+    #     "4. What is the capital of Togo a.) Lome b.) Gertha": "a",
+    #     "5. What is the capital of Germany a.) Munchen b.) Berlin": "b",
+    #     "6. What is the capital of Sweden a.) Heilsinki b.) Stockholm": "b",
+    #     "7. What is the capital of Cape Verde a.) Praia b.) Ladta": "a",
+    #     "8. What is the capital of South Africa a.) Cape Town b.) Johannesburg": "a",
+    #     "9. What is the capital of Oyo a.) Ibadan b.) Oyo": "a",
+    #     "10. What is the capital of Lagos a.) Ikeja b.) Alimosho": "a",
+    # }
 
-    for question, answers in exam.items():
-        print(question)
-        user = input('answer: ').strip().lower()
-        if user != answers:
-            print('wrong')
-        else:
-            print('correct')
-            score += 10
-    print(score)
-        
+    # for question, answers in exam.items():
+    #     print(question)
+    #     user = input('answer: ').strip().lower()
+    #     if user != answers:
+    #         print('wrong')
+    #     else:
+    #         print('correct')
+    #         score += 10
+    # print(score)
+
+    # solo = [1,2,3,4,5,6,1]
+    # # print(solo.index(1))
+    # xy = 1
+    # y = 0
+    # ===========================================
+
+    word = input('PALINDROME CHECKER: ').strip().lower()
+    word_split = word.split()
+    word_join = "".join(word_split)
+    print(word_join, word_split)
+    if word_join != word_join[::-1]:
+        print('Not a palindrome')
+    else:
+        print('PAlindrome')
 
 
-            
+
+
+
+
+
+
+
+    # ===========================================
+    # for x in solo:
+    #     if x == xy:
+    # #         print(solo.index(xy)) 
+    # #         y+=1 
+    # # print('DONE')
+
+    # weight = input('Enter weight in kg or lbs: ').strip().lower()
+    # print(weight)
+
+    # print('\n')
+
+    # if weight.endswith('kg'):
+    #     x = int(weight.strip('kg'))
+    #     weight_in_pounds = x/0.453
+    #     print(f'Your weight in pounds is {weight_in_pounds}lbs.')
+    # elif weight.endswith('lbs'):
+    #     x = int(weight.strip('lbs'))
+    #     weight_in_kg = (x*0.453)
+    #     weight_in_kg = round(weight_in_kg, 2)
+    #     print(f'Your weight in kilogram is {weight_in_kg}Kg.')
+    # else:
+    #     print('Enter A COMMAND ENDING IN KG OR LBS')       
 
 
 game()

@@ -2,8 +2,10 @@
 
 # # print(name)
 # # print(name[6])
+"""Below is an example of slicing in python"""
 # # print(name[0:4])
 # # print(name[0:4:2])
+# =======================
 # # print('The length of the senhtence is ', len(name))
 # # print(len(name.strip()))
 # # print(name.upper())

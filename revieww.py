@@ -1,4 +1,6 @@
-# number (object) = int() [class integer] / 34 = integer class 
+"""
+ number (object) = int() [class integer] / 34 = integer class 
+"""
 
 import mysql.connector as sql
 import random 

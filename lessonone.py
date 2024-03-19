@@ -54,18 +54,27 @@
 
 
 
-# # ======================
-# # variable declaration
-# # i = me = myself = 'Damilare'
-# # print(i)
-# # print(me)
-# # print(myself)
-# # print((len(me)))
-# # print(type(me))
+# # # ======================
+# # # variable declaration
+# i = me = myself = 'Damilare'
+# print(i)
+# print(me)
+# print(myself)
+# print(len(me)) 
+# print(me.index('i'))
+# print(type(me))
 
-# # addition and variables
-# # value1 = 50
-# # value2 = 40
+# # # addition and variables
+# # # value1 = 50
+# # # value2 = 40
+
+# print('''jkpjkjdjgjejgoejoeogk
+# dkfkfkjd
+# fvnknvk mans nnv
+# ffkpvnkdnvd
+# vkpvnkdvnkdv
+# dvkpdkvndknvd
+# vdkvnd''')
 
 # # result = value1 - value2
 # # print('your answer is', result)
@@ -103,17 +112,38 @@
 # # print(ord('_'))
 # # print(chr(50))
 
-# # arithmetic operator: + - * /
-# # assignment operator: = += -=
-# # comparison operator: == != >=
-# # logical operator: and or not
-# # identity operator: is, is not
-# # membership operator:in, in not
+# assignment operator: = += -=
+# arithmetic operator: + - * /
+# comparison operator: == != >= <=
+# logical operator: and or not
+# identity operator: is, is not
+# membership operator:in, in not
 
 
-# # comparison operator
-# # name = 'solomon'
-# # print(name == 'Solomon')
+# =============================================
+
+
+
+
+
+# age = int(input('ENTER AGE:' ))
+
+# if age >= 18:
+#     print('WELCOME')
+# else:
+#     print('SORRY. AGE IS NOT LEGAL YET')
+
+
+# name = 'SOLOMON'
+# print(nam)
+
+# x = 30
+
+# print(x > 26)
+# ===================================================
+# comparison operator
+# name = 'solomon'
+# print(name == 'Solomon')
 
 # # conditional statement
 # # nested conditional statement
@@ -138,11 +168,19 @@
 
 # # classwork
 
-# # number = int(input('Kindly input a number here: '))
-# # if number %2 == 0 :
-# #     print(f'{number} is  an even number')
-# # else:
-# #     print(f'{number} is an odd number')
+# name = 'solomon'
+
+# fullname = 'adedokun '
+
+# print(f'Your name is {name} {fullname}.')
+
+
+
+# number = int(input('Kindly input a number here: '))
+# if number %2 == 0 :
+#     print(f'{number} is  an even number')
+# else:
+#     print(f'{number} is an odd number')
 
 
 # # ==================================================================================
@@ -404,14 +442,14 @@
 # # palindrome = 'A man, a plan, a canal panama'.upper()
 
 
-# # user = input('put in your your palindrome: ')
-# # word = user.lower().strip()
-# # word = word.split()
+# user = input('put in your your palindrome: ')
+# word = user.lower().strip(',')
+# word = word.split()
 
-# # word = ''.join(word)
-# # if word == word[::-1]:
-# #     print(f" '{user}' is a palindrome")
-# # else:
-# #     print(f" '{user}' is not a palindrome")
+# word = ''.join(word)
+# if word == word[::-1]:
+#     print(f" '{user}' is a palindrome")
+# else:
+#     print(f" '{user}' is not a palindrome")
 
-# # =========================
+# # # =========================

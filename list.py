@@ -1,22 +1,117 @@
-import random
-
-
-
+# import random
 # ==========================LIST CLASS===================================
-# LIST IS A COLLECTION WHICH IS ORDERED, CHANGEABLE, ALLOWS DUPLICATE VALUE AND THE ITEMS ARE INDEXED.
 
-# my_list = ['White Rice', 'beans', 'bread', 'Meat', 'egg', 'fried rice', 'jollof rice', 'pounded yam and egusi', 'fanta', 'water', 'chi exotic', 'wine', True, 2 + 1j, ['Bukunmi', 'Solomon'], (343, 67)]
+# LIST IS A COLLECTION WHICH IS
+# ORDERED, 
+# CHANGEABLE,
+# ALLOWS DUPLICATE VALUE
+# ITEMS ARE INDEXED.
+
+# symbol for a list is []
+
+# my_list1 = ['Tunde', 'Azeez', 'Boluwatife', 'Temitayo', 'Bukunmi', 'Solomon']
+
+# print(my_list1)
+# print('\n')
+
+# my_list2 = [1,2,3,4,5,6]
+
+# my_list_copy = []
+# my_list3 = ['Tunde', 'Emmanuel', [1,2,3], 'James']
+
+# print(my_list1[1:5])
+# print(my_list1[::-1])
+# print(my_list1[0][4])
+
+# CHANGING ENTRIES ON A LIST
+# my_list1[0:3] = ['Emmanuel','Shade', 'James']
+# print(my_list1)
+
+# functions we can perform on list
+# my_list1.append('AYOMIDE LATE COMER')
+# my_list1.insert(1, 'DAMILARE')
+# print(my_list1.index('Solomon'))
+# my_list1.remove('Solomon')
+# my_list1.clear()
+# my_list1.append(my_list2)
+# print(my_list1)
+# print("\n")
+# my_list_copy = my_list1.copy()
+# print(my_list_copy)
+
+# my_list1.extend(my_list2)
+# print(my_list1)
+
+# palindrome cheecker:
+
+user = input('Enter Palindrome: ').strip()
+check = "".join(user.split())
+if check == check[::-1]:
+    print("Word is a palindrome")
+else:
+    print("'Word entered is not a palindrome")
+# =======================================================================================
+# word = input('PALINDROME CHECKER: ').strip().lower()
+# word_split = word.split()
+# word_join = "".join(word_split)
+# print(word_join, word_split)
+# if word_join != word_join[::-1]:
+#     print('Not a palindrome')
+# else:
+#     print('PAlindrome')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# my_list = ['White Rice', 'beans', 'bread','White Rice', 'Meat', 'egg', 'fried rice', 'jollof rice', 'pounded yam and egusi', 'fanta', 'water', 'chi exotic', 'wine', True, 2 + 1j, ['Bukunmi', 'Solomon'], (343, 67)]
 
 # my_list2 = [100, 200, 400, 700]
 
-# print(my_list[0][0])
+# print(my_list[0][0]) 
+'''
+INDEX STARTS COUNT FROM (0)
+'''
+'''A MAN A PLAN A CAR A CANAL PANAMA'''
 # print(type(my_list))
+'''
+Prints the making component of the object. Where Object() is my_list
+'''
+
 # print(len(my_list))
-# print(my_list[5])
+'''
+LEN STARTS COUNT FROM (1)
+'''  
+# # print(my_list[5])
+
+"""Below is an example of slicing in python"""
+# print(my_list[::-1])
 # print(my_list[-1][1])
 # print(my_list[2:7])
-# print(my_list[::-1])
 # print(my_list[:7])
+
+""" Changing list item"""
+# my_list[3] = 'Egusi'
+# print(len(my_list))
+# print(my_list)
+# print('\n')
+# my_list[0:3] = ['french fries', 'chicken and chips', 'EFO RIRO']
+# print(my_list)
+
+'''Test'''
+# my_list[0:3] = ['french fries', 'chicken and chips', 'quakammoli', 'LEMONADE', 'EFO RIRO', 'BANGA SOUP']
+# print(len(my_list))
+# print(my_list)
 
 # functions of a list
 # append
@@ -27,16 +122,32 @@ import random
 
 # insert
 # my_list.insert(3, 'Solomon King')
+# print(len(my_list))
 # print(my_list)
 
 # extend
-# my_list.extend(my_list2)
+# print(my_list.count('White Rice'))
 # print(my_list)
 
-# ============================================================== 
-# x = list(range(1,20))
-# print(x)
+# .copy()
+# .insert(0, 'enter value here')
+# .remove('enter value here')
+# .clear()
 
+# my_list = [1,2,3,4,5,6,1]
+# for item in my_list:
+#     print()
+
+
+
+# ============================================================== 
+# x = list(range(1,21))
+# print(random.choice(x))
+
+# y_list = []
+# for y in range(1,21):
+#     y_list.append(y)
+# print(y_list)
 
 
 # name_of_students = ['Solomon','Gabriel', 'Samuel', 'Pelumi', 'James', 'Tolashe', 'Blessing', 'Ota', 'Sheyi', 'Oyindamola', 'Precious']
@@ -115,4 +226,59 @@ import random
 # ==============================
     
     
+# def getAns(entry):
+#     if entry == 1:
+#         return('Lord of the rings')
+#     elif entry == 2:
+#         return('Lord of the caves')
+#     elif entry == 3:
+#         return('Lord of the gyms')
+#     elif entry == 4:
+#         return('Lord of the rockets')
+#     elif entry == 5:
+#         return('Lord of the flies')
+
+
+# r = random.randint(1,5)
+# give = getAns(r)
+# print(give)
+
+# ========================
+
+# password_checker = input('Enter password: ')
+# if (len(password_checker) >= 8):
+#     print("Password accepted")
     
+# elif password_checker == '':
+#     print('Field cannot be empty. Try Again.')
+
+# else:
+#     print('''
+#     Password must not be less than 8 character set.
+#     Try again....................................
+#     ''')
+# ===============================================
+# try:   
+#     name = 'sunday'
+#     # print(name[2::])
+#     print(name[7])
+# except IndexError:
+#     print('Character does not reach 7. Try again')
+
+# ================ MARCH 12TH 2024 ============================
+
+# comment = 'solomon@gmail.com'
+
+# # startswith and #endswith
+
+# print(comment.startswith(",,"))
+# print(comment.endswith("@gmail.com"))
+
+# name = input('name: ').strip()
+# print(name)
+
+# word = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic earum consectetur delectus numquam nihil expedita eveniet enim saepe perferendis provident commodi molestias deserunt nostrum, soluta vel maxime amet neque suscipit'
+# name = 'issokay'
+# x = word.split()
+# print('\n')
+# print('x'.join(x))

@@ -40,3 +40,12 @@
 # print(studentName)
 
 # to do list
+# from time import sleep
+# # =========================
+# x = 30
+# while x >= 5:
+#     print(f' {x} seconds')
+#     x-=5
+#     sleep(5)
+#     if x == 0:
+#         print('Time Up')

@@ -93,9 +93,9 @@ class SPORTY():
         time.sleep(2)
 
         try:
-            query ="""
+            query =("""
             INSERT INTO Sport_bettor(Age, Name, userId, Email, Password, Balance, City, State )
-            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"""
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)""")
 
             values = (age, name, user_id, e_mail, password2, balance, city, state)
 
@@ -183,7 +183,7 @@ class SPORTY():
 
             details = mycursor.fetchone()
             self.Email = details[4]
-            # print(details) ======= PRINTS ALL IN A ROW FORMAT AND ENSURES ALL THE ENTRIES ARE IN A TABLE FORMAT
+            # print(details) ======= PRINTS ALL IN A ROW FORMAT AND ENSURES ALL THE ENTRIES ARE IN A TABLE FORMATz
 
             if details:
                 print('Login Successful.')
@@ -335,21 +335,7 @@ class SPORTY():
                     mycursor.execute(query, value)
 
 
-                    if Balance <= (Balance/4):
-                        print('You have a quarter of your starting funds left.')
-                        option = input('''
-                        Do you want to continue?
-                        Yes, No
-                        
-                        ''').strip().lower()
-                        if option == 'yes':
-                            self.game_1()
-                        elif option == 'no':
-                            self.dashboard()
-                        else:
-                            print('Invalid Option')
-                            self.terms()
-                    elif Balance == 0:
+                    if Balance == 0:
                         print('''
                         You exhausted your money.
                         Press "1" to deposit
@@ -418,102 +404,73 @@ class SPORTY():
                         self.game_2()
                 elif (wager==0):
                     self.dashboard()
-                else:
-                    try:         
-                        number = random.randint(1,999)
-                        print("\n")
-                        print(number,"is your the number\n")
-                        number_2 = random.randint(1, 999)
-                        guess = input('''
-                        Select
-                        1. Higher
-                        2. Lower
-                        3. Equal to
+                else:        
+                    number = random.randint(1,999)
+                    print("\n")
+                    print(number,"is your the number\n")
+                    number_2 = random.randint(1, 999)
+                    guess = input('''
+                    Select
+                    1. The next number will be higher
+                    2. The next number will be lower
+                    3. Equal to number
 
-                        >> 
-                        
-                        ''').strip()
-                        if guess == '1':
-                            print(f'The first number is {number} and the second number {number_2}.')
-                            if (number_2 > number):
-                                Balance += wager*2
-                                print("#",wager*2, "was added to your Balance")
-                            else:
-                                Balance -= wager
-                                print('You lost your Wager')
-
-                        elif guess == '2':
-                            print(f'The first number is {number} and the second number {number_2}.')
-                            if (number_2 < number):
-                                Balance += wager*2
-                                print(wager*2, "was added to your Balance")
-                            else:
-                                Balance -= wager
-                                print('You lost your Wager')
-                        
-                        elif guess == '2':
-                            print(f'The first number is {number} and the second number {number_2}.')
-                            if (number_2 < number):
-                                Balance += wager*2
-                                print(wager*2, "was added to your Balance")
-                            else:
-                                Balance -= wager
-                                print('You lost your Wager')
-                        elif guess == '3':
-                            print(f'The first number is {number} and the second number {number_2}.')
-                            if (number_2 == number):
-                                Balance += wager*5
-                                print(wager*5, "was added to your Balance")
-                            else:
-                                Balance -= wager
-                                print('You lost your Wager')
+                    >> 
+                    
+                    ''').strip()
+                    if guess == '1':
+                        print(f'The first number is {number} and the second number {number_2}.')
+                        if (number_2 > number):
+                            Balance += wager*2
+                            print("#",wager*2, "was added to your Balance")
                         else:
-                            print('RETRY')                            
+                            Balance -= wager
+                            print('You lost your Wager')
 
-                        query_wager = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
-                        value_wager = (Balance, self.Email)
-                        mycursor.execute(query_wager, value_wager)
-                        # mycon.commit()
-
-                        if Balance <= (Balance/4):
-                            print('You have a quarter of your starting funds left.')
-                            option = input('''
-                            Do you want to continue?
-                            Yes, No
-                            
-                            ''').strip().lower()
-                            if option == 'yes':
-                                self.game_2()
-                            elif option == 'no':
-                                self.dashboard()
-                            else:
-                                print('Invalid Option')
-                                self.terms()
-                        elif Balance == 0:
-                            print('''
-                            You exhausted your money.
-                            Press "1" to deposit
-                            Press "2" to exit
-                            ''')
-                            user = input('Option: ').strip()
-                            if user == '1':
-                                self.deposit()
-                            elif user == '2':
-                                print('Do come back')
-                                sleep(4)
-                                exit()
-                            else:
-                                print('Enter a valid command')
-                                self.terms()
+                    elif guess == '2':
+                        print(f'The first number is {number} and the second number {number_2}.')
+                        if (number_2 < number):
+                            Balance += wager*2
+                            print('#',wager*2, "was added to your Balance")
                         else:
-                            self.game_2()
-                        
+                            Balance -= wager
+                            print('You lost your Wager')
+                    
+                    elif guess == '3':
+                        print(f'The first number is {number} and the second number {number_2}.')
+                        if (number_2 == number):
+                            Balance += wager*5
+                            print(wager*5, "was added to your Balance")
+                        else:
+                            Balance -= wager
+                            print('You lost your Wager')
+                    else:
+                        print('RETRY')                            
 
-                    except Exception as e:
-                        print(f"{e}. Retry")
+                    query_wager = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
+                    value_wager = (Balance, self.Email)
+                    mycursor.execute(query_wager, value_wager)
+                    # mycon.commit()
+
+                    if Balance == 0:
+                        print('''
+                        You exhausted your money.
+                        Press "1" to deposit
+                        Press "2" to exit
+                        ''')
+                        user = input('Option: ').strip()
+                        if user == '1':
+                            self.deposit()
+                        elif user == '2':
+                            print('Do come back')
+                            sleep(4)
+                            exit()
+                        else:
+                            print('Enter a valid command')
+                            self.terms()
+                    else:
                         self.game_2()
-            except Exception as e:
-                    print(f"{e}")
+            except ValueError:
                     self.game_2()
         else:
             print('Invalid Command')
@@ -578,26 +535,29 @@ class SPORTY():
 
 
     def deposit(self):
-        print(f'How much do you want to deposit into your {self.name} account.')
-        amount =float(input('Amount: '))
+        try:
+            print(f'How much do you want to deposit into your {self.name} account.')
+            amount =float(input('Amount: '))
 
-        query1 = ('SELECT * FROM Sport_bettor WHERE Email = %s')
-        value1 = (self.Email,)
-        mycursor.execute(query1, value1)
-        details = mycursor.fetchone()
+            query1 = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+            value1 = (self.Email,)
+            mycursor.execute(query1, value1)
+            details = mycursor.fetchone()
 
-        Balance = details[6]
+            Balance = details[6]
 
-        Balance += amount
+            Balance += amount
 
-        # ================ SECOND QUERY TO DATABASE TO UPDATE THE ACCOUNT BALANCE WITH DEPOSIT =================
+            # ================ SECOND QUERY TO DATABASE TO UPDATE THE ACCOUNT BALANCE WITH DEPOSIT =================
 
-        query2 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email =%s')
-        value2 = (Balance, self.Email)
-        mycursor.execute(query2,value2)
-        # mycon.commit()
-        print('Transaction Successful.')
-        self.deposit_again()
+            query2 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email =%s')
+            value2 = (Balance, self.Email)
+            mycursor.execute(query2,value2)
+            # mycon.commit()
+            print('Transaction Successful.')
+            self.deposit_again()
+        except ValueError:
+            self.deposit()
 
 
 
@@ -613,12 +573,12 @@ class SPORTY():
             self.dashboard()
         else:
             print('Invalid Command.')
+            self.deposit_again()
     
 
 
 
     def withdraw_again(self):
-        print('Withdrawal successful')
         sleep(2)
         user = input('Do you want to withdraw another amount now?: ').strip().lower()
         if user == 'yes':
@@ -628,70 +588,74 @@ class SPORTY():
             sleep(2)
             self.dashboard()
         else:
-            print('Invalid Command.')
-
+            self.withdraw_again()
 
 
 
     def withdraw(self):
-        amount = float(input('Amount to Withdraw: '))
-        self.amount_checker(amount)
-        account_no_receiver = input('Kindly provide the account to send the money: ')
-        query = ('SELECT * FROM Sport_bettor WHERE Email = %s')
-        value = (self.Email,)
-        
-        mycursor.execute(query,value)
+        try:
+            amount = float(input('Amount to Withdraw: '))
+            self.amount_checker(amount)
+            account_no_receiver = input('Kindly provide the account to send the money: ')
+            query = ('SELECT * FROM Sport_bettor WHERE Email = %s')
+            value = (self.Email,)
+            
+            mycursor.execute(query,value)
 
-        details = mycursor.fetchone()
-        Pin = details[10]
-        Balance = details[6]      
+            details = mycursor.fetchone()
+            Pin = details[10]
+            Balance = details[6]      
 
-        prompt = input('''
-        Enter transaction Pin. 
-            Press "1" to create. 
-                Press "s" to skip if you have already created >>  '''.strip())
-        if prompt == '1':
-            self.pin_create()
-        elif prompt == 's':
-            for num in range(1,6):
-                pin = pw.pwinput('Enter your Secure transaction pin to confirm transaction: ').strip()
-                if pin != Pin:
-                    if num == 1:
-                        if pin != Pin:
-                            print('You have 4 attempts left')
-                    elif num == 2:
-                        if pin != Pin:
-                            print('You have 3 attempts left')
-                    elif num == 3:
-                        if pin != Pin:
-                            print('You have 2 attempts left')
-                    elif num == 4:
-                        if pin != Pin:
-                            print('You have 1 attempt left. ')
-                            time.sleep(2)
-                            print('Account will be automatically logged out on final attempt.')
-                            time.sleep(2)
-                    elif num == 5:
+            prompt = input('''
+            Enter transaction Pin. 
+                Press "1" to create. 
+                    Press "s" to skip if you have already created >>  '''.strip().lower())
+            if prompt == '1':
+                self.pin_create()
+            elif prompt == 's':
+                for num in range(1,6):
+                    pin = pw.pwinput('Enter your Secure transaction pin to confirm transaction: ').strip()
+                    if pin != Pin:
+                        if num == 1:
                             if pin != Pin:
-                                print('Account Logged out.')
+                                print('You have 4 attempts left')
+                        elif num == 2:
+                            if pin != Pin:
+                                print('You have 3 attempts left')
+                        elif num == 3:
+                            if pin != Pin:
+                                print('You have 2 attempts left')
+                        elif num == 4:
+                            if pin != Pin:
+                                print('You have 1 attempt left. ')
                                 time.sleep(2)
-                                exit()
-                else:
-                    Balance -= amount
-                    print('Transaction Approved')
-                    break
-        else:
-            sleep(2)
+                                print('Account will be automatically logged out on final attempt.')
+                                time.sleep(2)
+                        elif num == 5:
+                                if pin != Pin:
+                                    print('Account Logged out.')
+                                    time.sleep(2)
+                                    exit()
+                    else:
+                        Balance -= amount
+                        print('''
+                        Transaction Approved
+                        Withdrawal successful
+                        ''')
+                        break
+            else:   
+                sleep(2)
+                self.withdraw()
+            
+            query5 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
+            value5 = (Balance, self.Email)
+
+            mycursor.execute(query5,value5)
+            # mycon.commit()
+
+            self.withdraw_again()
+        except ValueError:
             self.withdraw()
-        
-        query5 = ('UPDATE Sport_bettor SET Balance = %s WHERE Email = %s')
-        value5 = (Balance, self.Email)
-
-        mycursor.execute(query5,value5)
-        # mycon.commit()
-
-        self.withdraw_again()
-    
 
 
     def amount_checker(self, amounnt):
