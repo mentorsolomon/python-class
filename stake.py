@@ -127,7 +127,7 @@ class SPORTY():
         pattern = (r'\d+\w+@\w+\.\w+') or (r'\w+\d+@\w+\.\w+')
         find = re.findall(pattern,ee_mail)
         if not find:
-            print('Email Mismatch.. TRY "ask11@gmail.com"')
+            print('Email Mismatch.. TRY "ask11@gmail.com" OR 123sk@xxx.com')
             self.mail_checker()
         else:
             time.sleep(2)   
@@ -767,8 +767,8 @@ class SPORTY():
         3. Email
         >> ''').strip()
         if user == '1':
-            new_name = input('Input Name: ').strip()
             try:
+                new_name = input('Input Name: ').strip()
                 querys = 'UPDATE Sport_bettor SET Name = %s WHERE Email = %s'
                 values = (new_name, self.Email)
 

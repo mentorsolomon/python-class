@@ -94,7 +94,6 @@ import re
 #         2. transfer
         
 #         """)
-   
 
     
 
@@ -189,7 +188,7 @@ import re
 #                 exit()
 
 # =====================
-def game():
+# def game():
     # try:
     #     earn = 0
     #     x = random.randint(1, 15)
@@ -271,14 +270,14 @@ def game():
     # y = 0
     # ===========================================
 
-    word = input('PALINDROME CHECKER: ').strip().lower()
-    word_split = word.split()
-    word_join = "".join(word_split)
-    print(word_join, word_split)
-    if word_join != word_join[::-1]:
-        print('Not a palindrome')
-    else:
-        print('PAlindrome')
+    # word = input('PALINDROME CHECKER: ').strip().lower()
+    # word_split = word.split()
+    # word_join = "".join(word_split)
+    # print(word_join, word_split)
+    # if word_join != word_join[::-1]:
+    #     print('Not a palindrome')
+    # else:
+    #     print('PAlindrome')
 
 
 
@@ -312,5 +311,5 @@ def game():
     # else:
     #     print('Enter A COMMAND ENDING IN KG OR LBS')       
 
-
-game()
+# 
+# game()

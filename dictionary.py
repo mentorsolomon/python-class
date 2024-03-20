@@ -4,13 +4,13 @@
 # syntax 
 # written using {key:value} or dict{key=value}
 
-vehicle = {
-    'Name': ('BMW','peugoet'),
-    'Year': 2020,
-    'Status': {'Brand New': True, 'Tokunbo':False},
-    'Bonus': {'2 extre tyres', 'Engine oil'},
-    'Price': {6_000_000: 89}
-}
+# vehicle = {
+#     'Name': ('BMW','peugoet'),
+#     'Year': 2020,
+#     'Status': {'Brand New': True, 'Tokunbo':False},
+#     'Bonus': {'2 extre tyres', 'Engine oil'},
+#     'Price': {6_000_000: 89}
+# }
 
 # print(vehicle['Name'][1])
 # x = vehicle['Bonus'].pop()  #pop selects a value at random
@@ -149,3 +149,21 @@ vehicle = {
 
 
 
+# phone_no = int(input('Enter your number: '))
+# numbers = {
+#         '1':'One',
+#         '2':'Two',
+#         '3':'Three',
+#         '4':'Four',
+#         '5':'Five',
+#         '6':'Six',
+#         '7':'Seven',
+#         '8':'Eight',
+#         '9':'Nine',
+#         '0': 'Zero'
+#         }
+
+# output = ""
+# for characters in phone_no:
+#     output += numbers.get(characters, "!") + " "
+# print(output)

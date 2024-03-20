@@ -1,4 +1,4 @@
-import random
+# import random
 
 # sets
 # JANUARY 2024 CLASS ONE
@@ -7,12 +7,12 @@ import random
 # set: A SET IS A COLLECTION WHICH IS UNORDERED, UNINDEXED, IMMUTABLE/UNCHANGEABLE AND DOES NOT ACCEPT DUPLICATE VALUE
 # set {} or ()
 
-# name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
-# # setNames = set(('Muazeem', 'Ige', 'Lado'))
-# setNames = ('Muazeem', 'Ige', 'Lado')
-# name.add('jide')
-# name.update([6,7,8], setName)
-# print(name)
+name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
+setName = set(('Muazeem', 'Ige', 'Lado'))
+setNames = ('Muazeem', 'Ige', 'Lado')
+name.add('jide')
+name.update([6,7,8], setName)
+print(name)
 
 # sets = set()
 # print('welcome to set calculator')
@@ -36,6 +36,10 @@ import random
 #     # for setItems in no_of_setItems:
 #     #     setItem = int(input('list the numbers in your set: '))
 #     # print(setItem)
+
+
+
+
 
 # ===============================SET CALCULATOR==========================================
 def home():
@@ -123,14 +127,7 @@ def home():
     # print(f'{x}{y}')
     
     
-    # set calculator 
-    set_A = set()
-    set_B = set()
-    set_C = set()
-    set_D = set()
-    set_E= set()
-    
-    
+    # set calculator     
     print('''
           
           Welcome to set Calculator
@@ -165,14 +162,14 @@ def home():
     
 def union_op():
     operations = int(input('How many sets do you want? '))
-    for operation in range(operations):
+    for operation in range( operations):
         for entry in range(operation):
             user = int(input(f'How many data set do you have in {operation}: \n'))
             for num in range(user):
                 sets = input(f'enter set{num+1}: ')
                 
                 
-                unio
+                
                 
         
         
