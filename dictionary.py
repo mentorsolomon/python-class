@@ -221,7 +221,7 @@ class USSD:
         ''')
 
         ussd_code = input('Enter USSD code: ').strip()
-        while ussd_code != self.airtime or ussd_code != self.data:
+        while ussd_code != self.airtime:
             print('Try again.')
             ussd_code = input('Enter USSD code: ').strip()
         
