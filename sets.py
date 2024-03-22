@@ -7,12 +7,12 @@
 # set: A SET IS A COLLECTION WHICH IS UNORDERED, UNINDEXED, IMMUTABLE/UNCHANGEABLE AND DOES NOT ACCEPT DUPLICATE VALUE
 # set {} or ()
 
-name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
-setName = set(('Muazeem', 'Ige', 'Lado'))
-setNames = ('Muazeem', 'Ige', 'Lado')
-name.add('jide')
-name.update([6,7,8], setName)
-print(name)
+# name = {"james", "sade", "larry", "gaga", "jerry", "ige"}
+# setName = set(('Muazeem', 'Ige', 'Lado'))
+# setNames = ('Muazeem', 'Ige', 'Lado')
+# name.add('jide')
+# name.update([6,7,8], setName)
+# print(name)
 
 # sets = set()
 # print('welcome to set calculator')
@@ -128,31 +128,30 @@ def home():
     
     
     # set calculator     
-    print('''
-          
-          Welcome to set Calculator
-          
-          ''')
     user = input('''
-                 What will you like to do today?
-                 1. union
-                 2. intersection
-                 3. difference
-                 4. symmetric difference
-                 5. Others
+
+            Welcome to set Calculator. 
+            
+            Select an operation to perform
+
+            1. union
+            2. intersection
+            3. difference
+            4. symmetric difference
+            5. Others
                  
-                 > ''')
+                 > ''').strip()
     
     
-    if user.strip() == '1':
+    if user == '1':
         union_op()
-    elif user.strip() == '2':
+    elif user == '2':
         intersection_op()
-    elif user.strip() == '3':
+    elif user == '3':
         difference_op()   
-    elif user.strip() == '4':
+    elif user == '4':
         sym_difference()  
-    elif user.strip() == '5':
+    elif user == '5':
         others()
     else:
         print('Invalid Entry') 
@@ -161,13 +160,21 @@ def home():
     
     
 def union_op():
-    operations = int(input('How many sets do you want? '))
-    for operation in range( operations):
-        for entry in range(operation):
-            user = int(input(f'How many data set do you have in {operation}: \n'))
-            for num in range(user):
-                sets = input(f'enter set{num+1}: ')
-                
+    sett = []
+    sets = int(input('How many set do you have >> ').strip())
+    for set in range(sets):
+        set_items = int(input(f'How many data items are in your set{set+1} > ').strip())
+        for entries in range(set_items):
+            entry = input(f'Your data item {entries + 1} is > ').strip()
+            sett.update(entry)
+        
+    print(sett)
+
+
+
+
+        
+            
                 
                 
                 

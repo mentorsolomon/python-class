@@ -618,4 +618,61 @@
 #             print(f'{x}. {cart} ---> #{price: ,}')
 
 # print(f'Your total price is #{sum(cartPrice):,}')
+
+
+
+
+# =================================
+
+num_of_set = int(input('How many set do you have: '))
+list_set = []
+y = 0
+
+for num in range(1, num_of_set+1):
+    num_item = int(input(f'How many items do you have in set{num}: '))
+    items = []
+    x =1
+
+    for each in range(num_item):
+        item = int(input(f'Item{x}: '))
+        items.append(item)
+        x+=1
+
+
+    list_set.append(set(items))
+    y+=1
+z = 1
+print(list_set)
+for each_set in list_set:
+    print(f"""      
+Set{z}: {each_set}
+""")
+    z+=1
+
+print("""
+1. Union
+2. Intersection
+""")
+
+
+user = input('Option: ')
+if user == '1':
+    print('setA union setB')
+    setA = int(input("What is your setA: "))
+    setB = int(input("What is your setB: "))
+    setA = set(list_set[setA - 1])
+    setB = set(list_set[setB - 1])
+    print(f'{setA} union {setB} = {setA.union(setB)}')
+
+elif user == '2':
+    print('setA intersection setB')
+    setA = int(input("What is your setA: "))
+    setB = int(input("What is your setB: "))
+    setA = set(list_set[setA - 1])
+    setB = set(list_set[setB - 1])
+    print(f'{setA} intersection {setB} = {setA.intersection(setB)}')
+
+else:
+    print('invalid option')
+
     

@@ -313,3 +313,137 @@ import re
 
 # 
 # game()
+
+
+# =======================================
+# sett = set(range(1, 7))
+# # print(sett)
+# for sets in sett:
+#     print(sets)
+    # if sets == 1:
+    #     set_items = int(input(f'How many data items are in your set{set+1} > ').strip())
+    #     for entries in range(set_items):
+    #         entry = int(input(f'Your data item {entries + 1} is > ').strip())
+    #         sett.update(entry)
+    #         print(sett)
+
+# ========================================
+# SET CALCULATOR
+
+from time import sleep
+
+print('''
+    WELCOME TO SET CALCULATOR.
+
+...Kindly provide the following informationn...    
+    ''')   
+list_sets = []
+
+try:
+    sets_in_list = int(input('How many sets do you have: ').strip())
+
+    for num in range(sets_in_list):
+        set_items = int(input(f'How many items are in Set{num+1}>> ').strip())
+        items = []
+        count = 1
+
+        for data_items in range(set_items):
+            item = int(input(f'Item{data_items+1}: ').strip())
+            items.append(item)
+            count+=1
+
+        list_sets.append(set(items))
+        sleep(2)
+
+        
+    var = 1
+
+    for sets in list_sets:
+        print(f"""
+        Set{var} = {sets}
+        """)
+        var+=1
+
+
+
+    sleep(3)
+    user = input(f'''
+        Note, you can only compare two sets, irrespective of how many you have provided.
+        
+        What operation will you like to perform
+        1. Union
+        2. Intersection
+        3. Difference
+        4. Symmetric_difference
+        5. exit
+    >>>> 
+
+    ''').strip()
+
+    sleep(2)
+    if user == '1':
+        print(f'''
+        You have {len(list_sets)} saved Sets
+        Kindly select
+        ''')
+        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+        sleep(3)
+        print(f'{setA} union {setB} = {setA.union(setB)}')
+    
+        
+
+    elif user == '2':
+        print(f'''
+        You have {len(list_sets)} saved Sets
+        Kindly select...
+        ''')
+        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+        sleep(3)
+        print(f'{setA} intersection {setB} = {setA.intersection(setB)}')
+    
+
+
+    elif user == '3':
+        print(f'''
+        You have {len(list_sets)} saved Sets
+        Kindly select with priority to the one you want to perform the operation on.
+        ''')
+        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+        sleep(3)
+        print(f'{setA} difference {setB} = {setA.difference(setB)}')
+        sleep(2)
+    
+
+    elif user == '4':
+        print(f'''
+        You have {len(list_sets)} saved Sets
+        Kindly select...
+        ''')
+        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+        sleep(3)
+        print(f'{setA} symmetric_difference {setB} = {setA.symmetric_difference(setB)}')
+        sleep(2)
+        
+
+
+    elif user =='5':
+        sleep(2)
+        exit()
+
+
+    else:
+        print('Invalid Command. Try again from the top.')
+        sleep(2)
+        
+
+except Exception as e:
+    print(f'{e}. Try again')
+
+
+
+   
+        
