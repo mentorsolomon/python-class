@@ -225,19 +225,19 @@ class USSD:
             print('Try again.')
             ussd_code = input('Enter USSD code: ').strip()
         
-        if ussd_code == self.airtime:
-            print('''
-            Press
+        # if ussd_code == self.airtime:
+        #     print('''
+        #     Press
             
-            1. Buy airtime
-            2. Check Balance''')
+        #     1. Buy airtime
+        #     2. Check Balance''')
         
-        elif ussd_code == self.data:
-            print('''
-            Press
+        # elif ussd_code == self.data:
+        #     print('''
+        #     Press
             
-            1. Buy Data
-            2. Check Balance''')
+        #     1. Buy Data
+        #     2. Check Balance''')
         
 
 
