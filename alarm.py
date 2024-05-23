@@ -1,8 +1,8 @@
 # # import pygame
 # # import datetime as dt
-import time
-import random
-import re
+# import time
+# import random
+# import re
 
 # from inherintance import PARENT
 
@@ -10,25 +10,25 @@ import re
 
 
 
-# # file = (r"C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
+# file = (r"C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
 
-# # while True:
-# #     tm = dt.datetime.now()
-# #     if tm.strftime('%I') == "08" and tm.strftime("%M") == "52" and tm.strftime("%S") == "00" and tm.strftime("%p") == "AM":
-# #         print("Its time to play.")
-# #         pygame.init()
-# #         pygame.mixer.music.load(file)
-# #         pygame.mixer.music.play()
-# #         time.sleep(20)
-# #         pygame.mixer.music.stop()
+# while True:
+#     tm = dt.datetime.now()
+#     if tm.strftime('%I') == "08" and tm.strftime("%M") == "52" and tm.strftime("%S") == "00" and tm.strftime("%p") == "AM":
+#         print("Its time to play.")
+#         pygame.init()
+#         pygame.mixer.music.load(file)
+#         pygame.mixer.music.play()
+#         time.sleep(20)
+#         pygame.mixer.music.stop()
 
-# # email = input('Email: '.strip())
-# # pattern = r'\w+@\w+\.\w+'
-# # username = re.findall(pattern, email)
-# # if username:
-# #     print(f"Your username is {'username'}")
-# # else:
-# #     print('error')
+# email = input('Email: '.strip())
+# pattern = r'\w+@\w+\.\w+'
+# username = re.findall(pattern, email)
+# if username:
+#     print(f"Your username is {'username'}")
+# else:
+#     print('error')
 
 # ===============================
 
@@ -330,119 +330,135 @@ import re
 # ========================================
 # SET CALCULATOR
 
-from time import sleep
+# from time import sleep
 
-print('''
-    WELCOME TO SET CALCULATOR.
+# print('''
+#     WELCOME TO SET CALCULATOR.
 
-...Kindly provide the following informationn...    
-    ''')   
-list_sets = []
+# ...Kindly provide the following informationn...    
+#     ''')   
+# list_sets = []
 
-try:
-    sets_in_list = int(input('How many sets do you have: ').strip())
+# try:
+#     sets_in_list = int(input('How many sets do you have: ').strip())
 
-    for num in range(sets_in_list):
-        set_items = int(input(f'How many items are in Set{num+1}>> ').strip())
-        items = []
-        count = 1
+#     for num in range(sets_in_list):
+#         set_items = int(input(f'How many items are in Set{num+1}>> ').strip())
+#         items = []
+#         count = 1
 
-        for data_items in range(set_items):
-            item = int(input(f'Item{data_items+1}: ').strip())
-            items.append(item)
-            count+=1
+#         for data_items in range(set_items):
+#             item = int(input(f'Item{data_items+1}: ').strip())
+#             items.append(item)
+#             count+=1
 
-        list_sets.append(set(items))
-        sleep(2)
+#         list_sets.append(set(items))
+#         sleep(2)
 
         
-    var = 1
+#     var = 1
 
-    for sets in list_sets:
-        print(f"""
-        Set{var} = {sets}
-        """)
-        var+=1
+#     for sets in list_sets:
+#         print(f"""
+#         Set{var} = {sets}
+#         """)
+#         var+=1
 
 
 
-    sleep(3)
-    user = input(f'''
-        Note, you can only compare two sets, irrespective of how many you have provided.
+#     sleep(3)
+#     user = input(f'''
+#         Note, you can only compare two sets, irrespective of how many you have provided.
         
-        What operation will you like to perform
-        1. Union
-        2. Intersection
-        3. Difference
-        4. Symmetric_difference
-        5. exit
-    >>>> 
+#         What operation will you like to perform
+#         1. Union
+#         2. Intersection
+#         3. Difference
+#         4. Symmetric_difference
+#         5. exit
+#     >>>> 
 
-    ''').strip()
+#     ''').strip()
 
-    sleep(2)
-    if user == '1':
-        print(f'''
-        You have {len(list_sets)} saved Sets
-        Kindly select
-        ''')
-        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
-        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
-        sleep(3)
-        print(f'{setA} union {setB} = {setA.union(setB)}')
+#     sleep(2)
+#     if user == '1':
+#         print(f'''
+#         You have {len(list_sets)} saved Sets
+#         Kindly select
+#         ''')
+#         setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+#         setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+#         sleep(3)
+#         print(f'{setA} union {setB} = {setA.union(setB)}')
     
         
 
-    elif user == '2':
-        print(f'''
-        You have {len(list_sets)} saved Sets
-        Kindly select...
-        ''')
-        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
-        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
-        sleep(3)
-        print(f'{setA} intersection {setB} = {setA.intersection(setB)}')
+#     elif user == '2':
+#         print(f'''
+#         You have {len(list_sets)} saved Sets
+#         Kindly select...
+#         ''')
+#         setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+#         setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+#         sleep(3)
+#         print(f'{setA} intersection {setB} = {setA.intersection(setB)}')
     
 
 
-    elif user == '3':
-        print(f'''
-        You have {len(list_sets)} saved Sets
-        Kindly select with priority to the one you want to perform the operation on.
-        ''')
-        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
-        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
-        sleep(3)
-        print(f'{setA} difference {setB} = {setA.difference(setB)}')
-        sleep(2)
+#     elif user == '3':
+#         print(f'''
+#         You have {len(list_sets)} saved Sets
+#         Kindly select with priority to the one you want to perform the operation on.
+#         ''')
+#         setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+#         setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+#         sleep(3)
+#         print(f'{setA} difference {setB} = {setA.difference(setB)}')
+#         sleep(2)
     
 
-    elif user == '4':
-        print(f'''
-        You have {len(list_sets)} saved Sets
-        Kindly select...
-        ''')
-        setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
-        setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
-        sleep(3)
-        print(f'{setA} symmetric_difference {setB} = {setA.symmetric_difference(setB)}')
-        sleep(2)
+#     elif user == '4':
+#         print(f'''
+#         You have {len(list_sets)} saved Sets
+#         Kindly select...
+#         ''')
+#         setA = set(list_sets[(int(input('What is your setA: ').strip())) - 1])
+#         setB = set(list_sets[(int(input('What is your setB: ').strip())) - 1])
+#         sleep(3)
+#         print(f'{setA} symmetric_difference {setB} = {setA.symmetric_difference(setB)}')
+#         sleep(2)
         
 
 
-    elif user =='5':
-        sleep(2)
-        exit()
+#     elif user =='5':
+#         sleep(2)
+#         exit()
 
 
-    else:
-        print('Invalid Command. Try again from the top.')
-        sleep(2)
+#     else:
+#         print('Invalid Command. Try again from the top.')
+#         sleep(2)
         
 
-except Exception as e:
-    print(f'{e}. Try again')
+# except Exception as e:
+#     print(f'{e}. Try again')
 
+
+# =====================================
+
+# gabe = input('Enter 0 to 9 >> ')
+# print(gabe[::-1])
+# print(gabe[-2: -6: -2])
+# print(gabe[-2: -6: -1])
+# print(gabe[2: 6: 2])
+
+
+x = int(input('x = '))
+y = int(input('y = '))
+
+result =(x+True)/(4-y*False)
+
+print(result)
 
 
    

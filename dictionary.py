@@ -174,33 +174,33 @@
 
 # set dictionary
 
-# list_set = []
-# sets = int(input('How many sets do you have: ').strip())
+list_set = []
+sets = int(input('How many sets do you have: ').strip())
 
 
-# for sett in range(sets):
-#     items = int(input(f'How many items are in Set{sett+1}: ').strip())
-#     set_items = []
-#     set_items_count = 1
+for sett in range(sets):
+    items = int(input(f'How many items are in Set{sett+1}: ').strip())
+    set_items = []
+    set_items_count = 1
 
-#     for item in range(items):
-#         set_data = int(input(f'Data{set_items_count}: ').strip())
-#         set_items.append(set_data)
-#         set_items_count += 1
+    for item in range(items):
+        set_data = int(input(f'Data{set_items_count}: ').strip())
+        set_items.append(set_data)
+        set_items_count += 1
     
-#     list_set.append(set(set_items))
+    list_set.append(set(set_items))
 
-# print(list_set)
+print(list_set)
 
 
-# list_count = 1
-# for setts in list_set:
-#     print(f'''
-#     Set{list_count} = {setts}    
-#     ''')
-#     list_count += 1
+list_count = 1
+for setts in list_set:
+    print(f'''
+    Set{list_count} = {setts}    
+    ''')
+    list_count += 1
 
-# print('You can now perform your operations')
+print('You can now perform your operations')
 
 # ========================================================================
 class USSD:
@@ -210,46 +210,15 @@ class USSD:
         self.data = '*312#'
     
     def home(self):
-        print(f'''
-        {self.name},,, 
-        EVERYWHERE YOU GO
-
-        Press *310# for airtime
-        Press *312# for data
-
-        Press * for more information.
-        ''')
-
+        print(f'{self.name} NG'.center(25, '"'))
         ussd_code = input('Enter USSD code: ').strip()
         while ussd_code != self.airtime:
-            print('Try again.')
             ussd_code = input('Enter USSD code: ').strip()
         
-        # if ussd_code == self.airtime:
-        #     print('''
-        #     Press
-            
-        #     1. Buy airtime
-        #     2. Check Balance''')
-        
-        # elif ussd_code == self.data:
-        #     print('''
-        #     Press
-            
-        #     1. Buy Data
-        #     2. Check Balance''')
+        print('Welcome to data')
         
 
-
-
-        
-
-
-
-       
-
-
-
+    
 
 
 

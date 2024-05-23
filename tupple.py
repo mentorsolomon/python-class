@@ -56,3 +56,88 @@
 # # print(item4)
 # for name, age, place in list_items: #for _, mango, _, _ in list_items: shorthand way of calling LHS
 #         print(f"{name} is God's.")
+
+# ====================================================================================
+
+list_set = list()
+set_items = int(input('How many sets do you have: ').strip())
+
+for sets in range(set_items):
+    items =  int(input(f'How many item are in your Set{sets+1}: ').strip())
+    item = list()
+    item_count = 1
+
+    for data in range(items):
+        data_item = int(input(f'Item{item_count}: ').strip())
+        item.append(data_item)
+        item_count+=1
+    
+    list_set.append(set(item))
+
+# print(list_set)
+
+list_count = 1
+
+for entries in list_set:
+    print(f'''
+    Set{list_count} = {entries}
+    ''')
+    list_count+=1
+
+user = input('''
+    What do you want to do?
+
+    1. Union
+    2. Intersection
+    3. Difference
+    4. Symmetric difference
+    5. Others
+    6. Exit
+
+''').strip()
+
+if user == '1':
+    setA = list_set[(int(input('Which number is your setA: ').strip()))- 1]
+    setB = list_set[(int(input('Which number is your setB: ').strip()))- 1]
+    
+    print(f'''
+    {setA} union {setB} = {setA | setB}
+    ''')
+
+
+elif user == '2':
+    setA = list_set[(int(input('Which number is your setA: ').strip()))- 1]
+    setB = list_set[(int(input('Which number is your setB: ').strip()))- 1]
+    
+    print(f'''
+    {setA} intersection {setB} = {setA & setB}
+    ''')
+
+
+elif user == '3':
+    setA = list_set[(int(input('Which number is your setA: ').strip()))- 1]
+    setB = list_set[(int(input('Which number is your setB: ').strip()))- 1]
+    
+    print(f'''
+    {setA} difference {setB} = {setA - setB}
+    ''')
+
+elif user == '4':
+    setA = list_set[(int(input('Which number is your setA: ').strip()))- 1]
+    setB = list_set[(int(input('Which number is your setB: ').strip()))- 1]
+    
+    print(f'''
+    {setA} symmmetric_difference {setB} = {setA ^ setB}
+    ''')
+
+elif user == '5':
+    setA = list_set[(int(input('Which number is your setA: ').strip()))- 1]
+    setB = list_set[(int(input('Which number is your setB: ').strip()))- 1]
+    
+
+
+elif user == '6':
+    exit()
+
+else:
+    print('Invalid command.')

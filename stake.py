@@ -7,7 +7,7 @@ import mysql.connector as sql
 import pwinput as pw
 
 # ============================= SQL PROMPT ===================================
-mycon = sql.connect(host = '127.0.0.1' , user = 'root', password = '',  database = 'Sporty_db')
+mycon = sql.connect(host = '127.0.0.1' , user = 'root', password = 'Lacious@49#!',  database = 'Sporty_db')
 
 mycursor = mycon.cursor()
 
@@ -95,7 +95,8 @@ class SPORTY():
         try:
             query =("""
             INSERT INTO Sport_bettor(Age, Name, userId, Email, Password, Balance, City, State )
-            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)""")
+            VALUES(%s,%s,%s,%s,%s,%s,%s,%s)
+            """)
 
             values = (age, name, user_id, e_mail, password2, balance, city, state)
 

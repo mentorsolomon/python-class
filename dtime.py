@@ -1,9 +1,11 @@
 import datetime as dt
 import time
-import playsound
-import pygame
+# import playsound
+# import pygame
 
-current_date = dt.datetime.now()
+# current_date = dt.datetime.now()
+
+# current_date = dt.datetime.
 # print(current_date)
 
 # ==== HOWW TO SET DATETIME =================
@@ -13,7 +15,7 @@ set_dt = dt.datetime(2024, 2, 19, 6,55,34,333)
 
 # strftime
 _time = dt.datetime.now()
-# print(_time.strftime('%B'))
+print(_time.strftime('%p'))
 
 # day = %a or %A
 # month = %b or %B
@@ -29,8 +31,8 @@ _time = dt.datetime.now()
 #     print('Music not loadable')
 
 # ================== PYGAME ============================
-pygame.init()
-pygame.mixer.music.load("C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
-pygame.mixer.music.play()
-time.sleep(20)
-pygame.mixer.music.stop()
+# pygame.init()
+# pygame.mixer.music.load("C:\python-level-two\music\Greatman_Takit_-_Correct_CeeNaija.com_.mp3")
+# pygame.mixer.music.play()
+# time.sleep(20)
+# pygame.mixer.music.stop()
